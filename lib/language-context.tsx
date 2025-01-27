@@ -1,0 +1,225 @@
+"use client"
+
+import { createContext, useContext, useState } from "react"
+
+type Language = "en" | "sw"
+
+type Translations = {
+  [key in Language]: {
+    training: string
+    learnSkills: string
+    guide: string
+    quickReference: string
+    emergency: string
+    emergencyNumber: string
+    location: string
+    enable: string
+    disable: string
+    address: string
+    coordinates: string
+    fetchingAddress: string
+    fetchingCoordinates: string
+    waitingLocation: string
+    firstAid: string
+    trainingModules: string
+    basicFirstAid: string
+    basicFirstAidDesc: string
+    cprCourse: string
+    cprCourseDesc: string
+    woundTreatment: string
+    woundTreatmentDesc: string
+    startCourse: string
+    minutes: string
+    lessons: string
+    back: string
+    trafficAccident: string
+    snakeBite: string
+    fireEmergency: string
+    burns: string
+    treatment: string
+    burnTreatment: {
+      title: string
+      steps: string[]
+    }
+    trafficAccidentTreatment: {
+      title: string
+      steps: string[]
+    }
+    snakeBiteTreatment: {
+      title: string
+      steps: string[]
+    }
+    lesson: string
+    watchVideo: string
+    firstAidLocations: string
+    findNearbyLocations: string
+  }
+}
+
+const translations: Translations = {
+  en: {
+    training: "Training program",
+    learnSkills: "Learn essential skills",
+    guide: "Emergency guide",
+    quickReference: "Quick reference",
+    emergency: "Call emergency",
+    emergencyNumber: "Dial 112",
+    location: "My Location",
+    enable: "Enable",
+    disable: "Disable",
+    address: "Address",
+    coordinates: "GPS Coordinates",
+    fetchingAddress: "Fetching address...",
+    fetchingCoordinates: "Fetching coordinates...",
+    waitingLocation: "Waiting for location data...",
+    firstAid: "First Aid",
+    trainingModules: "Training Modules",
+    basicFirstAid: "Basic First Aid",
+    basicFirstAidDesc: "Learn the essential principles of first aid",
+    cprCourse: "CPR Course",
+    cprCourseDesc: "Cardiopulmonary resuscitation for adults and children",
+    woundTreatment: "Wound Treatment",
+    woundTreatmentDesc: "Handling cuts, scrapes and other wounds",
+    startCourse: "Start Course",
+    minutes: "min",
+    lessons: "lessons",
+    back: "Back",
+    trafficAccident: "Traffic Accident",
+    snakeBite: "Snake Bite",
+    fireEmergency: "Fire Emergency",
+    burns: "Burns",
+    treatment: "Treatment",
+    burnTreatment: {
+      title: "Burns Treatment",
+      steps: [
+        "Cool the burn with lukewarm water for at least 20 minutes",
+        "Remove clothing and jewelry from the burned area",
+        "Cover the burn with clean bandage or dressing",
+        "Seek medical help for large or deep burns",
+      ],
+    },
+    trafficAccidentTreatment: {
+      title: "Traffic Accident Response",
+      steps: [
+        "Ensure your own safety first - park safely and turn on hazard lights",
+        "Call emergency services (112) immediately",
+        "Do not move injured persons unless they are in immediate danger",
+        "Check for consciousness and breathing of the victims",
+        "Apply pressure to any bleeding wounds using clean cloth",
+        "Keep injured persons warm and calm until help arrives",
+        "Collect information and document the scene if possible",
+      ],
+    },
+    snakeBiteTreatment: {
+      title: "Snake Bite Treatment",
+      steps: [
+        "Keep the person calm and still to slow down venom spread",
+        "Call emergency services (112) immediately",
+        "Remove any constricting items (jewelry, watches) from affected area",
+        "Keep the bitten area below heart level",
+        "Clean the wound with soap and water if available",
+        "Do NOT apply a tourniquet or try to suck out the venom",
+        "Try to remember or safely photograph the snake for identification",
+      ],
+    },
+    lesson: "Lesson",
+    watchVideo: "Watch Video",
+    firstAidLocations: "First Aid Locations",
+    findNearbyLocations: "Find nearby locations",
+  },
+  sw: {
+    training: "Programu ya Mafunzo",
+    learnSkills: "Jifunze ujuzi muhimu",
+    guide: "Mwongozo wa dharura",
+    quickReference: "Rejea ya haraka",
+    emergency: "Piga simu ya dharura",
+    emergencyNumber: "Piga 112",
+    location: "Mahali Pangu",
+    enable: "Wezesha",
+    disable: "Zima",
+    address: "Anwani",
+    coordinates: "Koordineti za GPS",
+    fetchingAddress: "Inapata anwani...",
+    fetchingCoordinates: "Inapata koordineti...",
+    waitingLocation: "Inasubiri data ya mahali...",
+    firstAid: "Huduma ya Kwanza",
+    trainingModules: "Moduli za Mafunzo",
+    basicFirstAid: "Huduma ya Kwanza ya Msingi",
+    basicFirstAidDesc: "Jifunze kanuni muhimu za huduma ya kwanza",
+    cprCourse: "Kozi ya CPR",
+    cprCourseDesc: "Uhuishaji wa moyo na mapafu kwa watu wazima na watoto",
+    woundTreatment: "Matibabu ya Vidonda",
+    woundTreatmentDesc: "Kushughulikia michubuko, majeraha na vidonda vingine",
+    startCourse: "Anza Kozi",
+    minutes: "dakika",
+    lessons: "masomo",
+    back: "Rudi",
+    trafficAccident: "Ajali ya Barabarani",
+    snakeBite: "Kuumwa na Nyoka",
+    fireEmergency: "Dharura ya Moto",
+    burns: "Kuungua",
+    treatment: "Matibabu",
+    burnTreatment: {
+      title: "Matibabu ya Kuungua",
+      steps: [
+        "Pooza eneo lililoungua kwa maji vuguvugu kwa dakika 20 au zaidi",
+        "Ondoa nguo na vito kwenye eneo lililoungua",
+        "Funika eneo lililoungua kwa bendeji safi",
+        "Tafuta msaada wa daktari kwa kuungua kukubwa au kwa kina",
+      ],
+    },
+    trafficAccidentTreatment: {
+      title: "Kukabiliana na Ajali ya Barabarani",
+      steps: [
+        "Hakikisha usalama wako kwanza - egeshea gari salama na washa taa za hatari",
+        "Piga simu ya dharura (112) mara moja",
+        "Usihamishee walioumia isipokuwa wapo hatarini",
+        "Angalia kama waathirika wana fahamu na wanapumua",
+        "Bandika kidonda kinachotoka damu kwa kutumia kitambaa safi",
+        "Waweke waathirika katika hali ya joto na utulivu hadi msaada ufike",
+        "Kusanya taarifa na picha za tukio ikiwezekana",
+      ],
+    },
+    snakeBiteTreatment: {
+      title: "Matibabu ya Kuumwa na Nyoka",
+      steps: [
+        "Mweke mgonjwa atulie ili kuzuia sumu kusambaa haraka",
+        "Piga simu ya dharura (112) mara moja",
+        "Ondoa vitu vyovyote vinavyobana (vito, saa) kutoka eneo lililoathirika",
+        "Weka sehemu iliyoumwa chini ya kiwango cha moyo",
+        "Safisha kidonda kwa sabuni na maji ikiwa vinapatikana",
+        "USIFUNGE kamba kubana wala kujaribu kufyonza sumu",
+        "Jaribu kukumbuka au kupiga picha ya nyoka kwa uangalifu kwa utambuzi",
+      ],
+    },
+    lesson: "Somo",
+    watchVideo: "Tazama Video",
+    firstAidLocations: "Maeneo ya Huduma ya Kwanza",
+    findNearbyLocations: "Tafuta maeneo ya karibu",
+  },
+}
+
+type LanguageContextType = {
+  language: Language
+  setLanguage: (lang: Language) => void
+  t: (key: keyof typeof translations.en) => string
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguage] = useState<Language>("en")
+
+  const t = (key: keyof typeof translations.en) => translations[language][key]
+
+  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext)
+  if (context === undefined) {
+    throw new Error("useLanguage must be used within a LanguageProvider")
+  }
+  return context
+}
+
