@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Car, SnailIcon as Snake, FireExtinguisher } from "lucide-react"
+import { ArrowRight, Car, SnailIcon as Snake, FireExtinguisher, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { BackButton } from "@/components/back-button"
@@ -9,6 +9,7 @@ export default function GuidePage() {
   const { t } = useLanguage()
 
   const emergencies = [
+    { title: t("generalFirstAid"), icon: BookOpen, color: "text-purple-500", href: "/guide/general" },
     { title: t("trafficAccident"), icon: Car, color: "text-blue-500", href: "/guide/traffic-accident" },
     { title: t("snakeBite"), icon: Snake, color: "text-green-500", href: "/guide/snake-bite" },
     { title: t("burns"), icon: FireExtinguisher, color: "text-red-600", href: "/guide/fire-emergency" },

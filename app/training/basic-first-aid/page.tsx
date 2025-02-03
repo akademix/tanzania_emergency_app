@@ -3,12 +3,15 @@
 import { BackButton } from "@/components/back-button"
 import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
+import { VideoPlayer } from "@/components/video/video-player"
+import { getVideo } from "@/lib/video/config"
 
 export default function BasicFirstAidPage() {
   const { t } = useLanguage()
+  const introVideo = getVideo('intro-first-aid')
 
   const lessons = [
-    { title: "Introduction to First Aid", videoId: "placeholder1" },
+    { title: "Introduction to First Aid", videoId: "intro-first-aid" },
     { title: "Assessing Emergency Situations", videoId: "placeholder2" },
     { title: "CPR Basics", videoId: "placeholder3" },
     { title: "Treating Wounds and Bleeding", videoId: "placeholder4" },
@@ -44,9 +47,14 @@ export default function BasicFirstAidPage() {
                   {t("watchVideo")}
                 </button>
               </div>
-              {/* Placeholder for video player */}
-              <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">Video Player Placeholder</p>
+              <div className="mt-4">
+                {lesson.videoId === "intro-first-aid" && introVideo ? (
+                  <VideoPlayer video={introVideo} />
+                ) : (
+                  <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                    <p className="text-gray-500">Video Player Placeholder</p>
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -53,6 +53,9 @@ type Translations = {
     watchVideo: string
     firstAidLocations: string
     findNearbyLocations: string
+    generalFirstAid: string
+    generalFirstAidDesc: string
+    generalFirstAidSteps: string[]
   }
 }
 
@@ -126,6 +129,17 @@ const translations: Translations = {
     watchVideo: "Watch Video",
     firstAidLocations: "First Aid Locations",
     findNearbyLocations: "Find nearby locations",
+    generalFirstAid: "General First Aid",
+    generalFirstAidDesc: "Basic principles and steps for any emergency",
+    generalFirstAidSteps: [
+      "Check the scene is safe before approaching",
+      "Use universal precautions - protect yourself from blood and bodily fluids",
+      "Check responsiveness and breathing",
+      "Call for emergency help if needed",
+      "Control any life-threatening bleeding",
+      "Protect the person from further harm",
+      "Monitor vital signs until help arrives"
+    ],
   },
   sw: {
     training: "Programu ya Mafunzo",
@@ -196,6 +210,17 @@ const translations: Translations = {
     watchVideo: "Tazama Video",
     firstAidLocations: "Maeneo ya Huduma ya Kwanza",
     findNearbyLocations: "Tafuta maeneo ya karibu",
+    generalFirstAid: "Huduma ya Kwanza ya Msingi",
+    generalFirstAidDesc: "Jifunze kanuni muhimu za huduma ya kwanza",
+    generalFirstAidSteps: [
+      "Jifunze kanuni muhimu za huduma ya kwanza",
+      "Kushughulikia michubuko, majeraha na vidonda vingine",
+      "Kushughulikia michubuko, majeraha na vidonda vingine",
+      "Kushughulikia michubuko, majeraha na vidonda vingine",
+      "Kushughulikia michubuko, majeraha na vidonda vingine",
+      "Kushughulikia michubuko, majeraha na vidonda vingine",
+      "Kushughulikia michubuko, majeraha na vidonda vingine"
+    ],
   },
 }
 
