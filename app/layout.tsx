@@ -1,10 +1,10 @@
-import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { LanguageProvider } from "@/lib/language-context"
 import Script from "next/script"
+import type React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,6 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="First Aid App" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
+      </head>
       <body className={`${inter.className} bg-gray-50 min-h-screen`}>
         <LanguageProvider>
           <Header />

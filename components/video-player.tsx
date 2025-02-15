@@ -41,6 +41,7 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
             <div className="relative">
+              {/* Thumbnail */}
               <img
                 src={thumbnailUrl || "/placeholder.svg"}
                 alt={title}
@@ -49,6 +50,7 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
                   e.currentTarget.src = "/placeholder.svg?height=720&width=1280"
                 }}
               />
+              {/* Play button overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <Button size="lg" className="rounded-full w-16 h-16">
                   <Play className="h-8 w-8" />
