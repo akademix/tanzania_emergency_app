@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react"
 
 type Language = "en" | "sw"
 
@@ -50,9 +50,18 @@ type Translations = {
       steps: string[]
     }
     lesson: string
-    watchVideo: string
     firstAidLocations: string
     findNearbyLocations: string
+    continueOrStartOver: string
+    continueOrStartOverDescription: string
+    continue: string
+    startOver: string
+    resetProgress: string
+    resetProgressConfirmTitle: string
+    resetProgressConfirmDescription: string
+    cancel: string
+    confirm: string
+    callEmergency: string
   }
 }
 
@@ -63,7 +72,7 @@ const translations: Translations = {
     guide: "Emergency guide",
     quickReference: "Quick reference",
     emergency: "Call emergency",
-    emergencyNumber: "Dial 112",
+    emergencyNumber: "Dial 0800 750 112",
     location: "My Location",
     enable: "Enable",
     disable: "Disable",
@@ -102,7 +111,7 @@ const translations: Translations = {
       title: "Traffic Accident Response",
       steps: [
         "Ensure your own safety first - park safely and turn on hazard lights",
-        "Call emergency services (112) immediately",
+        "Call emergency services (0800 750 112) immediately",
         "Do not move injured persons unless they are in immediate danger",
         "Check for consciousness and breathing of the victims",
         "Apply pressure to any bleeding wounds using clean cloth",
@@ -114,7 +123,7 @@ const translations: Translations = {
       title: "Snake Bite Treatment",
       steps: [
         "Keep the person calm and still to slow down venom spread",
-        "Call emergency services (112) immediately",
+        "Call emergency services (0800 750 112) immediately",
         "Remove any constricting items (jewelry, watches) from affected area",
         "Keep the bitten area below heart level",
         "Clean the wound with soap and water if available",
@@ -123,9 +132,19 @@ const translations: Translations = {
       ],
     },
     lesson: "Lesson",
-    watchVideo: "Watch Video",
     firstAidLocations: "First Aid Locations",
     findNearbyLocations: "Find nearby locations",
+    resetProgress: "Reset Progress",
+    resetProgressConfirmTitle: "Reset Progress",
+    resetProgressConfirmDescription: "Are you sure you want to reset your progress? This action cannot be undone.",
+    cancel: "Cancel",
+    confirm: "Confirm",
+    continueOrStartOver: "Continue or Start Over?",
+    continueOrStartOverDescription:
+      "You have previous progress. Do you want to continue where you left off or start over?",
+    continue: "Continue",
+    startOver: "Start Over",
+    callEmergency: "Call Emergency",
   },
   sw: {
     training: "Programu ya Mafunzo",
@@ -133,7 +152,7 @@ const translations: Translations = {
     guide: "Mwongozo wa dharura",
     quickReference: "Rejea ya haraka",
     emergency: "Piga simu ya dharura",
-    emergencyNumber: "Piga 112",
+    emergencyNumber: "Piga 0800 750 112",
     location: "Mahali Pangu",
     enable: "Wezesha",
     disable: "Zima",
@@ -172,7 +191,7 @@ const translations: Translations = {
       title: "Kukabiliana na Ajali ya Barabarani",
       steps: [
         "Hakikisha usalama wako kwanza - egeshea gari salama na washa taa za hatari",
-        "Piga simu ya dharura (112) mara moja",
+        "Piga simu ya dharura (0800 750 112) mara moja",
         "Usihamishee walioumia isipokuwa wapo hatarini",
         "Angalia kama waathirika wana fahamu na wanapumua",
         "Bandika kidonda kinachotoka damu kwa kutumia kitambaa safi",
@@ -184,7 +203,7 @@ const translations: Translations = {
       title: "Matibabu ya Kuumwa na Nyoka",
       steps: [
         "Mweke mgonjwa atulie ili kuzuia sumu kusambaa haraka",
-        "Piga simu ya dharura (112) mara moja",
+        "Piga simu ya dharura (0800 750 112) mara moja",
         "Ondoa vitu vyovyote vinavyobana (vito, saa) kutoka eneo lililoathirika",
         "Weka sehemu iliyoumwa chini ya kiwango cha moyo",
         "Safisha kidonda kwa sabuni na maji ikiwa vinapatikana",
@@ -193,9 +212,19 @@ const translations: Translations = {
       ],
     },
     lesson: "Somo",
-    watchVideo: "Tazama Video",
     firstAidLocations: "Maeneo ya Huduma ya Kwanza",
     findNearbyLocations: "Tafuta maeneo ya karibu",
+    resetProgress: "Weka upya Maendeleo",
+    resetProgressConfirmTitle: "Weka upya Maendeleo",
+    resetProgressConfirmDescription:
+      "Je, una uhakika unataka kuweka upya maendeleo yako? Kitendo hiki hakiwezi kutenduliwa.",
+    cancel: "Ghairi",
+    confirm: "Thibitisha",
+    continueOrStartOver: "Endelea au Anza Upya?",
+    continueOrStartOverDescription: "Una maendeleo ya awali. Je, unataka kuendelea kutoka ulipoishia au kuanza upya?",
+    continue: "Endelea",
+    startOver: "Anza Upya",
+    callEmergency: "Piga Simu ya Dharura",
   },
 }
 
@@ -207,7 +236,7 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
   const t = (key: keyof typeof translations.en) => translations[language][key]

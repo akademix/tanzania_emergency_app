@@ -1,8 +1,9 @@
 "use client"
 
 import { Globe } from "lucide-react"
-import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import Link from "next/link"
+import Image from "next/image"
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage()
@@ -10,8 +11,9 @@ export function Header() {
   return (
     <header className="bg-white border-b">
       <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-semibold">
-          {t("firstAid")}
+        <Link href="/" className="flex items-center gap-2">
+          <div className="text-xl font-semibold">{t("firstAid")}</div>
+          <Image src="/logo.svg" alt="First Aid App Logo" width={24} height={24} />
         </Link>
         <button
           className="p-2 hover:bg-gray-100 rounded-lg transition-colors flex items-center gap-2"

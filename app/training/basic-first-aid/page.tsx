@@ -3,12 +3,17 @@
 import { BackButton } from "@/components/back-button"
 import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
+import { VideoPlayer } from "@/components/video-player"
 
 export default function BasicFirstAidPage() {
   const { t } = useLanguage()
 
   const lessons = [
-    { title: "Introduction to First Aid", videoId: "placeholder1" },
+    {
+      title: "Introduction to First Aid",
+      videoId: "ea1RJUOiNfQ",
+      description: "Learn how to perform a primary survey - the first and most crucial step in providing first aid.",
+    },
     { title: "Assessing Emergency Situations", videoId: "placeholder2" },
     { title: "CPR Basics", videoId: "placeholder3" },
     { title: "Treating Wounds and Bleeding", videoId: "placeholder4" },
@@ -27,8 +32,11 @@ export default function BasicFirstAidPage() {
 
         <div className="space-y-4">
           {lessons.map((lesson, index) => (
-            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
-              <div className="flex items-center justify-between">
+            <div
+              key={index}
+              className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <div className="text-green-500">
                     <PlayCircle className="w-8 h-8" />
@@ -40,14 +48,20 @@ export default function BasicFirstAidPage() {
                     </p>
                   </div>
                 </div>
-                <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
-                  {t("watchVideo")}
-                </button>
               </div>
-              {/* Placeholder for video player */}
-              <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">Video Player Placeholder</p>
-              </div>
+              {lesson.videoId === "placeholder2" ||
+              lesson.videoId === "placeholder3" ||
+              lesson.videoId === "placeholder4" ||
+              lesson.videoId === "placeholder5" ? (
+                <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                  <p className="text-gray-500">Video Player Placeholder</p>
+                </div>
+              ) : (
+                <div className="mt-4">
+                  {lesson.description && <p className="text-gray-600 mb-4">{lesson.description}</p>}
+                  <VideoPlayer videoId={lesson.videoId} title={lesson.title} />
+                </div>
+              )}
             </div>
           ))}
         </div>

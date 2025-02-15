@@ -39,9 +39,6 @@ export default function WoundTreatmentPage() {
                     </p>
                   </div>
                 </div>
-                <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
-                  {t("watchVideo")}
-                </button>
               </div>
               {/* Placeholder for video player */}
               <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">

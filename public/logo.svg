@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- White background -->
+  <rect width="200" height="200" fill="white"/>
+  <!-- Define an improved heart shape with smoother curves -->
+  <defs>
+    <clipPath id="heartClip">
+      <path d="
+        M100 190
+        C 85 175, 30 135, 15 95
+        C 0 55, 15 15, 45 15
+        C 75 15, 95 40, 100 65
+        C 105 40, 125 15, 155 15
+        C 185 15, 200 55, 185 95
+        C 170 135, 115 175, 100 190
+        Z"/>
+    </clipPath>
+    <!-- Add a subtle gradient overlay for depth -->
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Group for the heart with stripes -->
+  <g clip-path="url(#heartClip)">
+    <!-- Base color fills -->
+    <rect x="-50" y="-50" width="300" height="300" fill="#1EB53A"/>
+    <!-- Diagonal stripes container -->
+    <g transform="rotate(-45, 100, 100)">
+      <!-- Green section remains as base -->
+      <!-- Yellow stripe 1 -->
+      <rect x="-50" y="65" width="300" height="14" fill="#FCD116"/>
+      <!-- Black stripe -->
+      <rect x="-50" y="79" width="300" height="32" fill="#000000"/>
+      <!-- Yellow stripe 2 -->
+      <rect x="-50" y="111" width="300" height="14" fill="#FCD116"/>
+      <!-- Light blue section -->
+      <rect x="-50" y="125" width="300" height="300" fill="#00A3DD"/>
+    </g>
+    <!-- Add subtle gradient overlay for depth -->
+    <rect x="-50" y="-50" width="300" height="300" fill="url(#shine)"/>
+  </g>
+  <!-- Add refined border with variable width -->
+  <path d="
+    M100 190
+    C 85 175, 30 135, 15 95
+    C 0 55, 15 15, 45 15
+    C 75 15, 95 40, 100 65
+    C 105 40, 125 15, 155 15
+    C 185 15, 200 55, 185 95
+    C 170 135, 115 175, 100 190
+    Z"
+    fill="none"
+    stroke="#333333"
+    stroke-width="1.5"
+    stroke-opacity="0.6"
+  />
+</svg>
+

@@ -66,7 +66,7 @@ export default function Home() {
         </Link>
 
         <a
-          href="tel:112"
+          href="tel:0800750112"
           className="block p-6 bg-red-50 rounded-2xl border border-red-100 hover:bg-red-100 hover:border-red-200 transition-colors"
         >
           <div className="flex items-center justify-between">
