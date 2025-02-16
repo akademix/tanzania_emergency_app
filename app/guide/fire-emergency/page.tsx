@@ -18,7 +18,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { EmergencyCallButton } from "@/components/emergency-call-button"
 
 export default function BurnsPage() {
   const { t } = useLanguage()
@@ -72,8 +71,6 @@ export default function BurnsPage() {
       </AlertDialog>
 
       <div className="space-y-6">
-        <EmergencyCallButton />
-
         <div>
           <h1 className="text-3xl font-bold">First Aid for Burns</h1>
         </div>
