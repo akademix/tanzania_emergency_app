@@ -30,16 +30,17 @@ export default function BasicFirstAidPage() {
           <p className="mt-2 text-gray-500">{t("basicFirstAidDesc")}</p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4" role="list">
           {lessons.map((lesson, index) => (
             <div
               key={index}
               className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              role="listitem"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <div className="text-green-500">
-                    <PlayCircle className="w-8 h-8" />
+                    <PlayCircle className="w-8 h-8" aria-hidden="true" />
                   </div>
                   <div>
                     <h2 className="text-lg font-semibold">{lesson.title}</h2>
@@ -53,13 +54,24 @@ export default function BasicFirstAidPage() {
               lesson.videoId === "placeholder3" ||
               lesson.videoId === "placeholder4" ||
               lesson.videoId === "placeholder5" ? (
-                <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                <div 
+                  className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center"
+                  aria-label={`Placeholder for ${lesson.title} video`}
+                >
                   <p className="text-gray-500">Video Player Placeholder</p>
                 </div>
               ) : (
                 <div className="mt-4">
-                  {lesson.description && <p className="text-gray-600 mb-4">{lesson.description}</p>}
-                  <VideoPlayer videoId={lesson.videoId} title={lesson.title} />
+                  {lesson.description && (
+                    <p className="text-gray-600 mb-4" id={`description-${index}`}>
+                      {lesson.description}
+                    </p>
+                  )}
+                  <VideoPlayer 
+                    videoId={lesson.videoId} 
+                    title={lesson.title}
+                    aria-describedby={lesson.description ? `description-${index}` : undefined}
+                  />
                 </div>
               )}
             </div>
@@ -69,4 +81,3 @@ export default function BasicFirstAidPage() {
     </div>
   )
 }
-

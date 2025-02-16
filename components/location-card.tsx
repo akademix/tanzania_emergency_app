@@ -45,7 +45,7 @@ export function LocationCard() {
             loading: false,
             error: null,
           })
-        } catch (error) {
+        } catch {
           setLocation((prev) => ({
             ...prev,
             loading: false,
@@ -53,7 +53,7 @@ export function LocationCard() {
           }))
         }
       },
-      (error) => {
+      () => {
         setLocation((prev) => ({
           ...prev,
           loading: false,
@@ -139,4 +139,3 @@ export function LocationCard() {
     </div>
   )
 }
-
