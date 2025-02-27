@@ -4,68 +4,64 @@ import { createContext, useContext, useState, type ReactNode } from "react"
 
 type Language = "en" | "sw"
 
-type TreatmentType = {
-  title: string
-  steps: string[]
-}
-
-// Define which keys return objects vs strings
-type StringTranslationKeys =
-  | "training"
-  | "learnSkills"
-  | "guide"
-  | "quickReference"
-  | "emergency"
-  | "emergencyNumber"
-  | "location"
-  | "enable"
-  | "disable"
-  | "address"
-  | "coordinates"
-  | "fetchingAddress"
-  | "fetchingCoordinates"
-  | "waitingLocation"
-  | "firstAid"
-  | "trainingModules"
-  | "basicFirstAid"
-  | "basicFirstAidDesc"
-  | "cprCourse"
-  | "cprCourseDesc"
-  | "woundTreatment"
-  | "woundTreatmentDesc"
-  | "startCourse"
-  | "minutes"
-  | "lessons"
-  | "back"
-  | "trafficAccident"
-  | "snakeBite"
-  | "fireEmergency"
-  | "burns"
-  | "treatment"
-  | "lesson"
-  | "firstAidLocations"
-  | "findNearbyLocations"
-  | "continueOrStartOver"
-  | "continueOrStartOverDescription"
-  | "continue"
-  | "startOver"
-  | "resetProgress"
-  | "resetProgressConfirmTitle"
-  | "resetProgressConfirmDescription"
-  | "cancel"
-  | "confirm"
-  | "callEmergency"
-  | "emergencyContact"
-
-type ObjectTranslationKeys = "burnTreatment" | "trafficAccidentTreatment" | "snakeBiteTreatment"
-
-type TranslationKey = StringTranslationKeys | ObjectTranslationKeys
-
 type Translations = {
   [key in Language]: {
-    [key in StringTranslationKeys]: string
-  } & {
-    [key in ObjectTranslationKeys]: TreatmentType
+    training: string
+    learnSkills: string
+    guide: string
+    quickReference: string
+    emergency: string
+    emergencyNumber: string
+    location: string
+    enable: string
+    disable: string
+    address: string
+    coordinates: string
+    fetchingAddress: string
+    fetchingCoordinates: string
+    waitingLocation: string
+    firstAid: string
+    trainingModules: string
+    basicFirstAid: string
+    basicFirstAidDesc: string
+    cprCourse: string
+    cprCourseDesc: string
+    woundTreatment: string
+    woundTreatmentDesc: string
+    startCourse: string
+    minutes: string
+    lessons: string
+    back: string
+    trafficAccident: string
+    snakeBite: string
+    fireEmergency: string
+    burns: string
+    treatment: string
+    burnTreatment: {
+      title: string
+      steps: string[]
+    }
+    trafficAccidentTreatment: {
+      title: string
+      steps: string[]
+    }
+    snakeBiteTreatment: {
+      title: string
+      steps: string[]
+    }
+    lesson: string
+    firstAidLocations: string
+    findNearbyLocations: string
+    continueOrStartOver: string
+    continueOrStartOverDescription: string
+    continue: string
+    startOver: string
+    resetProgress: string
+    resetProgressConfirmTitle: string
+    resetProgressConfirmDescription: string
+    cancel: string
+    confirm: string
+    callEmergency: string
   }
 }
 
@@ -149,7 +145,6 @@ const translations: Translations = {
     continue: "Continue",
     startOver: "Start Over",
     callEmergency: "Call Emergency",
-    emergencyContact: "Emergency Contact"
   },
   sw: {
     training: "Programu ya Mafunzo",
@@ -230,14 +225,13 @@ const translations: Translations = {
     continue: "Endelea",
     startOver: "Anza Upya",
     callEmergency: "Piga Simu ya Dharura",
-    emergencyContact: "Mawasiliano ya Dharura"
   },
 }
 
 type LanguageContextType = {
   language: Language
   setLanguage: (lang: Language) => void
-  t: <T extends TranslationKey>(key: T) => T extends StringTranslationKeys ? string : TreatmentType
+  t: (key: keyof typeof translations.en) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -245,7 +239,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
-  const t = <T extends TranslationKey>(key: T) => translations[language][key] as T extends StringTranslationKeys ? string : TreatmentType
+  const t = (key: keyof typeof translations.en) => translations[language][key]
 
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
 }
@@ -257,3 +251,4 @@ export function useLanguage() {
   }
   return context
 }
+

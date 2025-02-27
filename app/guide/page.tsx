@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Car, SnailIcon as Snake, FireExtinguisher } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { BackButton } from "@/components/back-button"
@@ -9,9 +9,24 @@ export default function GuidePage() {
   const { t } = useLanguage()
 
   const emergencies = [
-    { title: t("trafficAccident"), icon: Car, color: "text-blue-500", href: "/guide/traffic-accident" },
-    { title: t("snakeBite"), icon: Snake, color: "text-green-500", href: "/guide/snake-bite" },
-    { title: t("burns"), icon: FireExtinguisher, color: "text-red-600", href: "/guide/fire-emergency" },
+    {
+      title: t("trafficAccident"),
+      emoji: "🚗",
+      color: "text-blue-500",
+      href: "/guide/traffic-accident",
+    },
+    {
+      title: t("snakeBite"),
+      emoji: "🐍",
+      color: "text-green-500",
+      href: "/guide/snake-bite",
+    },
+    {
+      title: t("burns"),
+      emoji: "🔥",
+      color: "text-red-600",
+      href: "/guide/fire-emergency",
+    },
   ]
 
   return (
@@ -27,9 +42,7 @@ export default function GuidePage() {
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className={emergency.color}>
-                  <emergency.icon className="w-8 h-8" />
-                </div>
+                <div className={`${emergency.color} text-2xl`}>{emergency.emoji}</div>
                 <div>
                   <h2 className="text-lg font-semibold">{emergency.title}</h2>
                   <p className="text-gray-500">{t("firstAid")}</p>
