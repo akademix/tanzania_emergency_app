@@ -1,21 +1,13 @@
-import { Metadata, Viewport } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { AlertTriangle } from 'lucide-react'
 
-// Move themeColor and viewport to a separate viewport export
-export const viewport: Viewport = {
-  themeColor: '#3b82f6',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-}
-
-// Keep other metadata properties here
+// Combine all metadata into a single metadata export
 export const metadata: Metadata = {
   title: 'Offline | First Aid App',
   description: 'You are currently offline',
-  // Remove themeColor and viewport from here
+  // Include theme color in the metadata
+  themeColor: '#3b82f6',
 }
 
 export default function OfflinePage() {

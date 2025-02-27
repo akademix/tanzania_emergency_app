@@ -53,8 +53,7 @@ export function LocationCard() {
           }))
         }
       },
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      (_) => {
+      () => {
         setLocation((prev) => ({
           ...prev,
           loading: false,

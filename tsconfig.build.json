@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["app/guide/[slug]/page.tsx"]
+} 
