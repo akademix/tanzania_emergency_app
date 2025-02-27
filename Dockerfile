@@ -23,7 +23,7 @@ RUN npm install --include=dev --legacy-peer-deps
 COPY . .
 
 # Build application
-RUN npx next build --experimental-build-mode compile
+RUN npx next build
 
 # Remove development dependencies
 RUN npm prune --omit=dev
