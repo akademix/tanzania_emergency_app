@@ -62,6 +62,66 @@ type Translations = {
     cancel: string
     confirm: string
     callEmergency: string
+    pageNotFound: string
+    pageNotFoundDes: string
+    pageNotFoundDescription: string
+    emergencyContacts: string
+    name: string
+    phone: string
+    addContact: string
+    deleteContact: string
+    yourEmergencyContacts: string
+    noContactsYet: string
+    addYourFirstContact: string
+    firstAidApp: string
+    appDescription: string
+    copyRight: string
+    privacyPolicy: string
+    termsOfService: string
+    quickLinks: string
+    home: string
+    about: string
+    contact: string
+    resources: string
+    faq: string
+    loading: string
+    error: string
+    retry: string
+    save: string
+    play: string
+    pause: string
+    mute: string
+    unmute: string
+    fullscreen: string
+    exitFullscreen: string
+    findingLocation: string
+    locationError: string
+    refreshLocation: string
+    firePreventionTips: string
+    evacuationSteps: string
+    drowning: string
+    poisoning: string
+    heartAttack: string
+    stroke: string
+    sendMessage: string
+    yourName: string
+    yourEmail: string
+    message: string
+    submit: string
+    followUs: string
+    newsletter: string
+    subscribeToNewsletter: string
+    emailAddress: string
+    subscribe: string
+    settings: string
+    emergencyServices: string
+    fireEmergencyTitle: string
+    fireEmergencyDescription: string
+    videoPlayerError: string
+    locationPermissionDenied: string
+    shareLocation: string
+    copyLocationInfo: string
+    locationCopied: string
   }
 }
 
@@ -145,6 +205,66 @@ const translations: Translations = {
     continue: "Continue",
     startOver: "Start Over",
     callEmergency: "Call Emergency",
+    pageNotFound: "Page Not Found",
+    pageNotFoundDes: "The requested page could not be found.",
+    pageNotFoundDescription: "The page you are looking for does not exist or has been moved.",
+    emergencyContacts: "Emergency Contacts",
+    name: "Name",
+    phone: "Phone Number",
+    addContact: "Add Contact",
+    deleteContact: "Delete",
+    yourEmergencyContacts: "Your Emergency Contacts",
+    noContactsYet: "No contacts added yet",
+    addYourFirstContact: "Add your first emergency contact",
+    firstAidApp: "First Aid App",
+    appDescription: "A comprehensive first aid guide and training application designed to help you prepare for emergencies.",
+    copyRight: "© 2023 First Aid App. All rights reserved.",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    quickLinks: "Quick Links",
+    home: "Home",
+    about: "About Us",
+    contact: "Contact",
+    resources: "Resources",
+    faq: "FAQ",
+    loading: "Loading...",
+    error: "An error occurred",
+    retry: "Retry",
+    save: "Save",
+    play: "Play",
+    pause: "Pause",
+    mute: "Mute",
+    unmute: "Unmute",
+    fullscreen: "Fullscreen",
+    exitFullscreen: "Exit Fullscreen",
+    findingLocation: "Finding your location...",
+    locationError: "Could not determine your location",
+    refreshLocation: "Refresh Location",
+    firePreventionTips: "Fire Prevention Tips",
+    evacuationSteps: "Evacuation Steps",
+    drowning: "Drowning",
+    poisoning: "Poisoning",
+    heartAttack: "Heart Attack",
+    stroke: "Stroke",
+    sendMessage: "Send Message",
+    yourName: "Your Name",
+    yourEmail: "Your Email",
+    message: "Message",
+    submit: "Submit",
+    followUs: "Follow Us",
+    newsletter: "Newsletter",
+    subscribeToNewsletter: "Subscribe to our newsletter",
+    emailAddress: "Email Address",
+    subscribe: "Subscribe",
+    settings: "Settings",
+    emergencyServices: "Emergency Services",
+    fireEmergencyTitle: "Fire Emergency",
+    fireEmergencyDescription: "Learn how to respond to fire emergencies",
+    videoPlayerError: "Error loading video",
+    locationPermissionDenied: "Location permission denied",
+    shareLocation: "Share Location",
+    copyLocationInfo: "Copy Location Info",
+    locationCopied: "Location information copied to clipboard"
   },
   sw: {
     training: "Programu ya Mafunzo",
@@ -225,6 +345,66 @@ const translations: Translations = {
     continue: "Endelea",
     startOver: "Anza Upya",
     callEmergency: "Piga Simu ya Dharura",
+    pageNotFound: "Maeneo Yeyote",
+    pageNotFoundDes: "Hakuna maeneo kupatikana kwa kurudi.",
+    pageNotFoundDescription: "The page you are looking for does not exist or has been moved.",
+    emergencyContacts: "Anwani za Dharura",
+    name: "Jina",
+    phone: "Namba ya Simu",
+    addContact: "Ongeza Anwani",
+    deleteContact: "Futa",
+    yourEmergencyContacts: "Anwani Zako za Dharura",
+    noContactsYet: "Hakuna anwani zilizoongezwa bado",
+    addYourFirstContact: "Ongeza anwani yako ya kwanza ya dharura",
+    firstAidApp: "Programu ya Huduma ya Kwanza",
+    appDescription: "Mwongozo kamili wa huduma ya kwanza na programu ya mafunzo iliyoundwa kukusaidia kujiandaa kwa dharura.",
+    copyRight: "© 2023 Programu ya Huduma ya Kwanza. Haki zote zimehifadhiwa.",
+    privacyPolicy: "Sera ya Faragha",
+    termsOfService: "Masharti ya Huduma",
+    quickLinks: "Viungo vya Haraka",
+    home: "Nyumbani",
+    about: "Kuhusu Sisi",
+    contact: "Wasiliana",
+    resources: "Rasilimali",
+    faq: "Maswali",
+    loading: "Inapakia...",
+    error: "Hitilafu imetokea",
+    retry: "Jaribu tena",
+    save: "Hifadhi",
+    play: "Cheza",
+    pause: "Simamisha",
+    mute: "Zima sauti",
+    unmute: "Washa sauti",
+    fullscreen: "Skrini kamili",
+    exitFullscreen: "Toka skrini kamili",
+    findingLocation: "Inatafuta eneo lako...",
+    locationError: "Haikuweza kubaini eneo lako",
+    refreshLocation: "Onyesha upya Eneo",
+    firePreventionTips: "Vidokezo vya Kuzuia Moto",
+    evacuationSteps: "Hatua za Kuondoka",
+    drowning: "Kuzama",
+    poisoning: "Sumu",
+    heartAttack: "Shambulio la Moyo",
+    stroke: "Kiharusi",
+    sendMessage: "Tuma Ujumbe",
+    yourName: "Jina Lako",
+    yourEmail: "Barua pepe Yako",
+    message: "Ujumbe",
+    submit: "Wasilisha",
+    followUs: "Tufuate",
+    newsletter: "Jarida",
+    subscribeToNewsletter: "Jiandikishe kupokea jarida letu",
+    emailAddress: "Anwani ya Barua pepe",
+    subscribe: "Jiandikishe",
+    settings: "Mipangilio",
+    emergencyServices: "Huduma za Dharura",
+    fireEmergencyTitle: "Dharura ya Moto",
+    fireEmergencyDescription: "Jifunze jinsi ya kukabiliana na dharura za moto",
+    videoPlayerError: "Hitilafu katika kupakia video",
+    locationPermissionDenied: "Ruhusa ya eneo imekataliwa",
+    shareLocation: "Shiriki Eneo",
+    copyLocationInfo: "Nakili Taarifa za Eneo",
+    locationCopied: "Taarifa za eneo zimenakiliwa kwenye ubao"
   },
 }
 

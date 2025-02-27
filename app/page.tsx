@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BookOpen, Phone, AlertCircle, MapPin } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { LocationCard } from "@/components/location-card"
 import { useLanguage } from "@/lib/language-context"
 
@@ -17,8 +17,8 @@ export default function Home() {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="text-green-500">
-                <BookOpen className="w-8 h-8" />
+              <div className="text-green-500 text-2xl">
+                📚
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("training")}</h2>
@@ -35,8 +35,8 @@ export default function Home() {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="text-purple-500">
-                <AlertCircle className="w-8 h-8" />
+              <div className="text-purple-500 text-2xl">
+                ⚠️
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("guide")}</h2>
@@ -53,8 +53,8 @@ export default function Home() {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="text-orange-500">
-                <MapPin className="w-8 h-8" />
+              <div className="text-orange-500 text-2xl">
+                🏥
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("firstAidLocations")}</h2>
@@ -71,8 +71,8 @@ export default function Home() {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="text-red-500">
-                <Phone className="w-8 h-8" />
+              <div className="text-red-500 text-2xl">
+                🚨
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("emergency")}</h2>

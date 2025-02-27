@@ -50,7 +50,10 @@ export default function BurnsPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4">
-      <BackButton />
+      <div className="mb-6">
+        <BackButton />
+        <h1 className="text-3xl font-bold">First Aid for Burns</h1>
+      </div>
 
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent>
@@ -67,10 +70,6 @@ export default function BurnsPage() {
       </AlertDialog>
 
       <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold">First Aid for Burns</h1>
-        </div>
-
         <div className="space-y-2">
           <Progress value={progress} className="w-full" />
           <div className="flex justify-between text-sm text-gray-500">
