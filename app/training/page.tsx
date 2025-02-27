@@ -6,26 +6,26 @@ import { BackButton } from "@/components/back-button"
 import Link from "next/link"
 
 export default function TrainingPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   const courses = [
     {
-      title: t("basicFirstAid"),
-      description: t("basicFirstAidDesc"),
+      title: tString("basicFirstAid"),
+      description: tString("basicFirstAidDesc"),
       duration: 30,
       lessons: 5,
       href: "/training/basic-first-aid",
     },
     {
-      title: t("cprCourse"),
-      description: t("cprCourseDesc"),
+      title: tString("cprCourse"),
+      description: tString("cprCourseDesc"),
       duration: 45,
       lessons: 7,
       href: "/training/cpr",
     },
     {
-      title: t("woundTreatment"),
-      description: t("woundTreatmentDesc"),
+      title: tString("woundTreatment"),
+      description: tString("woundTreatmentDesc"),
       duration: 20,
       lessons: 4,
       href: "/training/wound-treatment",
@@ -35,7 +35,7 @@ export default function TrainingPage() {
   return (
     <div className="max-w-2xl mx-auto px-4">
       <BackButton />
-      <h1 className="text-3xl font-bold mb-8">{t("trainingModules")}</h1>
+      <h1 className="text-3xl font-bold mb-8">{tString("trainingModules")}</h1>
       <div className="space-y-4">
         {courses.map((course) => (
           <Link
@@ -51,13 +51,13 @@ export default function TrainingPage() {
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
                     <span>
-                      {course.duration} {t("minutes")}
+                      {course.duration} {tString("minutes")}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <PlayCircle className="w-4 h-4" />
                     <span>
-                      {course.lessons} {t("lessons")}
+                      {course.lessons} {tString("lessons")}
                     </span>
                   </div>
                 </div>

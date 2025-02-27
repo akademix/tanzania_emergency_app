@@ -5,13 +5,13 @@ import { useLanguage } from "@/lib/language-context"
 import Link from "next/link"
 
 export function Header() {
-  const { language, setLanguage, t } = useLanguage()
+  const { language, setLanguage, tString } = useLanguage()
 
   return (
     <header className="bg-white border-b">
       <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="text-xl font-semibold">{t("firstAid")}</div>
+          <div className="text-xl font-semibold">{tString("firstAid")}</div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" className="w-6 h-6">
             <rect width="200" height="200" fill="white" />
             <defs>

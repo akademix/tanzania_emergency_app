@@ -5,7 +5,7 @@ import { MapPin, Loader2 } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function LocationCard() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
   const [location, setLocation] = useState({
     address: "",
     latitude: 0,
@@ -45,7 +45,7 @@ export function LocationCard() {
             loading: false,
             error: null,
           })
-        } catch (error) {
+        } catch {
           setLocation((prev) => ({
             ...prev,
             loading: false,
@@ -53,7 +53,8 @@ export function LocationCard() {
           }))
         }
       },
-      (error) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      (_) => {
         setLocation((prev) => ({
           ...prev,
           loading: false,
@@ -81,7 +82,7 @@ export function LocationCard() {
             <MapPin className="w-8 h-8" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold">{t("location")}</h2>
+            <h2 className="text-lg font-semibold">{tString("location")}</h2>
           </div>
         </div>
         <button
@@ -92,7 +93,7 @@ export function LocationCard() {
               : "bg-blue-500 text-white hover:bg-blue-600"
           }`}
         >
-          {isLocationEnabled ? t("disable") : t("enable")}
+          {isLocationEnabled ? tString("disable") : tString("enable")}
         </button>
       </div>
 
@@ -103,22 +104,22 @@ export function LocationCard() {
       ) : (
         <div className="space-y-4">
           <div>
-            <h3 className="text-sm font-medium text-gray-700 mb-1">{t("address")}</h3>
+            <h3 className="text-sm font-medium text-gray-700 mb-1">{tString("address")}</h3>
             {location.loading ? (
               <div className="flex items-center gap-2 text-gray-500">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>{t("fetchingAddress")}</span>
+                <span>{tString("fetchingAddress")}</span>
               </div>
             ) : (
               <p className="text-sm text-gray-600">{location.address}</p>
             )}
           </div>
           <div>
-            <h3 className="text-sm font-medium text-gray-700 mb-1">{t("coordinates")}</h3>
+            <h3 className="text-sm font-medium text-gray-700 mb-1">{tString("coordinates")}</h3>
             {location.loading ? (
               <div className="flex items-center gap-2 text-gray-500">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>{t("fetchingCoordinates")}</span>
+                <span>{tString("fetchingCoordinates")}</span>
               </div>
             ) : (
               <p className="text-sm text-gray-600">
@@ -129,7 +130,7 @@ export function LocationCard() {
                     LONG: {location.longitude.toFixed(6)}
                   </>
                 ) : (
-                  t("waitingLocation")
+                  tString("waitingLocation")
                 )}
               </p>
             )}

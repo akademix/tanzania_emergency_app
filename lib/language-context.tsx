@@ -228,10 +228,14 @@ const translations: Translations = {
   },
 }
 
+// Define a type for your translation values
+type TranslationValue = string | { title: string; steps: string[] };
+
 type LanguageContextType = {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: keyof typeof translations.en) => string
+  t: (key: keyof typeof translations.en) => TranslationValue
+  tString: (key: keyof typeof translations.en) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -239,9 +243,17 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
-  const t = (key: keyof typeof translations.en) => translations[language][key]
+  // Create a helper function to ensure string output for JSX contexts
+  const tString = (key: keyof typeof translations.en): string => {
+    const value = translations[language][key];
+    return typeof value === "string" ? value : JSON.stringify(value);
+  };
 
-  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+  // Keep the original t function for when you need the structured data
+  const t = (key: keyof typeof translations.en): TranslationValue => 
+    translations[language][key];
+
+  return <LanguageContext.Provider value={{ language, setLanguage, t, tString }}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {

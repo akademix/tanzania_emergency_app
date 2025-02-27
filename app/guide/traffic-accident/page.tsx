@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog"
 
 export default function TrafficAccidentPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
   const steps = [
     "Ensure your own safety and call emergency services immediately - Provide exact location - State number of people involved - Report any trapped victims - Mention if there's fire or dangerous goods",
     "Secure the accident scene: Turn on hazard lights, place warning triangle at least 100m behind the accident",
@@ -56,17 +56,13 @@ export default function TrafficAccidentPage() {
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t("continueOrStartOver")}</AlertDialogTitle>
-            <AlertDialogDescription>{t("continueOrStartOverDescription")}</AlertDialogDescription>
+            <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
+            <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={handleStartOver}>{t("startOver")}</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleContinue}
-              className="bg-blue-500 text-white hover:bg-blue-600 font-bold px-6 py-2"
-            >
-              {t("continue")}
-            </AlertDialogAction>
+            <AlertDialogCancel>{tString("cancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={handleContinue}>{tString("continue")}</AlertDialogAction>
+            <AlertDialogAction onClick={handleStartOver}>{tString("startOver")}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

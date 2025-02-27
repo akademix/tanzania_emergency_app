@@ -4,7 +4,7 @@ import { BackButton } from "@/components/back-button"
 import { useLanguage } from "@/lib/language-context"
 
 export default function FirstAidLocationsPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +12,7 @@ export default function FirstAidLocationsPage() {
 
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">{t("firstAidLocations")}</h1>
+          <h1 className="text-3xl font-bold">{tString("firstAidLocations")}</h1>
         </div>
 
         <div className="aspect-[4/5] sm:aspect-video w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">

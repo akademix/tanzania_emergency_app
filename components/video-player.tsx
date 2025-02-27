@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Play, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import Image from 'next/image'
 
 interface VideoPlayerProps {
   videoId: string
@@ -42,9 +43,12 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
             <div className="relative">
               {/* Thumbnail */}
-              <img
+              <Image 
                 src={thumbnailUrl || "/placeholder.svg"}
                 alt={title}
+                width={500}
+                height={300}
+                layout="responsive"
                 className="w-full h-full object-cover opacity-50"
                 onError={(e) => {
                   e.currentTarget.src = "/placeholder.svg?height=720&width=1280"

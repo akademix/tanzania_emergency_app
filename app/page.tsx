@@ -6,7 +6,7 @@ import { LocationCard } from "@/components/location-card"
 import { useLanguage } from "@/lib/language-context"
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   return (
     <div className="max-w-2xl mx-auto px-4">
@@ -21,8 +21,8 @@ export default function Home() {
                 <BookOpen className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">{t("training")}</h2>
-                <p className="text-gray-500">{t("learnSkills")}</p>
+                <h2 className="text-lg font-semibold">{tString("training")}</h2>
+                <p className="text-gray-500">{tString("learnSkills")}</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -39,8 +39,8 @@ export default function Home() {
                 <AlertCircle className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">{t("guide")}</h2>
-                <p className="text-gray-500">{t("quickReference")}</p>
+                <h2 className="text-lg font-semibold">{tString("guide")}</h2>
+                <p className="text-gray-500">{tString("quickReference")}</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -57,8 +57,8 @@ export default function Home() {
                 <MapPin className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">{t("firstAidLocations")}</h2>
-                <p className="text-gray-500">{t("findNearbyLocations")}</p>
+                <h2 className="text-lg font-semibold">{tString("firstAidLocations")}</h2>
+                <p className="text-gray-500">{tString("findNearbyLocations")}</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -75,8 +75,8 @@ export default function Home() {
                 <Phone className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">{t("emergency")}</h2>
-                <p className="text-red-600 font-medium">{t("emergencyNumber")}</p>
+                <h2 className="text-lg font-semibold">{tString("emergency")}</h2>
+                <p className="text-red-600 font-medium">{tString("emergencyNumber")}</p>
               </div>
             </div>
           </div>

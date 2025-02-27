@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
 
 export default function WoundTreatmentPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   const lessons = [
     { title: "Types of Wounds", videoId: "placeholder1" },
@@ -20,8 +20,8 @@ export default function WoundTreatmentPage() {
 
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">{t("woundTreatment")}</h1>
-          <p className="mt-2 text-gray-500">{t("woundTreatmentDesc")}</p>
+          <h1 className="text-3xl font-bold">{tString("woundTreatment")}</h1>
+          <p className="mt-2 text-gray-500">{tString("woundTreatmentDesc")}</p>
         </div>
 
         <div className="space-y-4">
@@ -35,7 +35,7 @@ export default function WoundTreatmentPage() {
                   <div>
                     <h2 className="text-lg font-semibold">{lesson.title}</h2>
                     <p className="text-gray-500">
-                      {t("lesson")} {index + 1}
+                      {tString("lesson")} {index + 1}
                     </p>
                   </div>
                 </div>

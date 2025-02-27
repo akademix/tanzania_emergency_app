@@ -6,7 +6,7 @@ import { PlayCircle } from "lucide-react"
 import { VideoPlayer } from "@/components/video-player"
 
 export default function BasicFirstAidPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   const lessons = [
     {
@@ -26,8 +26,8 @@ export default function BasicFirstAidPage() {
 
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">{t("basicFirstAid")}</h1>
-          <p className="mt-2 text-gray-500">{t("basicFirstAidDesc")}</p>
+          <h1 className="text-3xl font-bold">{tString("basicFirstAid")}</h1>
+          <p className="mt-2 text-gray-500">{tString("basicFirstAidDesc")}</p>
         </div>
 
         <div className="space-y-4">
@@ -44,7 +44,7 @@ export default function BasicFirstAidPage() {
                   <div>
                     <h2 className="text-lg font-semibold">{lesson.title}</h2>
                     <p className="text-gray-500">
-                      {t("lesson")} {index + 1}
+                      {tString("lesson")} {index + 1}
                     </p>
                   </div>
                 </div>

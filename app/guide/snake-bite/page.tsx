@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog"
 
 export default function SnakeBitePage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
   const steps = [
     "Ensure your own safety and move away from the snake's area. If still attached, use a stick to make it release - do not attempt to catch or kill it.",
     "Call emergency services immediately, especially if: - Snake is venomous or unknown - Difficulty breathing - Bite on head/neck - Signs of severe allergic reaction.",
@@ -55,17 +55,13 @@ export default function SnakeBitePage() {
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t("continueOrStartOver")}</AlertDialogTitle>
-            <AlertDialogDescription>{t("continueOrStartOverDescription")}</AlertDialogDescription>
+            <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
+            <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={handleStartOver}>{t("startOver")}</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleContinue}
-              className="bg-blue-500 text-white hover:bg-blue-600 font-bold px-6 py-2"
-            >
-              {t("continue")}
-            </AlertDialogAction>
+            <AlertDialogCancel>{tString("cancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={handleContinue}>{tString("continue")}</AlertDialogAction>
+            <AlertDialogAction onClick={handleStartOver}>{tString("startOver")}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

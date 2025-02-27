@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
 
 export default function CPRPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
 
   const lessons = [
     { title: "Understanding CPR", videoId: "placeholder1" },
@@ -23,8 +23,8 @@ export default function CPRPage() {
 
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">{t("cprCourse")}</h1>
-          <p className="mt-2 text-gray-500">{t("cprCourseDesc")}</p>
+          <h1 className="text-3xl font-bold">{tString("cprCourse")}</h1>
+          <p className="mt-2 text-gray-500">{tString("cprCourseDesc")}</p>
         </div>
 
         <div className="space-y-4">
@@ -38,7 +38,7 @@ export default function CPRPage() {
                   <div>
                     <h2 className="text-lg font-semibold">{lesson.title}</h2>
                     <p className="text-gray-500">
-                      {t("lesson")} {index + 1}
+                      {tString("lesson")} {index + 1}
                     </p>
                   </div>
                 </div>

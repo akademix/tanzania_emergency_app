@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog"
 
 export default function BurnsPage() {
-  const { t } = useLanguage()
+  const { tString } = useLanguage()
   const steps = [
     "Ensure your own safety and call emergency services immediately, especially if: - Large burn area - Inhaled smoke/hot air - Burns to face/throat - Breathing difficulties",
     "If person or clothes are on fire: Stop, drop, and roll them on the ground. Use water if available.",
@@ -55,17 +55,13 @@ export default function BurnsPage() {
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t("continueOrStartOver")}</AlertDialogTitle>
-            <AlertDialogDescription>{t("continueOrStartOverDescription")}</AlertDialogDescription>
+            <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
+            <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={handleStartOver}>{t("startOver")}</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleContinue}
-              className="bg-blue-500 text-white hover:bg-blue-600 font-bold px-6 py-2"
-            >
-              {t("continue")}
-            </AlertDialogAction>
+            <AlertDialogCancel>{tString("cancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={handleContinue}>{tString("continue")}</AlertDialogAction>
+            <AlertDialogAction onClick={handleStartOver}>{tString("startOver")}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
