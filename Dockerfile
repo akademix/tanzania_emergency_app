@@ -19,6 +19,9 @@ COPY package.json package-lock.json ./
 # Use npm install instead of npm ci
 RUN npm install --include=dev --legacy-peer-deps
 
+# Install missing dependency
+RUN npm install @radix-ui/react-progress
+
 # Copy application code
 COPY . .
 
