@@ -11,19 +11,19 @@ export default function GuidePage() {
   const emergencies = [
     {
       title: tString("trafficAccident"),
-      icon: <Car className="w-6 h-6" />,
+      icon: <Car className="w-8 h-8" />,
       color: "text-blue-500",
       href: "/guide/traffic-accident",
     },
     {
       title: tString("snakeBite"),
-      icon: <Bug className="w-6 h-6" />,
+      icon: <Bug className="w-8 h-8" />,
       color: "text-green-500",
       href: "/guide/snake-bite",
     },
     {
       title: tString("burns"),
-      icon: <Flame className="w-6 h-6" />,
+      icon: <Flame className="w-8 h-8" />,
       color: "text-red-600",
       href: "/guide/fire-emergency",
     },

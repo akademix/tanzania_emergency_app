@@ -18,7 +18,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-green-500">
-                <BookOpen className="w-6 h-6" />
+                <BookOpen className="w-8 h-8" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("training")}</h2>
@@ -36,7 +36,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-purple-500">
-                <AlertTriangle className="w-6 h-6" />
+                <AlertTriangle className="w-8 h-8" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("guide")}</h2>
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-orange-500">
-                <Building className="w-6 h-6" />
+                <Building className="w-8 h-8" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("firstAidLocations")}</h2>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-red-500">
-                <AlertCircle className="w-6 h-6" />
+                <AlertCircle className="w-8 h-8" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold">{tString("emergency")}</h2>

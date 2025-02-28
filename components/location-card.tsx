@@ -78,7 +78,7 @@ export function LocationCard() {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
           <div className="text-blue-500">
-            <MapPin className="text-blue-500" />
+            <MapPin className="w-8 h-8 text-blue-500" />
           </div>
           <div>
             <h2 className="text-lg font-semibold">{tString("location")}</h2>
@@ -111,7 +111,7 @@ export function LocationCard() {
               </div>
             ) : (
               <span className="flex items-center gap-1">
-                <MapPin className="text-blue-500" />
+                <MapPin className="w-6 h-6 text-blue-500" />
                 {location.address}
               </span>
             )}
