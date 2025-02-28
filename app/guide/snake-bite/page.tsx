@@ -53,12 +53,12 @@ export default function SnakeBitePage() {
       <BackButton />
 
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
-        <AlertDialogContent>
+        <AlertDialogContent className="max-w-[90%] w-full rounded-xl p-6 sm:max-w-md">
           <AlertDialogHeader>
             <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
             <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-0">
             <AlertDialogCancel>{tString("cancel")}</AlertDialogCancel>
             <AlertDialogAction onClick={handleContinue}>{tString("continue")}</AlertDialogAction>
             <AlertDialogAction onClick={handleStartOver}>{tString("startOver")}</AlertDialogAction>
