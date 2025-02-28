@@ -5,9 +5,30 @@ import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
 import { VideoPlayer } from "@/components/video-player"
 import { FaFirstAid, FaUserMd, FaCalendar, FaClock } from 'react-icons/fa'
+import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog"
+import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react"
+import { useCompletedSteps } from "@/lib/useCompletedSteps"
 
 export default function BasicFirstAidPage() {
   const { tString } = useLanguage()
+  const [showDialog, setShowDialog] = useState(false)
+  const { isReturning } = useCompletedSteps("basicFirstAid", 5) // Assuming 5 lessons
+  
+  useEffect(() => {
+    if (isReturning) {
+      setShowDialog(true)
+    }
+  }, [isReturning])
+
+  const handleContinue = () => {
+    setShowDialog(false)
+  }
+
+  const handleStartOver = () => {
+    // Reset progress logic here if needed
+    setShowDialog(false)
+  }
 
   const lessons = [
     {
@@ -67,6 +88,30 @@ export default function BasicFirstAidPage() {
           ))}
         </div>
       </div>
+
+      <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
+        <AlertDialogContent className="max-w-[90%] w-full rounded-xl p-6 sm:max-w-md">
+          <AlertDialogHeader>
+            <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
+            <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="flex sm:flex-row gap-2">
+            <Button 
+              className="flex-1" 
+              variant="outline" 
+              onClick={handleStartOver}
+            >
+              {tString("startOver")}
+            </Button>
+            <Button 
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white" 
+              onClick={handleContinue}
+            >
+              {tString("continue")}
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }

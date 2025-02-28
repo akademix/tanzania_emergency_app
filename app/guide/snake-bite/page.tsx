@@ -59,17 +59,26 @@ export default function SnakeBitePage() {
             <AlertDialogTitle>{tString("continueOrStartOver")}</AlertDialogTitle>
             <AlertDialogDescription>{tString("continueOrStartOverDescription")}</AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-0">
-            <AlertDialogCancel>{tString("cancel")}</AlertDialogCancel>
-            <AlertDialogAction onClick={handleContinue}>{tString("continue")}</AlertDialogAction>
-            <AlertDialogAction onClick={handleStartOver}>{tString("startOver")}</AlertDialogAction>
+          <AlertDialogFooter className="flex sm:flex-row gap-2">
+            <Button 
+              className="flex-1" 
+              variant="outline" 
+              onClick={handleStartOver}
+            >
+              {tString("startOver")}
+            </Button>
+            <Button 
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white" 
+              onClick={handleContinue}
+            >
+              {tString("continue")}
+            </Button>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
       <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <Bug className="w-6 h-6 text-red-500" />
+        <div>
           <h1 className="text-3xl font-bold">First Aid for Snake Bites</h1>
         </div>
 
