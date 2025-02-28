@@ -37,6 +37,9 @@ FROM base
 # Copy built application
 COPY --from=build /app /app
 
+# Add this line after your docker-entrypoint.js file is copied or created
+RUN chmod +x /app/docker-entrypoint.js
+
 # Entrypoint sets up the container
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
