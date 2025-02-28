@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Loader2 } from "lucide-react"
+import { Loader2, MapPin, Phone, Building, Clock } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function LocationCard() {
@@ -78,7 +78,7 @@ export function LocationCard() {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
           <div className="text-blue-500">
-            📍
+            <MapPin className="text-blue-500" />
           </div>
           <div>
             <h2 className="text-lg font-semibold">{tString("location")}</h2>
@@ -110,7 +110,10 @@ export function LocationCard() {
                 <span>{tString("fetchingAddress")}</span>
               </div>
             ) : (
-              <p className="text-sm text-gray-600">{location.address}</p>
+              <span className="flex items-center gap-1">
+                <MapPin className="text-blue-500" />
+                {location.address}
+              </span>
             )}
           </div>
           <div>

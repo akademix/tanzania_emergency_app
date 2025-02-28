@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Bug, Car, Flame } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { BackButton } from "@/components/back-button"
@@ -11,19 +11,19 @@ export default function GuidePage() {
   const emergencies = [
     {
       title: tString("trafficAccident"),
-      emoji: "🚗",
+      icon: <Car className="w-6 h-6" />,
       color: "text-blue-500",
       href: "/guide/traffic-accident",
     },
     {
       title: tString("snakeBite"),
-      emoji: "🐍",
+      icon: <Bug className="w-6 h-6" />,
       color: "text-green-500",
       href: "/guide/snake-bite",
     },
     {
       title: tString("burns"),
-      emoji: "🔥",
+      icon: <Flame className="w-6 h-6" />,
       color: "text-red-600",
       href: "/guide/fire-emergency",
     },
@@ -42,7 +42,7 @@ export default function GuidePage() {
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className={`${emergency.color} text-2xl`}>{emergency.emoji}</div>
+                <div className={emergency.color}>{emergency.icon}</div>
                 <div>
                   <h2 className="text-lg font-semibold">{emergency.title}</h2>
                   <p className="text-gray-500">{tString("firstAid")}</p>

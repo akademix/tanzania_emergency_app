@@ -4,6 +4,7 @@ import { BackButton } from "@/components/back-button"
 import { useLanguage } from "@/lib/language-context"
 import { PlayCircle } from "lucide-react"
 import { VideoPlayer } from "@/components/video-player"
+import { FaFirstAid, FaUserMd, FaCalendar, FaClock } from 'react-icons/fa'
 
 export default function BasicFirstAidPage() {
   const { tString } = useLanguage()

@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/language-context"
 import { Progress } from "@/components/ui/progress"
 import { useCompletedSteps } from "@/lib/useCompletedSteps"
 import { useState, useEffect } from "react"
-import { CheckIcon, AlertTriangle, Info } from "lucide-react"
+import { CheckIcon, AlertTriangle, Info, Bug } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import {
@@ -18,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import { FaArrowRight, FaBan, FaFirstAid } from 'react-icons/fa'
 
 export default function SnakeBitePage() {
   const { tString } = useLanguage()
@@ -67,7 +68,8 @@ export default function SnakeBitePage() {
       </AlertDialog>
 
       <div className="space-y-6">
-        <div>
+        <div className="flex items-center gap-3">
+          <Bug className="w-6 h-6 text-red-500" />
           <h1 className="text-3xl font-bold">First Aid for Snake Bites</h1>
         </div>
 
