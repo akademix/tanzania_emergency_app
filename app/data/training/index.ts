@@ -29,7 +29,7 @@ export async function getAllTrainings(): Promise<TrainingData[]> {
   // When adding a new training module:
   // 1. Create a new TypeScript file in this directory (e.g., new-training.ts)
   // 2. Add the ID (filename without extension) to this array
-  const trainingIds = ['basic-first-aid', 'cpr', 'wound-treatment'];
+  const trainingIds = ['basic-first-aid', 'cpr', 'wound-treatment', 'burn-treatment'];
   
   try {
     // Dynamically import all training modules by ID
