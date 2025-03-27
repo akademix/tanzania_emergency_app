@@ -106,13 +106,15 @@ export function TrainingContent({ training }: TrainingContentProps) {
                 <PlayCircle className="w-6 h-6" />
               </div>
             </div>
+            {lesson.description && (
+              <p className="text-gray-600 mb-4 whitespace-pre-line">{lesson.description}</p>
+            )}
             {lesson.videoId.includes("placeholder") ? (
               <div className="mt-4 aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
                 <p className="text-gray-500">Video Player Placeholder</p>
               </div>
             ) : (
               <div className="mt-4">
-                {lesson.description && <p className="text-gray-600 mb-4">{lesson.description}</p>}
                 <VideoPlayer videoId={lesson.videoId} title={lesson.title} />
               </div>
             )}
