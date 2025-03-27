@@ -19,6 +19,26 @@ An emergency first aid application built with Next.js, designed to provide essen
 * **Location services**: Find nearby first aid locations and emergency services.
 * **Emergency contacts**: Manage and store emergency contact information locally.
 
+## Guide Content Management
+
+The app features a flexible guide content management system that makes it easy to add or update emergency guides:
+
+* **Dynamic guide loading**: All guides are loaded dynamically from data files
+* **Interactive checklists**: Each guide includes interactive step tracking with progress saving
+* **Simple content model**: Adding new guides requires no code changes, just data entry
+
+For developers interested in adding new guides, refer to the documentation in `app/data/guides/_GUIDE_DOCS.md`.
+
+## Training Content Management
+
+The app includes a data-driven training system for adding and managing video-based training modules:
+
+* **Video-based learning**: Training modules feature embedded video content for effective learning
+* **Progress tracking**: Users can track their progress through training modules
+* **Extensible architecture**: New training content can be added without code changes
+
+Developers can add new training modules by following the documentation in `app/data/training/_TRAINING_DOCS.md`.
+
 ## Tech stack
 
 * **Framework**: [Next.js](https://nextjs.org/) (using React Server Components)

@@ -2,7 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['img.youtube.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      }
+    ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   typescript: {
     // !! WARN !!
@@ -14,6 +26,17 @@ const nextConfig = {
   eslint: {
     // Also ignore ESLint errors during the build if needed
     ignoreDuringBuilds: true,
+  },
+  // Configure webpack to ignore markdown files
+  webpack: (config) => {
+    // Exclude markdown files from being processed as modules
+    config.module.rules.push({
+      test: /\.md$/,
+      type: 'javascript/auto',
+      use: [],
+    });
+    
+    return config;
   },
 }
 

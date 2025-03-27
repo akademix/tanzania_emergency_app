@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
@@ -12,12 +12,18 @@ export const metadata: Metadata = {
   title: "First Aid App",
   description: "Emergency first aid application with training and location services",
   manifest: "/manifest.json",
-  themeColor: "#3b82f6",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   icons: [
     { rel: "icon", url: "/logo.svg", type: "image/svg+xml" },
     { rel: "apple-touch-icon", url: "/logo.svg", type: "image/svg+xml" },
   ],
+}
+
+// Move themeColor and viewport to viewport export per Next.js 15.2.0+ recommendations
+export const viewport: Viewport = {
+  themeColor: "#3b82f6",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
