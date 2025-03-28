@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BookOpen, AlertTriangle, Building, AlertCircle } from "lucide-react"
+import { ArrowRight, BookOpen, AlertTriangle, Building, AlertCircle, ClipboardCheck } from "lucide-react"
 import { LocationCard } from "@/components/location-card"
 import { useLanguage } from "@/lib/language-context"
 
@@ -59,6 +59,24 @@ export default function Home() {
               <div>
                 <h2 className="text-lg font-semibold">{tString("firstAidLocations")}</h2>
                 <p className="text-gray-500">{tString("findNearbyLocations")}</p>
+              </div>
+            </div>
+            <ArrowRight className="w-5 h-5 text-gray-400" />
+          </div>
+        </Link>
+
+        <Link
+          href="/responder-form"
+          className="block p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:bg-blue-100 hover:border-blue-200 transition-colors"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="text-blue-500">
+                <ClipboardCheck className="w-8 h-8" />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold">Responder Form</h2>
+                <p className="text-gray-500">Submit emergency response reports</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-gray-400" />
