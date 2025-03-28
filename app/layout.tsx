@@ -46,19 +46,7 @@ export default function RootLayout({
           <Header />
           <main className="py-8">{children}</main>
         </LanguageProvider>
-        <Script
-          id="register-service-worker"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/service-worker.js');
-                });
-              }
-            `,
-          }}
-        />
+        {/* Service worker is registered in the PWAInstaller component */}
       </body>
     </html>
   )
