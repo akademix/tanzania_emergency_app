@@ -41,7 +41,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </head>
-      <body className={`${inter.className} bg-gray-50 min-h-screen`}>
+      <body className={`${inter.className} bg-gray-50 min-h-screen`} suppressHydrationWarning>
         <LanguageProvider>
           <Header />
           <main className="py-8">{children}</main>
