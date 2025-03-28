@@ -21,11 +21,11 @@ const nextConfig = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    // Also ignore ESLint errors during the build if needed
-    ignoreDuringBuilds: true,
+    // Optionally: Also ignore ESLint errors during the build if needed
+    ignoreDuringBuilds: false,
   },
   // Configure webpack to ignore markdown files
   webpack: (config) => {
