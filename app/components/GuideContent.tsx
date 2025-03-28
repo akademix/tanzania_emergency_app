@@ -21,6 +21,15 @@ export interface GuideContentProps {
   guide: GuideData
 }
 
+// Helper function to safely format text with newlines and bullet points
+function formatTextWithLineBreaks(text: string) {
+  return text.split('\n').map((line, i) => (
+    <span key={i} className={line.startsWith('•') ? 'block ml-4' : line.trim() === '' ? 'block h-4' : 'block'}>
+      {line}
+    </span>
+  ));
+}
+
 export function GuideContent({ guide }: GuideContentProps) {
   const { tString } = useLanguage()
   const { completedSteps, toggleStep, progress, isReturning } = useCompletedSteps(guide.id, guide.steps.length)
@@ -87,11 +96,11 @@ export function GuideContent({ guide }: GuideContentProps) {
               completedSteps.includes(index) ? "bg-green-50 border-green-200" : "bg-white border-gray-200"
             }`}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-start gap-4">
               <Button
                 variant="ghost"
                 size="sm"
-                className={`p-0 w-6 h-6 rounded-full ${
+                className={`p-0 w-6 h-6 mt-1 rounded-full ${
                   completedSteps.includes(index)
                     ? "bg-green-500 text-white hover:bg-green-600"
                     : "border border-gray-300 hover:bg-gray-100"
@@ -101,7 +110,7 @@ export function GuideContent({ guide }: GuideContentProps) {
                 {completedSteps.includes(index) && <CheckIcon className="w-4 h-4" />}
               </Button>
               <label className="text-lg flex-1 cursor-pointer" onClick={() => toggleStep(index)}>
-                {step}
+                {formatTextWithLineBreaks(step)}
               </label>
             </div>
           </div>
