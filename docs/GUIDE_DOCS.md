@@ -25,7 +25,7 @@ Name your file after your guide's slug (e.g., `heart-attack.ts`). The slug shoul
 Use this template:
 
 ```typescript
-import { GuideData } from './index';
+import { GuideData, GuideStep } from './index';
 
 const guide: GuideData = {
   id: 'your-guide-slug', // Must match the filename
@@ -33,9 +33,17 @@ const guide: GuideData = {
   description: 'Brief description of the guide',
   image: 'https://placehold.co/800x400/YOUR_HEX_COLOR/FFFFFF?text=Your+Guide+Title',
   steps: [
-    'Step 1 instruction text',
-    'Step 2 instruction text',
-    'Step 3 instruction text',
+    {
+      instruction: 'Step 1 instruction text',
+      videoId: '/videos/training/Your_Category/YOUR_VIDEO.mp4' // Optional
+    },
+    {
+      instruction: 'Step 2 instruction text',
+    },
+    {
+      instruction: 'Step 3 instruction text',
+      videoId: '/videos/training/Your_Category/ANOTHER_VIDEO.mp4' // Optional
+    },
     // Add more steps as needed
   ],
   dangerWarnings: [
@@ -89,10 +97,17 @@ You can import icons from `lucide-react` or any other icon library.
 | `title` | string | Display title for the guide |
 | `description` | string | Brief description shown in list and metadata |
 | `image` | string | URL for the guide image (can be placeholder) |
-| `steps` | string[] | Array of step instructions |
+| `steps` | GuideStep[] | Array of step instructions with optional videos |
 | `dangerWarnings` | string[] | Array of warnings about what NOT to do |
 | `criticalSigns` | string[] | Array of critical signs or important notes |
 | `additionalInfo` | string | Additional helpful information |
+
+### GuideStep Structure
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `instruction` | string | The step instruction text |
+| `videoId` | string? | Optional - Path to a video demonstrating this step |
 
 ## Best Practices
 
@@ -102,14 +117,17 @@ You can import icons from `lucide-react` or any other icon library.
    
 3. **Consider translations**: If the app is multilingual, ensure content can be easily translated
    
-4. **Use appropriate HTML**: You can include basic formatting in strings like:
+4. **Use text formatting**: You can include line breaks and bullet points using:
    ```
-   "Check for: <br />- Breathing<br />- Pulse<br />- Response"
+   "Check for:\n• Breathing\n• Pulse\n• Response"
    ```
    
-5. **Test your guide**: After adding a new guide, test all features:
+5. **Add demonstration videos**: For complex steps, include videos from the training modules to provide visual guidance
+   
+6. **Test your guide**: After adding a new guide, test all features:
    - Progress tracking
-   - Step completion
+   - Step completion 
+   - Video playback
    - Returning user experience
 
 ## Examples

@@ -11,10 +11,16 @@ export interface GuideData {
   title: string;      // Display title of the guide
   description: string; // Brief description shown in list and metadata
   image?: string;     // URL to guide image (can be placeholder)
-  steps: string[];    // Array of step instructions for the interactive checklist
+  steps: GuideStep[];    // Array of step instructions for the interactive checklist
   dangerWarnings?: string[]; // Things NOT to do (displayed in red)
   criticalSigns?: string[]; // Important signs or notes (displayed in blue)
   additionalInfo?: string; // Any additional helpful information (displayed in green)
+}
+
+// Step interface with optional video
+export interface GuideStep {
+  instruction: string;   // The step instruction text
+  videoId?: string;      // Optional video ID that demonstrates this step
 }
 
 // Function to fetch all guides

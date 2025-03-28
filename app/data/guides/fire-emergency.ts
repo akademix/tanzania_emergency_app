@@ -1,4 +1,4 @@
-import { GuideData } from './index';
+import { GuideData, GuideStep } from './index';
 
 const guide: GuideData = {
   id: 'fire-emergency',
@@ -6,13 +6,27 @@ const guide: GuideData = {
   description: 'How to respond to a fire emergency',
   image: 'https://placehold.co/800x400/DC2626/FFFFFF?text=Fire+Emergency',
   steps: [
-    'Alert everyone in the area by shouting "Fire!"',
-    'Call emergency services (0800 750 112) immediately',
-    'If the fire is small and contained, use a fire extinguisher',
-    'If the fire is large, evacuate immediately',
-    'Stay low to avoid smoke inhalation',
-    'Feel doors before opening - if hot, find another exit',
-    'Once outside, stay outside and wait for emergency services'
+    {
+      instruction: 'Alert everyone in the area by shouting "Fire!"'
+    },
+    {
+      instruction: 'Call emergency services (0800 750 112) immediately'
+    },
+    {
+      instruction: 'If the fire is small and contained, use a fire extinguisher'
+    },
+    {
+      instruction: 'If the fire is large, evacuate immediately'
+    },
+    {
+      instruction: 'Stay low to avoid smoke inhalation'
+    },
+    {
+      instruction: 'Feel doors before opening - if hot, find another exit'
+    },
+    {
+      instruction: 'Once outside, stay outside and wait for emergency services'
+    }
   ],
   dangerWarnings: [
     'Do NOT use elevators during a fire',

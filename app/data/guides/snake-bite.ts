@@ -1,4 +1,4 @@
-import { GuideData } from './index';
+import { GuideData, GuideStep } from './index';
 
 const guide: GuideData = {
   id: 'snake-bite',
@@ -6,13 +6,27 @@ const guide: GuideData = {
   description: 'How to respond to a snake bite',
   image: 'https://placehold.co/800x400/10B981/FFFFFF?text=Snake+Bite+Treatment',
   steps: [
-    "Ensure your own safety and move away from the snake's area. If still attached, use a stick to make it release - do not attempt to catch or kill it.",
-    "Call emergency services immediately, especially if: - Snake is venomous or unknown - Difficulty breathing - Bite on head/neck - Signs of severe allergic reaction.",
-    "Keep the person calm and still to slow down venom spread.",
-    "Remove any constricting items (jewelry, watches, tight clothing) from the affected area.",
-    "Keep the bitten area below heart level.",
-    "Clean the wound with soap and water if available.",
-    "Place the person on their left side (recovery position) in case of vomiting."
+    {
+      instruction: "Ensure your own safety and move away from the snake's area. If still attached, use a stick to make it release - do not attempt to catch or kill it."
+    },
+    {
+      instruction: "Call emergency services immediately, especially if: - Snake is venomous or unknown - Difficulty breathing - Bite on head/neck - Signs of severe allergic reaction."
+    },
+    {
+      instruction: "Keep the person calm and still to slow down venom spread."
+    },
+    {
+      instruction: "Remove any constricting items (jewelry, watches, tight clothing) from the affected area."
+    },
+    {
+      instruction: "Keep the bitten area below heart level."
+    },
+    {
+      instruction: "Clean the wound with soap and water if available."
+    },
+    {
+      instruction: "Place the person on their left side (recovery position) in case of vomiting."
+    }
   ],
   dangerWarnings: [
     'Apply a tourniquet or try to suck out the venom',

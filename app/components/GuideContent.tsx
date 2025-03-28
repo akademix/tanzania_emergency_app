@@ -1,13 +1,22 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CheckIcon, AlertTriangle, Info } from "lucide-react"
+import { CheckIcon, AlertTriangle, Info, PlayCircle, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { useCompletedSteps } from "@/lib/useCompletedSteps"
 import { useLanguage } from "@/lib/language-context"
-import { GuideData } from "@/app/data/guides"
+import { GuideData, GuideStep } from "@/app/data/guides"
+import { VideoPlayer } from "@/components/video-player"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog"
 import {
   AlertDialog,
   AlertDialogContent,
@@ -34,6 +43,8 @@ export function GuideContent({ guide }: GuideContentProps) {
   const { tString } = useLanguage()
   const { completedSteps, toggleStep, progress, isReturning } = useCompletedSteps(guide.id, guide.steps.length)
   const [showDialog, setShowDialog] = useState(false)
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false)
+  const [currentVideo, setCurrentVideo] = useState<{videoId: string, title: string}>({videoId: "", title: ""})
 
   useEffect(() => {
     if (isReturning) {
@@ -48,6 +59,11 @@ export function GuideContent({ guide }: GuideContentProps) {
   const handleStartOver = () => {
     completedSteps.forEach((step) => toggleStep(step))
     setShowDialog(false)
+  }
+
+  const handleWatchDemo = (videoId: string, title: string) => {
+    setCurrentVideo({videoId, title})
+    setVideoDialogOpen(true)
   }
 
   return (
@@ -75,6 +91,26 @@ export function GuideContent({ guide }: GuideContentProps) {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Demonstration Video</DialogTitle>
+            <DialogDescription>Watch how to perform this step properly</DialogDescription>
+          </DialogHeader>
+          <div className="mt-4">
+            <VideoPlayer videoId={currentVideo.videoId} title={currentVideo.title} />
+          </div>
+          <DialogFooter className="mt-4">
+            <Button 
+              variant="outline" 
+              onClick={() => setVideoDialogOpen(false)}
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       <div>
         <h1 className="text-3xl font-bold">First Aid for {guide.title}</h1>
@@ -109,9 +145,23 @@ export function GuideContent({ guide }: GuideContentProps) {
               >
                 {completedSteps.includes(index) && <CheckIcon className="w-4 h-4" />}
               </Button>
-              <label className="text-lg flex-1 cursor-pointer" onClick={() => toggleStep(index)}>
-                {formatTextWithLineBreaks(step)}
-              </label>
+              <div className="flex-1">
+                <label className="text-lg flex-1 cursor-pointer" onClick={() => toggleStep(index)}>
+                  {formatTextWithLineBreaks(step.instruction)}
+                </label>
+                
+                {step.videoId && (
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="mt-3 text-blue-600 border-blue-200 hover:bg-blue-50 flex items-center gap-2"
+                    onClick={() => handleWatchDemo(step.videoId!, `${guide.title} - Step ${index + 1}`)}
+                  >
+                    <PlayCircle className="h-4 w-4" />
+                    Watch Demonstration
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         ))}
