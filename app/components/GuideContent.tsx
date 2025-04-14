@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { CheckIcon, AlertTriangle, Info, PlayCircle, X } from "lucide-react"
+import { useEffect, useState, useRef } from "react"
+import { CheckIcon, AlertTriangle, Info, PlayCircle, X, Volume2, Pause } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
@@ -40,11 +40,13 @@ function formatTextWithLineBreaks(text: string) {
 }
 
 export function GuideContent({ guide }: GuideContentProps) {
-  const { tString } = useLanguage()
+  const { tString, language } = useLanguage()
   const { completedSteps, toggleStep, progress, isReturning } = useCompletedSteps(guide.id, guide.steps.length)
   const [showDialog, setShowDialog] = useState(false)
   const [videoDialogOpen, setVideoDialogOpen] = useState(false)
   const [currentVideo, setCurrentVideo] = useState<{videoId: string, title: string}>({videoId: "", title: ""})
+  const [playingAudioIndex, setPlayingAudioIndex] = useState<number | null>(null)
+  const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     if (isReturning) {
@@ -65,6 +67,44 @@ export function GuideContent({ guide }: GuideContentProps) {
     setCurrentVideo({videoId, title})
     setVideoDialogOpen(true)
   }
+
+  const handlePlayAudio = (step: GuideStep, index: number) => {
+    console.log("Play audio for step", index, "Language:", language);
+    const audioPath = language === 'sw' ? step.audioSwPath : step.audioEnPath;
+    console.log("Audio path:", audioPath);
+
+    if (audioRef.current && audioPath) {
+      if (playingAudioIndex === index) {
+        audioRef.current.pause();
+        setPlayingAudioIndex(null);
+      } else {
+        if (playingAudioIndex !== null) {
+          audioRef.current.pause();
+        }
+        audioRef.current.src = audioPath;
+        audioRef.current.play().then(() => {
+          setPlayingAudioIndex(index);
+        }).catch(error => {
+          console.error("Error playing audio:", error);
+          setPlayingAudioIndex(null);
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    const audioElement = audioRef.current;
+    const handleAudioEnd = () => {
+      setPlayingAudioIndex(null);
+    };
+
+    if (audioElement) {
+      audioElement.addEventListener('ended', handleAudioEnd);
+      return () => {
+        audioElement.removeEventListener('ended', handleAudioEnd);
+      };
+    }
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -95,8 +135,8 @@ export function GuideContent({ guide }: GuideContentProps) {
       <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Demonstration Video</DialogTitle>
-            <DialogDescription>Watch how to perform this step properly</DialogDescription>
+            <DialogTitle>{tString("videoDialogTitle")}</DialogTitle>
+            <DialogDescription>{tString("videoDialogDescription")}</DialogDescription>
           </DialogHeader>
           <div className="mt-4">
             <VideoPlayer videoId={currentVideo.videoId} title={currentVideo.title} />
@@ -106,65 +146,99 @@ export function GuideContent({ guide }: GuideContentProps) {
               variant="outline" 
               onClick={() => setVideoDialogOpen(false)}
             >
-              Close
+              {tString("closeButton")}
             </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
 
       <div>
-        <h1 className="text-3xl font-bold">First Aid for {guide.title}</h1>
+        <h1 className="text-3xl font-bold">{tString("firstAid")} for {
+          String(
+            guide.title && typeof guide.title === 'object' && language in guide.title
+              ? guide.title[language as keyof typeof guide.title]
+              : ''
+          )
+        }</h1>
       </div>
 
       <div className="space-y-2">
         <Progress value={progress} className="w-full" />
         <div className="flex justify-between text-sm text-gray-500">
-          <span>{`${completedSteps.length} of ${guide.steps.length} steps completed`}</span>
+          <span>{`${completedSteps.length} of ${guide.steps.length} ${tString("lessons")} completed`}</span>
         </div>
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold">Immediate Actions</h2>
-        {guide.steps.map((step, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-2xl border ${
-              completedSteps.includes(index) ? "bg-green-50 border-green-200" : "bg-white border-gray-200"
-            }`}
-          >
-            <div className="flex items-start gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                className={`p-0 w-6 h-6 mt-1 rounded-full ${
-                  completedSteps.includes(index)
-                    ? "bg-green-500 text-white hover:bg-green-600"
-                    : "border border-gray-300 hover:bg-gray-100"
-                }`}
-                onClick={() => toggleStep(index)}
-              >
-                {completedSteps.includes(index) && <CheckIcon className="w-4 h-4" />}
-              </Button>
-              <div className="flex-1">
-                <label className="text-lg flex-1 cursor-pointer" onClick={() => toggleStep(index)}>
-                  {formatTextWithLineBreaks(step.instruction)}
-                </label>
-                
-                {step.videoId && (
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="mt-3 text-blue-600 border-blue-200 hover:bg-blue-50 flex items-center gap-2"
-                    onClick={() => handleWatchDemo(step.videoId!, `${guide.title} - Step ${index + 1}`)}
-                  >
-                    <PlayCircle className="h-4 w-4" />
-                    Watch Demonstration
-                  </Button>
-                )}
+        <h2 className="text-xl font-semibold">{tString("immediateActions")}</h2>
+        {guide.steps.map((step, index) => {
+          const hasAudio = step.audioEnPath || step.audioSwPath;
+          const isPlaying = playingAudioIndex === index;
+          const audioPath = language === 'sw' ? step.audioSwPath : step.audioEnPath;
+
+          return (
+            <div
+              key={index}
+              className={`p-6 rounded-2xl border ${
+                completedSteps.includes(index) ? "bg-green-50 border-green-200" : "bg-white border-gray-200"
+              }`}
+            >
+              <div className="flex items-start gap-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`p-0 w-6 h-6 mt-1 rounded-full flex-shrink-0 ${
+                    completedSteps.includes(index)
+                      ? "bg-green-500 text-white hover:bg-green-600"
+                      : "border border-gray-300 hover:bg-gray-100"
+                  }`}
+                  onClick={() => toggleStep(index)}
+                  aria-label={completedSteps.includes(index) ? "Mark step as incomplete" : "Mark step as complete"}
+                >
+                  {completedSteps.includes(index) && <CheckIcon className="w-4 h-4" />}
+                </Button>
+                <div className="flex-1 min-w-0">
+                  <div className="flex justify-between items-start gap-2">
+                    <label className="text-lg flex-grow cursor-pointer" onClick={() => toggleStep(index)}>
+                      {formatTextWithLineBreaks(
+                        step.instruction && typeof step.instruction === 'object' && language in step.instruction
+                          ? step.instruction[language as keyof typeof step.instruction]
+                          : ''
+                      )}
+                    </label>
+                    {audioPath && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-gray-500 hover:text-gray-700 flex-shrink-0"
+                        onClick={() => handlePlayAudio(step, index)}
+                        aria-label={isPlaying ? "Pause audio" : "Play audio"}
+                      >
+                        {isPlaying ? <Pause className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                      </Button>
+                    )}
+                  </div>
+                  {step.videoId && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-3 text-blue-600 border-blue-200 hover:bg-blue-50 flex items-center gap-2"
+                      onClick={() => handleWatchDemo(step.videoId!, 
+                        `${String(
+                          guide.title && typeof guide.title === 'object' && language in guide.title
+                            ? guide.title[language as keyof typeof guide.title]
+                            : ''
+                        )} - ${tString("lesson")} ${index + 1}`)}
+                    >
+                      <PlayCircle className="h-4 w-4" />
+                      {tString("watchDemonstration")}
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {guide.dangerWarnings && guide.dangerWarnings.length > 0 && (
@@ -172,14 +246,17 @@ export function GuideContent({ guide }: GuideContentProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-red-700">
               <AlertTriangle className="w-5 h-5" />
-              DO NOT
+              {tString("doNot")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-5 space-y-2 text-red-700">
-              {guide.dangerWarnings.map((warning, index) => (
-                <li key={index}>{warning}</li>
-              ))}
+              {guide.dangerWarnings?.map((warning, index) => {
+                const text = warning && typeof warning === 'object' && language in warning 
+                  ? warning[language as keyof typeof warning] 
+                  : '';
+                return <li key={index}>{String(text)}</li>;
+              })}
             </ul>
           </CardContent>
         </Card>
@@ -190,14 +267,17 @@ export function GuideContent({ guide }: GuideContentProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-blue-700">
               <Info className="w-5 h-5" />
-              Critical Signs to Monitor
+              {tString("criticalSignsToMonitor")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-5 space-y-2 text-blue-700">
-              {guide.criticalSigns.map((sign, index) => (
-                <li key={index}>{sign}</li>
-              ))}
+              {guide.criticalSigns?.map((sign, index) => {
+                const text = sign && typeof sign === 'object' && language in sign
+                  ? sign[language as keyof typeof sign]
+                  : '';
+                return <li key={index}>{String(text)}</li>;
+              })}
             </ul>
           </CardContent>
         </Card>
@@ -208,16 +288,22 @@ export function GuideContent({ guide }: GuideContentProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-green-700">
               <Info className="w-5 h-5" />
-              Additional Information
+              {tString("additionalInformation")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-green-700">
-              {guide.additionalInfo}
+              {String(
+                guide.additionalInfo && typeof guide.additionalInfo === 'object' && language in guide.additionalInfo
+                  ? guide.additionalInfo[language as keyof typeof guide.additionalInfo]
+                  : ''
+              )}
             </p>
           </CardContent>
         </Card>
       )}
+
+      <audio ref={audioRef} />
     </div>
   )
 } 
