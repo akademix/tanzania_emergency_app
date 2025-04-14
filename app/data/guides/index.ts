@@ -8,19 +8,21 @@
 // Types for guide data
 export interface GuideData {
   id: string;         // Unique identifier, should match filename
-  title: string;      // Display title of the guide
-  description: string; // Brief description shown in list and metadata
+  title: { en: string; sw: string };      // Display title of the guide
+  description: { en: string; sw: string }; // Brief description shown in list and metadata
   image?: string;     // URL to guide image (can be placeholder)
   steps: GuideStep[];    // Array of step instructions for the interactive checklist
-  dangerWarnings?: string[]; // Things NOT to do (displayed in red)
-  criticalSigns?: string[]; // Important signs or notes (displayed in blue)
-  additionalInfo?: string; // Any additional helpful information (displayed in green)
+  dangerWarnings?: { en: string; sw: string }[]; // Things NOT to do (displayed in red)
+  criticalSigns?: { en: string; sw: string }[]; // Important signs or notes (displayed in blue)
+  additionalInfo?: { en: string; sw: string }; // Any additional helpful information (displayed in green)
 }
 
 // Step interface with optional video
 export interface GuideStep {
-  instruction: string;   // The step instruction text
+  instruction: { en: string; sw: string };   // The step instruction text
   videoId?: string;      // Optional video ID that demonstrates this step
+  audioEnPath?: string; // Optional path to the English audio file
+  audioSwPath?: string; // Optional path to the Swahili audio file
 }
 
 // Function to fetch all guides

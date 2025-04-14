@@ -7,13 +7,19 @@ const guide: GuideData = {
   image: 'https://placehold.co/800x400/DC2626/FFFFFF?text=Fire+Emergency',
   steps: [
     {
-      instruction: 'Alert everyone in the area by shouting "Fire!"'
+      instruction: 'Alert everyone in the area by shouting "Fire!"',
+      audioEnPath: '/audio/fire-emergency/step1_en.mp3',
+      audioSwPath: '/audio/fire-emergency/step1_sw.mp3'
     },
     {
-      instruction: 'Call emergency services (0800 750 112) immediately'
+      instruction: 'Call emergency services (0800 750 112) immediately',
+      audioEnPath: '/audio/fire-emergency/step2_en.mp3',
+      audioSwPath: '/audio/fire-emergency/step2_sw.mp3'
     },
     {
-      instruction: 'If the fire is small and contained, use a fire extinguisher'
+      instruction: 'If the fire is small and contained, use a fire extinguisher',
+      audioEnPath: '/audio/fire-emergency/step3_en.mp3',
+      audioSwPath: '/audio/fire-emergency/step3_sw.mp3'
     },
     {
       instruction: 'If the fire is large, evacuate immediately'

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import { GuideData } from "../data/guides"
 
 export default function GuidePage() {
-  const { tString } = useLanguage()
+  const { tString, language } = useLanguage()
   const [guides, setGuides] = useState<GuideData[]>([])
 
   useEffect(() => {
@@ -52,7 +52,11 @@ export default function GuidePage() {
                   {guideIcons[guide.id]?.icon || <ArrowRight className="w-8 h-8" />}
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold">{guide.title}</h2>
+                  <h2 className="text-lg font-semibold">
+                    {guide.title && typeof guide.title === 'object' && language in guide.title
+                      ? guide.title[language as keyof typeof guide.title]
+                      : ''}
+                  </h2>
                   <p className="text-gray-500">{tString("firstAid")}</p>
                 </div>
               </div>

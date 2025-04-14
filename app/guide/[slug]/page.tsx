@@ -22,9 +22,17 @@ export async function generateMetadata(
     }
   }
   
+  // Defensively get English strings for metadata
+  const titleString = guide.title && typeof guide.title === 'object' && guide.title.en 
+    ? guide.title.en 
+    : 'First Aid Guide'; // Fallback title
+  const descriptionString = guide.description && typeof guide.description === 'object' && guide.description.en
+    ? guide.description.en
+    : 'Emergency first aid information'; // Fallback description
+  
   return {
-    title: `${guide.title} | First Aid Guide`,
-    description: guide.description
+    title: `${titleString} | First Aid Guide`,
+    description: descriptionString
   }
 }
 

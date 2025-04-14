@@ -122,6 +122,16 @@ type Translations = {
     shareLocation: string
     copyLocationInfo: string
     locationCopied: string
+    firstAidFor: string
+    stepsCompleted: string
+    immediateActions: string
+    doNot: string
+    criticalSignsToMonitor: string
+    additionalInformation: string
+    watchDemonstration: string
+    videoDialogTitle: string
+    videoDialogDescription: string
+    closeButton: string
   }
 }
 
@@ -142,6 +152,7 @@ const translations: Translations = {
     fetchingCoordinates: "Fetching coordinates...",
     waitingLocation: "Waiting for location data...",
     firstAid: "First Aid",
+    firstAidFor: "First Aid for",
     trainingModules: "Training Modules",
     basicFirstAid: "Basic First Aid",
     basicFirstAidDesc: "Learn the essential principles of first aid",
@@ -152,6 +163,7 @@ const translations: Translations = {
     startCourse: "Start Course",
     minutes: "min",
     lessons: "lessons",
+    stepsCompleted: "steps completed",
     back: "Back",
     trafficAccident: "Traffic Accident",
     snakeBite: "Snake Bite",
@@ -194,6 +206,7 @@ const translations: Translations = {
     lesson: "Lesson",
     firstAidLocations: "First Aid Locations",
     findNearbyLocations: "Find nearby locations",
+    immediateActions: "Immediate Actions",
     resetProgress: "Reset Progress",
     resetProgressConfirmTitle: "Reset Progress",
     resetProgressConfirmDescription: "Are you sure you want to reset your progress? This action cannot be undone.",
@@ -264,7 +277,14 @@ const translations: Translations = {
     locationPermissionDenied: "Location permission denied",
     shareLocation: "Share Location",
     copyLocationInfo: "Copy Location Info",
-    locationCopied: "Location information copied to clipboard"
+    locationCopied: "Location information copied to clipboard",
+    videoDialogTitle: "Demonstration Video",
+    videoDialogDescription: "Watch how to perform this step properly",
+    closeButton: "Close",
+    watchDemonstration: "Watch Demonstration",
+    doNot: "DO NOT",
+    criticalSignsToMonitor: "Critical Signs to Monitor",
+    additionalInformation: "Additional Information"
   },
   sw: {
     training: "Programu ya Mafunzo",
@@ -282,6 +302,7 @@ const translations: Translations = {
     fetchingCoordinates: "Inapata koordineti...",
     waitingLocation: "Inasubiri data ya mahali...",
     firstAid: "Huduma ya Kwanza",
+    firstAidFor: "Huduma ya Kwanza kwa",
     trainingModules: "Moduli za Mafunzo",
     basicFirstAid: "Huduma ya Kwanza ya Msingi",
     basicFirstAidDesc: "Jifunze kanuni muhimu za huduma ya kwanza",
@@ -292,6 +313,7 @@ const translations: Translations = {
     startCourse: "Anza Kozi",
     minutes: "dakika",
     lessons: "masomo",
+    stepsCompleted: "hatua zimekamilika",
     back: "Rudi",
     trafficAccident: "Ajali ya Barabarani",
     snakeBite: "Kuumwa na Nyoka",
@@ -334,6 +356,7 @@ const translations: Translations = {
     lesson: "Somo",
     firstAidLocations: "Maeneo ya Huduma ya Kwanza",
     findNearbyLocations: "Tafuta maeneo ya karibu",
+    immediateActions: "Hatua za Haraka",
     resetProgress: "Weka upya Maendeleo",
     resetProgressConfirmTitle: "Weka upya Maendeleo",
     resetProgressConfirmDescription:
@@ -404,7 +427,14 @@ const translations: Translations = {
     locationPermissionDenied: "Ruhusa ya eneo imekataliwa",
     shareLocation: "Shiriki Eneo",
     copyLocationInfo: "Nakili Taarifa za Eneo",
-    locationCopied: "Taarifa za eneo zimenakiliwa kwenye ubao"
+    locationCopied: "Taarifa za eneo zimenakiliwa kwenye ubao",
+    videoDialogTitle: "Video ya Maonyesho",
+    videoDialogDescription: "Tazama jinsi ya kutekeleza hatua hii ipasavyo",
+    closeButton: "Funga",
+    watchDemonstration: "Tazama Maonyesho",
+    doNot: "USIFANYE",
+    criticalSignsToMonitor: "Dalili Muhimu za Kufuatilia",
+    additionalInformation: "Taarifa za Ziada"
   },
 }
 

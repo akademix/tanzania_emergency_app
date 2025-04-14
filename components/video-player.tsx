@@ -101,7 +101,9 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
             onLoadedData={handleVideoLoad}
             onError={handleVideoError}
             poster="/placeholder.svg?height=720&width=1280"
-            onClick={togglePlay}
+            autoPlay
+            loop
+            muted
           >
             <source src={videoPath} type="video/mp4" />
             <p className="text-center p-4 bg-gray-100">
@@ -109,15 +111,6 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
               Try using Chrome, Firefox, or download <a href={videoPath} download className="text-blue-600 underline">the video</a> to play in VLC.
             </p>
           </video>
-          
-          {!isLoading && !isPlaying && (
-            <div className="absolute inset-0 flex items-center justify-center cursor-pointer" onClick={togglePlay}>
-              <Button size="lg" className="rounded-full w-16 h-16 bg-white/70 hover:bg-white/90">
-                <Play className="h-8 w-8 text-green-600" />
-                <span className="sr-only">Play video</span>
-              </Button>
-            </div>
-          )}
         </div>
       </div>
     )
