@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "First Aid App",
-  description: "Emergency first aid application with training and location services",
+  description: "Emergency first aid application with location services",
   manifest: "/manifest.json",
   icons: [
     { rel: "icon", url: "/logo.svg", type: "image/svg+xml" },

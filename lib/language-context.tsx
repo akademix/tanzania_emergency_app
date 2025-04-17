@@ -6,8 +6,6 @@ type Language = "en" | "sw"
 
 type Translations = {
   [key in Language]: {
-    training: string
-    learnSkills: string
     guide: string
     quickReference: string
     emergency: string
@@ -21,16 +19,7 @@ type Translations = {
     fetchingCoordinates: string
     waitingLocation: string
     firstAid: string
-    trainingModules: string
-    basicFirstAid: string
-    basicFirstAidDesc: string
-    cprCourse: string
-    cprCourseDesc: string
-    woundTreatment: string
-    woundTreatmentDesc: string
-    startCourse: string
-    minutes: string
-    lessons: string
+    firstAidFor: string
     back: string
     trafficAccident: string
     snakeBite: string
@@ -49,18 +38,18 @@ type Translations = {
       title: string
       steps: string[]
     }
-    lesson: string
     firstAidLocations: string
     findNearbyLocations: string
-    continueOrStartOver: string
-    continueOrStartOverDescription: string
-    continue: string
-    startOver: string
+    immediateActions: string
     resetProgress: string
     resetProgressConfirmTitle: string
     resetProgressConfirmDescription: string
     cancel: string
     confirm: string
+    continueOrStartOver: string
+    continueOrStartOverDescription: string
+    continue: string
+    startOver: string
     callEmergency: string
     pageNotFound: string
     pageNotFoundDes: string
@@ -122,9 +111,7 @@ type Translations = {
     shareLocation: string
     copyLocationInfo: string
     locationCopied: string
-    firstAidFor: string
     stepsCompleted: string
-    immediateActions: string
     doNot: string
     criticalSignsToMonitor: string
     additionalInformation: string
@@ -137,8 +124,6 @@ type Translations = {
 
 const translations: Translations = {
   en: {
-    training: "Training program",
-    learnSkills: "Learn essential skills",
     guide: "Emergency guide",
     quickReference: "Quick reference",
     emergency: "Call emergency",
@@ -153,17 +138,6 @@ const translations: Translations = {
     waitingLocation: "Waiting for location data...",
     firstAid: "First Aid",
     firstAidFor: "First Aid for",
-    trainingModules: "Training Modules",
-    basicFirstAid: "Basic First Aid",
-    basicFirstAidDesc: "Learn the essential principles of first aid",
-    cprCourse: "CPR Course",
-    cprCourseDesc: "Cardiopulmonary resuscitation for adults and children",
-    woundTreatment: "Wound Treatment",
-    woundTreatmentDesc: "Handling cuts, scrapes and other wounds",
-    startCourse: "Start Course",
-    minutes: "min",
-    lessons: "lessons",
-    stepsCompleted: "steps completed",
     back: "Back",
     trafficAccident: "Traffic Accident",
     snakeBite: "Snake Bite",
@@ -203,7 +177,6 @@ const translations: Translations = {
         "Try to remember or safely photograph the snake for identification",
       ],
     },
-    lesson: "Lesson",
     firstAidLocations: "First Aid Locations",
     findNearbyLocations: "Find nearby locations",
     immediateActions: "Immediate Actions",
@@ -230,7 +203,7 @@ const translations: Translations = {
     noContactsYet: "No contacts added yet",
     addYourFirstContact: "Add your first emergency contact",
     firstAidApp: "First Aid App",
-    appDescription: "A comprehensive first aid guide and training application designed to help you prepare for emergencies.",
+    appDescription: "A comprehensive first aid guide application designed to help you prepare for emergencies.",
     copyRight: "© 2023 First Aid App. All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
@@ -251,8 +224,8 @@ const translations: Translations = {
     fullscreen: "Fullscreen",
     exitFullscreen: "Exit Fullscreen",
     findingLocation: "Finding your location...",
-    locationError: "Could not determine your location",
-    refreshLocation: "Refresh Location",
+    locationError: "Could not find your location",
+    refreshLocation: "Refresh location",
     firePreventionTips: "Fire Prevention Tips",
     evacuationSteps: "Evacuation Steps",
     drowning: "Drowning",
@@ -272,23 +245,22 @@ const translations: Translations = {
     settings: "Settings",
     emergencyServices: "Emergency Services",
     fireEmergencyTitle: "Fire Emergency",
-    fireEmergencyDescription: "Learn how to respond to fire emergencies",
-    videoPlayerError: "Error loading video",
+    fireEmergencyDescription: "Steps to take during a fire emergency",
+    videoPlayerError: "Error playing video",
     locationPermissionDenied: "Location permission denied",
     shareLocation: "Share Location",
     copyLocationInfo: "Copy Location Info",
-    locationCopied: "Location information copied to clipboard",
-    videoDialogTitle: "Demonstration Video",
-    videoDialogDescription: "Watch how to perform this step properly",
-    closeButton: "Close",
-    watchDemonstration: "Watch Demonstration",
-    doNot: "DO NOT",
+    locationCopied: "Location copied to clipboard",
+    stepsCompleted: "steps completed",
+    doNot: "Do Not",
     criticalSignsToMonitor: "Critical Signs to Monitor",
-    additionalInformation: "Additional Information"
+    additionalInformation: "Additional Information",
+    watchDemonstration: "Watch Demonstration",
+    videoDialogTitle: "Video Tutorial",
+    videoDialogDescription: "Watch this tutorial for more information",
+    closeButton: "Close"
   },
   sw: {
-    training: "Programu ya Mafunzo",
-    learnSkills: "Jifunze ujuzi muhimu",
     guide: "Mwongozo wa dharura",
     quickReference: "Rejea ya haraka",
     emergency: "Piga simu ya dharura",
@@ -297,23 +269,12 @@ const translations: Translations = {
     enable: "Wezesha",
     disable: "Zima",
     address: "Anwani",
-    coordinates: "Koordineti za GPS",
-    fetchingAddress: "Inapata anwani...",
-    fetchingCoordinates: "Inapata koordineti...",
+    coordinates: "Vipimo vya GPS",
+    fetchingAddress: "Inaleta anwani...",
+    fetchingCoordinates: "Inaleta vipimo...",
     waitingLocation: "Inasubiri data ya mahali...",
     firstAid: "Huduma ya Kwanza",
     firstAidFor: "Huduma ya Kwanza kwa",
-    trainingModules: "Moduli za Mafunzo",
-    basicFirstAid: "Huduma ya Kwanza ya Msingi",
-    basicFirstAidDesc: "Jifunze kanuni muhimu za huduma ya kwanza",
-    cprCourse: "Kozi ya CPR",
-    cprCourseDesc: "Uhuishaji wa moyo na mapafu kwa watu wazima na watoto",
-    woundTreatment: "Matibabu ya Vidonda",
-    woundTreatmentDesc: "Kushughulikia michubuko, majeraha na vidonda vingine",
-    startCourse: "Anza Kozi",
-    minutes: "dakika",
-    lessons: "masomo",
-    stepsCompleted: "hatua zimekamilika",
     back: "Rudi",
     trafficAccident: "Ajali ya Barabarani",
     snakeBite: "Kuumwa na Nyoka",
@@ -323,64 +284,62 @@ const translations: Translations = {
     burnTreatment: {
       title: "Matibabu ya Kuungua",
       steps: [
-        "Pooza eneo lililoungua kwa maji vuguvugu kwa dakika 20 au zaidi",
-        "Ondoa nguo na vito kwenye eneo lililoungua",
+        "Pooza mahali palipoungua kwa maji baridi kwa dakika 20",
+        "Ondoa nguo na vito kutoka eneo lililoungua",
         "Funika eneo lililoungua kwa bendeji safi",
-        "Tafuta msaada wa daktari kwa kuungua kukubwa au kwa kina",
+        "Tafuta msaada wa matibabu kwa kuungua kubwa",
       ],
     },
     trafficAccidentTreatment: {
-      title: "Kukabiliana na Ajali ya Barabarani",
+      title: "Mwitikio wa Ajali ya Barabarani",
       steps: [
-        "Hakikisha usalama wako kwanza - egeshea gari salama na washa taa za hatari",
+        "Hakikisha usalama wako kwanza - ega gari kwa usalama na kuwasha taa za hatari",
         "Piga simu ya dharura (0800 750 112) mara moja",
-        "Usihamishee walioumia isipokuwa wapo hatarini",
-        "Angalia kama waathirika wana fahamu na wanapumua",
-        "Bandika kidonda kinachotoka damu kwa kutumia kitambaa safi",
-        "Waweke waathirika katika hali ya joto na utulivu hadi msaada ufike",
-        "Kusanya taarifa na picha za tukio ikiwezekana",
+        "Usiwahamishe waathiriwa isipokuwa wapo hatarini",
+        "Angalia fahamu na kupumua kwa waathiriwa",
+        "Weka shinikizo kwenye jeraha lolote linalotoa damu kwa kutumia kitambaa safi",
+        "Waweke waathiriwa katika hali ya joto na utulivu hadi msaada ufike",
+        "Kusanya taarifa na weka kumbukumbu ya tukio ikiwezekana",
       ],
     },
     snakeBiteTreatment: {
       title: "Matibabu ya Kuumwa na Nyoka",
       steps: [
-        "Mweke mgonjwa atulie ili kuzuia sumu kusambaa haraka",
+        "Mtulize mwathiriwa ili kupunguza kusambaa kwa sumu",
         "Piga simu ya dharura (0800 750 112) mara moja",
         "Ondoa vitu vyovyote vinavyobana (vito, saa) kutoka eneo lililoathirika",
-        "Weka sehemu iliyoumwa chini ya kiwango cha moyo",
-        "Safisha kidonda kwa sabuni na maji ikiwa vinapatikana",
-        "USIFUNGE kamba kubana wala kujaribu kufyonza sumu",
-        "Jaribu kukumbuka au kupiga picha ya nyoka kwa uangalifu kwa utambuzi",
+        "Weka eneo lililoumwa chini ya kiwango cha moyo",
+        "Safisha jeraha kwa sabuni na maji ikiwa inapatikana",
+        "USIFUNGE jeraha wala kujaribu kufyonza sumu",
+        "Jaribu kukumbuka au kupiga picha nyoka kwa utambuzi",
       ],
     },
-    lesson: "Somo",
     firstAidLocations: "Maeneo ya Huduma ya Kwanza",
     findNearbyLocations: "Tafuta maeneo ya karibu",
     immediateActions: "Hatua za Haraka",
-    resetProgress: "Weka upya Maendeleo",
-    resetProgressConfirmTitle: "Weka upya Maendeleo",
-    resetProgressConfirmDescription:
-      "Je, una uhakika unataka kuweka upya maendeleo yako? Kitendo hiki hakiwezi kutenduliwa.",
+    resetProgress: "Anza Upya",
+    resetProgressConfirmTitle: "Anza Upya",
+    resetProgressConfirmDescription: "Una uhakika unataka kuanza upya? Kitendo hiki hakiwezi kutenduliwa.",
     cancel: "Ghairi",
     confirm: "Thibitisha",
     continueOrStartOver: "Endelea au Anza Upya?",
-    continueOrStartOverDescription: "Una maendeleo ya awali. Je, unataka kuendelea kutoka ulipoishia au kuanza upya?",
+    continueOrStartOverDescription: "Una maendeleo ya awali. Unataka kuendelea au kuanza upya?",
     continue: "Endelea",
     startOver: "Anza Upya",
     callEmergency: "Piga Simu ya Dharura",
-    pageNotFound: "Maeneo Yeyote",
-    pageNotFoundDes: "Hakuna maeneo kupatikana kwa kurudi.",
-    pageNotFoundDescription: "The page you are looking for does not exist or has been moved.",
-    emergencyContacts: "Anwani za Dharura",
+    pageNotFound: "Ukurasa Haupatikani",
+    pageNotFoundDes: "Ukurasa ulioombwa haukupatikana.",
+    pageNotFoundDescription: "Ukurasa unaoutafuta haupo au umehamishwa.",
+    emergencyContacts: "Mawasiliano ya Dharura",
     name: "Jina",
     phone: "Namba ya Simu",
-    addContact: "Ongeza Anwani",
+    addContact: "Ongeza Mawasiliano",
     deleteContact: "Futa",
-    yourEmergencyContacts: "Anwani Zako za Dharura",
-    noContactsYet: "Hakuna anwani zilizoongezwa bado",
-    addYourFirstContact: "Ongeza anwani yako ya kwanza ya dharura",
+    yourEmergencyContacts: "Mawasiliano yako ya Dharura",
+    noContactsYet: "Hakuna mawasiliano bado",
+    addYourFirstContact: "Ongeza mawasiliano yako ya kwanza ya dharura",
     firstAidApp: "Programu ya Huduma ya Kwanza",
-    appDescription: "Mwongozo kamili wa huduma ya kwanza na programu ya mafunzo iliyoundwa kukusaidia kujiandaa kwa dharura.",
+    appDescription: "Mwongozo kamili wa huduma ya kwanza ulioundwa kukusaidia kujiandaa kwa dharura.",
     copyRight: "© 2023 Programu ya Huduma ya Kwanza. Haki zote zimehifadhiwa.",
     privacyPolicy: "Sera ya Faragha",
     termsOfService: "Masharti ya Huduma",
@@ -389,20 +348,20 @@ const translations: Translations = {
     about: "Kuhusu Sisi",
     contact: "Wasiliana",
     resources: "Rasilimali",
-    faq: "Maswali",
+    faq: "Maswali Yanayoulizwa Mara kwa Mara",
     loading: "Inapakia...",
     error: "Hitilafu imetokea",
     retry: "Jaribu tena",
     save: "Hifadhi",
     play: "Cheza",
     pause: "Simamisha",
-    mute: "Zima sauti",
-    unmute: "Washa sauti",
-    fullscreen: "Skrini kamili",
-    exitFullscreen: "Toka skrini kamili",
-    findingLocation: "Inatafuta eneo lako...",
-    locationError: "Haikuweza kubaini eneo lako",
-    refreshLocation: "Onyesha upya Eneo",
+    mute: "Nyamazisha",
+    unmute: "Rejesha Sauti",
+    fullscreen: "Skrini Kamili",
+    exitFullscreen: "Toka Skrini Kamili",
+    findingLocation: "Inatafuta mahali ulipo...",
+    locationError: "Haikuweza kupata mahali ulipo",
+    refreshLocation: "Onyesha upya mahali",
     firePreventionTips: "Vidokezo vya Kuzuia Moto",
     evacuationSteps: "Hatua za Kuondoka",
     drowning: "Kuzama",
@@ -422,19 +381,20 @@ const translations: Translations = {
     settings: "Mipangilio",
     emergencyServices: "Huduma za Dharura",
     fireEmergencyTitle: "Dharura ya Moto",
-    fireEmergencyDescription: "Jifunze jinsi ya kukabiliana na dharura za moto",
-    videoPlayerError: "Hitilafu katika kupakia video",
-    locationPermissionDenied: "Ruhusa ya eneo imekataliwa",
-    shareLocation: "Shiriki Eneo",
-    copyLocationInfo: "Nakili Taarifa za Eneo",
-    locationCopied: "Taarifa za eneo zimenakiliwa kwenye ubao",
-    videoDialogTitle: "Video ya Maonyesho",
-    videoDialogDescription: "Tazama jinsi ya kutekeleza hatua hii ipasavyo",
-    closeButton: "Funga",
-    watchDemonstration: "Tazama Maonyesho",
-    doNot: "USIFANYE",
+    fireEmergencyDescription: "Hatua za kuchukua wakati wa dharura ya moto",
+    videoPlayerError: "Hitilafu katika kucheza video",
+    locationPermissionDenied: "Ruhusa ya mahali imekataliwa",
+    shareLocation: "Shiriki Mahali",
+    copyLocationInfo: "Nakili Taarifa za Mahali",
+    locationCopied: "Taarifa za mahali zimenakiliwa",
+    stepsCompleted: "hatua zimekamilika",
+    doNot: "Usifanye",
     criticalSignsToMonitor: "Dalili Muhimu za Kufuatilia",
-    additionalInformation: "Taarifa za Ziada"
+    additionalInformation: "Taarifa za Ziada",
+    watchDemonstration: "Tazama Mfano",
+    videoDialogTitle: "Mafunzo ya Video",
+    videoDialogDescription: "Tazama mafunzo haya kwa taarifa zaidi",
+    closeButton: "Funga"
   },
 }
 

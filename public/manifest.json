@@ -1,7 +1,7 @@
 {
   "name": "First Aid App",
   "short_name": "First Aid",
-  "description": "Emergency first aid application with training and location services",
+  "description": "Emergency first aid application with location services",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
