@@ -57,8 +57,8 @@ export default function Home() {
                 <ClipboardCheck className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">Responder Form</h2>
-                <p className="text-gray-500">Submit emergency response reports</p>
+                <h2 className="text-lg font-semibold">{tString("responderForm")}</h2>
+                <p className="text-gray-500">{tString("submitEmergencyReports")}</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-gray-400" />

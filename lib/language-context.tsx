@@ -119,6 +119,8 @@ type Translations = {
     videoDialogTitle: string
     videoDialogDescription: string
     closeButton: string
+    responderForm: string
+    submitEmergencyReports: string
   }
 }
 
@@ -258,7 +260,9 @@ const translations: Translations = {
     watchDemonstration: "Watch Demonstration",
     videoDialogTitle: "Video Tutorial",
     videoDialogDescription: "Watch this tutorial for more information",
-    closeButton: "Close"
+    closeButton: "Close",
+    responderForm: "Responder Form",
+    submitEmergencyReports: "Submit emergency response reports"
   },
   sw: {
     guide: "Mwongozo wa dharura",
@@ -394,7 +398,9 @@ const translations: Translations = {
     watchDemonstration: "Tazama Mfano",
     videoDialogTitle: "Mafunzo ya Video",
     videoDialogDescription: "Tazama mafunzo haya kwa taarifa zaidi",
-    closeButton: "Funga"
+    closeButton: "Funga",
+    responderForm: "Fomu ya Mjibuji",
+    submitEmergencyReports: "Wasilisha ripoti za mwitikio wa dharura"
   },
 }
 
