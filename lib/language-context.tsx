@@ -121,6 +121,7 @@ type Translations = {
     closeButton: string
     responderForm: string
     submitEmergencyReports: string
+    learnSkillsDescription: string
   }
 }
 
@@ -262,7 +263,8 @@ const translations: Translations = {
     videoDialogDescription: "Watch this tutorial for more information",
     closeButton: "Close",
     responderForm: "Responder Form",
-    submitEmergencyReports: "Submit emergency response reports"
+    submitEmergencyReports: "Submit Emergency Reports",
+    learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
   },
   sw: {
     guide: "Mwongozo wa dharura",
@@ -399,8 +401,9 @@ const translations: Translations = {
     videoDialogTitle: "Mafunzo ya Video",
     videoDialogDescription: "Tazama mafunzo haya kwa taarifa zaidi",
     closeButton: "Funga",
-    responderForm: "Fomu ya Mjibuji",
-    submitEmergencyReports: "Wasilisha ripoti za mwitikio wa dharura"
+    responderForm: "Fomu ya Mwitikiaji",
+    submitEmergencyReports: "Wasilisha Ripoti za Dharura",
+    learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
   },
 }
 

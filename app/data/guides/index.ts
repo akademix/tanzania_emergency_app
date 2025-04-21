@@ -43,8 +43,8 @@ export async function getAllGuides(): Promise<GuideData[]> {
         if (id.startsWith('_')) return null;
         
         try {
-          const module = await import(`./${id}`);
-          return module.default;
+          const guideModule = await import(`./${id}`);
+          return guideModule.default;
         } catch (error) {
           console.error(`Failed to load guide ${id}:`, error);
           return null;
@@ -71,8 +71,8 @@ export async function getGuideById(id: string): Promise<GuideData | undefined> {
   }
   
   try {
-    const guide = await import(`./${id}`);
-    return guide.default;
+    const guideModule = await import(`./${id}`);
+    return guideModule.default;
   } catch (error) {
     console.error(`Guide with ID ${id} not found:`, error);
     return undefined;

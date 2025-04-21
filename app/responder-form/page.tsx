@@ -1,12 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useLanguage } from "@/lib/language-context"
-import { useLocalStorage } from "@/lib/useLocalStorage"
+// import { useRouter } from "next/navigation" // Removed useRouter
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Save, AlertCircle, ListFilter } from "lucide-react"
+import { Save, ListFilter } from "lucide-react"
 import Link from "next/link"
+// import { useLanguage } from "@/lib/language-context" // Removed useLanguage
 
 // Form data interface
 interface ResponderFormData {
@@ -29,7 +29,8 @@ interface ResponderFormData {
 }
 
 export default function ResponderForm() {
-  const { tString } = useLanguage()
+  // const router = useRouter() // Removed router
+  // const { tString } = useLanguage() // Removed tString
   
   // Initialize form with empty values
   const initialFormData: ResponderFormData = {

@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-import { CheckIcon, AlertTriangle, Info, PlayCircle, X, Volume2, Pause } from "lucide-react"
+import React, { useEffect, useState, useRef } from "react"
+import { CheckIcon, AlertTriangle, Info, PlayCircle, Volume2, Pause } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
@@ -165,14 +165,13 @@ export function GuideContent({ guide }: GuideContentProps) {
       <div className="space-y-2">
         <Progress value={progress} className="w-full" />
         <div className="flex justify-between text-sm text-gray-500">
-          <span>{`${completedSteps.length} of ${guide.steps.length} ${tString("lessons")} completed`}</span>
+          <span>{`${completedSteps.length} of ${guide.steps.length} ${tString("stepsCompleted")}`}</span>
         </div>
       </div>
 
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">{tString("immediateActions")}</h2>
         {guide.steps.map((step, index) => {
-          const hasAudio = step.audioEnPath || step.audioSwPath;
           const isPlaying = playingAudioIndex === index;
           const audioPath = language === 'sw' ? step.audioSwPath : step.audioEnPath;
 
@@ -228,7 +227,7 @@ export function GuideContent({ guide }: GuideContentProps) {
                           guide.title && typeof guide.title === 'object' && language in guide.title
                             ? guide.title[language as keyof typeof guide.title]
                             : ''
-                        )} - ${tString("lesson")} ${index + 1}`)}
+                        )} - ${tString("watchDemonstration")} ${index + 1}`)}
                     >
                       <PlayCircle className="h-4 w-4" />
                       {tString("watchDemonstration")}

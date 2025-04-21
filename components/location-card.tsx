@@ -1,7 +1,8 @@
 "use client"
 
+import React from "react"
 import { useState, useEffect, useCallback } from "react"
-import { Loader2, MapPin, Phone, Building, Clock } from "lucide-react"
+import { Loader2, MapPin } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function LocationCard() {
@@ -53,15 +54,27 @@ export function LocationCard() {
           }))
         }
       },
-      () => {
+      (error) => {
+        let errorMessage = "Failed to get your location. Please try again.";
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            errorMessage = tString("locationPermissionDenied");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            errorMessage = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            errorMessage = "The request to get user location timed out.";
+            break;
+        }
         setLocation((prev) => ({
           ...prev,
           loading: false,
-          error: "Failed to get your location. Please enable location services.",
+          error: errorMessage,
         }))
       },
     )
-  }, [isLocationEnabled])
+  }, [isLocationEnabled, tString])
 
   useEffect(() => {
     if (isLocationEnabled) {

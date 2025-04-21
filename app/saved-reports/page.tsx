@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useLanguage } from "@/lib/language-context"
+import React, { useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, Clipboard, Trash } from "lucide-react"
+import { useLocalStorage } from "@/lib/useLocalStorage"
+import { Trash2, ChevronLeft } from "lucide-react"
 import Link from "next/link"
 
 interface ResponderFormData {
@@ -25,15 +25,19 @@ interface ResponderFormData {
   }
 }
 
+// Define the shape of the saved report data
+interface SavedReport {
+  key: string;
+  data: ResponderFormData;
+}
+
 export default function SavedReports() {
-  const { tString } = useLanguage()
-  const [savedReports, setSavedReports] = useState<{key: string, data: ResponderFormData}[]>([])
-  const [deleteSuccess, setDeleteSuccess] = useState(false)
+  const [savedReports, setSavedReports] = useLocalStorage<SavedReport[]>("savedReports", [])
   
   // Load saved reports from localStorage on component mount
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const reports: {key: string, data: ResponderFormData}[] = []
+      const reports: SavedReport[] = []
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
         if (key && key.startsWith("responderReport_")) {
@@ -47,13 +51,15 @@ export default function SavedReports() {
       }
       setSavedReports(reports)
     }
-  }, [deleteSuccess])
+  }, [setSavedReports])
   
   // Delete a report
   const handleDelete = (key: string) => {
     if (confirm("Are you sure you want to delete this report?")) {
       localStorage.removeItem(key)
-      setDeleteSuccess(!deleteSuccess) // Toggle to trigger useEffect
+      // Read current state and filter it
+      const updatedReports = savedReports.filter((report: SavedReport) => report.key !== key)
+      setSavedReports(updatedReports)
     }
   }
   
@@ -107,7 +113,7 @@ export default function SavedReports() {
                     className="h-8"
                     onClick={() => handleDelete(key)}
                   >
-                    <Trash className="w-4 h-4 text-red-500" />
+                    <Trash2 className="w-4 h-4 text-red-500" />
                   </Button>
                 </div>
               </div>

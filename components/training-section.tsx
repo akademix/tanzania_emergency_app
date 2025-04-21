@@ -18,8 +18,8 @@ export default function TrainingSection() {
             <BookOpen className="w-8 h-8" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold">{tString("training")}</h2>
-            <p className="text-gray-500">{tString("learnSkills")}</p>
+            <h2 className="text-lg font-semibold">{tString("resources")}</h2>
+            <p className="text-gray-500">{tString("learnSkillsDescription")}</p>
           </div>
         </div>
         <ArrowRight className="w-5 h-5 text-gray-400" />

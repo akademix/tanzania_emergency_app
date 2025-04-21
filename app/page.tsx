@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BookOpen, AlertTriangle, Building, AlertCircle, ClipboardCheck } from "lucide-react"
+import { ArrowRight, AlertTriangle, Building, AlertCircle, ClipboardCheck } from "lucide-react"
 import { LocationCard } from "@/components/location-card"
 import { useLanguage } from "@/lib/language-context"
 
@@ -11,6 +11,23 @@ export default function Home() {
   return (
     <div className="max-w-2xl mx-auto px-4">
       <div className="space-y-4">
+        <a
+          href="tel:0800750112"
+          className="block p-6 bg-red-50 rounded-2xl border border-red-100 hover:bg-red-100 hover:border-red-200 transition-colors"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="text-red-500">
+                <AlertCircle className="w-8 h-8" />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold">{tString("emergency")}</h2>
+                <p className="text-red-600 font-medium">{tString("emergencyNumber")}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
         <Link
           href="/guide"
           className="block p-6 bg-purple-50 rounded-2xl border border-purple-100 hover:bg-purple-100 hover:border-purple-200 transition-colors"
@@ -64,23 +81,6 @@ export default function Home() {
             <ArrowRight className="w-5 h-5 text-gray-400" />
           </div>
         </Link>
-
-        <a
-          href="tel:0800750112"
-          className="block p-6 bg-red-50 rounded-2xl border border-red-100 hover:bg-red-100 hover:border-red-200 transition-colors"
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="text-red-500">
-                <AlertCircle className="w-8 h-8" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold">{tString("emergency")}</h2>
-                <p className="text-red-600 font-medium">{tString("emergencyNumber")}</p>
-              </div>
-            </div>
-          </div>
-        </a>
 
         <div className="bg-blue-50 rounded-2xl border border-blue-100 p-6">
           <LocationCard />

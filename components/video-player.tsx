@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { Play, AlertCircle, Pause, RotateCw } from "lucide-react"
+import React, { useState, useRef, useEffect } from "react"
+import { Play, AlertCircle, RotateCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import Image from 'next/image'
@@ -15,7 +15,6 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("Failed to load video. Please try refreshing the page or check your internet connection.")
-  const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   
   // Check if the videoId is a local file or YouTube ID
@@ -60,16 +59,16 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
     setIsLoading(false)
   }
   
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.play()
-      }
-      setIsPlaying(!isPlaying)
-    }
-  }
+  // const togglePlay = () => {
+  //   if (videoRef.current) {
+  //     if (isPlaying) {
+  //       videoRef.current.pause()
+  //     } else {
+  //       videoRef.current.play()
+  //     }
+  //     setIsPlaying(!isPlaying)
+  //   }
+  // }
 
   if (error) {
     return (
@@ -107,7 +106,7 @@ export function VideoPlayer({ videoId, title }: VideoPlayerProps) {
           >
             <source src={videoPath} type="video/mp4" />
             <p className="text-center p-4 bg-gray-100">
-              Your browser doesn't support this video format.
+              Your browser doesn&apos;t support this video format.
               Try using Chrome, Firefox, or download <a href={videoPath} download className="text-blue-600 underline">the video</a> to play in VLC.
             </p>
           </video>

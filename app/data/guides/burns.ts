@@ -1,4 +1,4 @@
-import { GuideData, GuideStep } from './index';
+import { GuideData } from './index';
 
 const guide: GuideData = {
   id: 'burns',

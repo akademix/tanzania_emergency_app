@@ -27,7 +27,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/training" className="text-gray-600 hover:text-blue-600 text-sm">
-                  {tString("training")}
+                  {tString("resources")}
                 </Link>
               </li>
               <li>

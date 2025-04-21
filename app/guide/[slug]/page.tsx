@@ -1,15 +1,13 @@
 // @ts-nocheck
 import { notFound } from 'next/navigation'
 import { Metadata, Viewport } from 'next'
-import Link from 'next/link'
-import { ChevronLeft } from 'lucide-react'
 import { getGuideById } from '@/app/data/guides'
 import { GuideContent } from '@/app/components/GuideContent'
 import { BackButton } from '@/components/back-button'
 
 // Generate metadata for the page
 export async function generateMetadata(
-  { params }: { params: { slug: string } }
+  { params }
 ): Promise<Metadata> {
   // Next.js 15.2.0+ requires params to be awaited
   const resolvedParams = await Promise.resolve(params);
@@ -43,7 +41,7 @@ export const viewport: Viewport = {
 
 // The page component
 export default async function GuidePage(
-  { params }: { params: { slug: string } }
+  { params }
 ) {
   // Next.js 15.2.0+ requires params to be awaited
   const resolvedParams = await Promise.resolve(params);
