@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 // import { useRouter } from "next/navigation" // Removed useRouter
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Save, ListFilter } from "lucide-react"
+import { Send } from "lucide-react"
 import Link from "next/link"
 // import { useLanguage } from "@/lib/language-context" // Removed useLanguage
 
@@ -53,22 +53,48 @@ export default function ResponderForm() {
   }
   
   const [formData, setFormData] = useState<ResponderFormData>(initialFormData)
-  const [savedReports, setSavedReports] = useState<string[]>([])
   const [saveSuccess, setSaveSuccess] = useState(false)
   
-  // Load saved reports from localStorage on component mount
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const reports: string[] = []
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i)
-        if (key && key.startsWith("responderReport_")) {
-          reports.push(key.replace("responderReport_", ""))
-        }
-      }
-      setSavedReports(reports)
-    }
-  }, [saveSuccess])
+  // Convert form data to CSV
+  const convertToCSV = (data: ResponderFormData) => {
+    // Define CSV headers
+    const headers = [
+      "Event Number",
+      "Location",
+      "Accident Type",
+      "Equipment Used",
+      "Injury And Service",
+      "Receiving Facility Name",
+      "Receiving Staff Name",
+      "Receiving Staff ID",
+      "First Aid Initiated",
+      "Caller Used App",
+      "Response Time Rating",
+      "Service Satisfaction Rating",
+      "Equipment Rating",
+      "Comments"
+    ].join(",");
+    
+    // Format data values
+    const values = [
+      data.eventNumber,
+      `"${data.location.replace(/"/g, '""')}"`,
+      data.accidentType,
+      `"${data.equipmentUsed.replace(/"/g, '""')}"`,
+      `"${data.injuryAndService.replace(/"/g, '""')}"`,
+      `"${data.receivingFacilityName.replace(/"/g, '""')}"`,
+      `"${data.receivingStaffName.replace(/"/g, '""')}"`,
+      data.receivingStaffId,
+      data.firstAidInitiated,
+      data.callerUsedApp,
+      data.feedback.responseTime,
+      data.feedback.serviceSatisfaction,
+      data.feedback.equipment,
+      `"${data.feedback.comments.replace(/"/g, '""')}"`
+    ].join(",");
+    
+    return `${headers}\n${values}`;
+  };
   
   // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -104,7 +130,7 @@ export default function ResponderForm() {
     }))
   }
   
-  // Save form data to localStorage
+  // Handle sending report
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -113,40 +139,74 @@ export default function ResponderForm() {
       return
     }
     
-    const key = `responderReport_${formData.eventNumber}`
-    localStorage.setItem(key, JSON.stringify(formData))
-    setSaveSuccess(true)
+    // Convert form data to CSV
+    const csvData = convertToCSV(formData);
+    const csvBlob = new Blob([csvData], { type: 'text/csv' });
+    const csvUrl = URL.createObjectURL(csvBlob);
+    
+    // Create a hidden download link
+    const hiddenElement = document.createElement('a');
+    hiddenElement.href = csvUrl;
+    hiddenElement.target = '_blank';
+    hiddenElement.download = `Emergency_Report_${formData.eventNumber}.csv`;
+    
+    // Get accident type label for the email
+    const accidentTypeLabels: Record<string, string> = {
+      "traffic": "Traffic Accident",
+      "burn": "Burns",
+      "snakeBite": "Snake Bite",
+      "drowning": "Drowning",
+      "other": "Other"
+    };
+    const accidentTypeLabel = accidentTypeLabels[formData.accidentType] || "Unspecified";
+    
+    // Create more detailed email content
+    const subject = encodeURIComponent(`Emergency Report #${formData.eventNumber} - ${accidentTypeLabel}`);
+    const bodyContent = [
+      `Emergency Report for Event #${formData.eventNumber}`,
+      "",
+      `Accident Type: ${accidentTypeLabel}`,
+      `Location: ${formData.location || "Not specified"}`,
+      `First Aid Initiated: ${formData.firstAidInitiated === "yes" ? "Yes" : "No"}`,
+      `Equipment Used: ${formData.equipmentUsed ? formData.equipmentUsed.substring(0, 50) + (formData.equipmentUsed.length > 50 ? "..." : "") : "Not specified"}`,
+      "",
+      "Please find the attached CSV file with complete emergency report details.",
+      "",
+      "This is an automated report sent from the Tanzania Emergency App."
+    ].join("\n");
+    
+    const body = encodeURIComponent(bodyContent);
+    
+    // Placeholder recipient email that will be changed later
+    const recipient = "emergency-reports@example.org";
+    
+    // Open email client with pre-filled data
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    
+    // Trigger download of CSV file first
+    hiddenElement.click();
+    
+    // Show success message
+    setSaveSuccess(true);
     
     // Reset success message after 3 seconds
     setTimeout(() => {
-      setSaveSuccess(false)
-    }, 3000)
+      setSaveSuccess(false);
+    }, 3000);
   }
   
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
-      <div className="mb-6 flex justify-between items-center">
+      <div className="mb-6">
         <div>
           <h1 className="text-2xl font-bold mb-2">Emergency Responder Form</h1>
           <p className="text-gray-600">Complete this form after responding to an emergency call</p>
         </div>
-        
-        <Link href="/saved-reports">
-          <Button variant="outline" className="flex items-center gap-2">
-            <ListFilter className="w-4 h-4" />
-            View Reports
-            {savedReports.length > 0 && (
-              <span className="bg-blue-100 text-blue-700 rounded-full w-6 h-6 flex items-center justify-center text-xs">
-                {savedReports.length}
-              </span>
-            )}
-          </Button>
-        </Link>
       </div>
       
       {saveSuccess && (
         <div className="mb-6 p-4 bg-green-50 border border-green-100 rounded-lg text-green-700">
-          Report saved successfully for Event #{formData.eventNumber}
+          Report created successfully for Event #{formData.eventNumber}
         </div>
       )}
       
@@ -423,8 +483,8 @@ export default function ResponderForm() {
         
         <div className="flex justify-between">
           <Button type="submit" className="flex items-center gap-2">
-            <Save className="w-4 h-4" />
-            Save Report
+            <Send className="w-4 h-4" />
+            Send Report
           </Button>
           
           <Link href="/">
