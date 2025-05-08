@@ -11,10 +11,14 @@ export interface GuideData {
   title: { en: string; sw: string };      // Display title of the guide
   description: { en: string; sw: string }; // Brief description shown in list and metadata
   image?: string;     // URL to guide image (can be placeholder)
+  audioEnPath?: string; // Path to English audio for the title
+  audioSwPath?: string; // Path to Swahili audio for the title
+  descriptionAudioEnPath?: string; // Path to English audio for the description
+  descriptionAudioSwPath?: string; // Path to Swahili audio for the description
   steps: GuideStep[];    // Array of step instructions for the interactive checklist
-  dangerWarnings?: { en: string; sw: string }[]; // Things NOT to do (displayed in red)
-  criticalSigns?: { en: string; sw: string }[]; // Important signs or notes (displayed in blue)
-  additionalInfo?: { en: string; sw: string }; // Any additional helpful information (displayed in green)
+  dangerWarnings?: DangerWarning[]; // Things NOT to do (displayed in red)
+  criticalSigns?: CriticalSign[]; // Important signs or notes (displayed in blue)
+  additionalInfo?: AdditionalInfo; // Any additional helpful information (displayed in green)
 }
 
 // Step interface with optional video
@@ -23,6 +27,30 @@ export interface GuideStep {
   videoId?: string;      // Optional video ID that demonstrates this step
   audioEnPath?: string; // Optional path to the English audio file
   audioSwPath?: string; // Optional path to the Swahili audio file
+}
+
+// Danger warning interface with audio
+export interface DangerWarning {
+  en: string;
+  sw: string;
+  audioEnPath?: string;
+  audioSwPath?: string;
+}
+
+// Critical sign interface with audio
+export interface CriticalSign {
+  en: string;
+  sw: string;
+  audioEnPath?: string;
+  audioSwPath?: string;
+}
+
+// Additional info interface with audio
+export interface AdditionalInfo {
+  en: string;
+  sw: string;
+  audioEnPath?: string;
+  audioSwPath?: string;
 }
 
 // Function to fetch all guides
