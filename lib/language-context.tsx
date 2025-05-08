@@ -122,6 +122,57 @@ type Translations = {
     responderForm: string
     submitEmergencyReports: string
     learnSkillsDescription: string
+    // New translations for responder form
+    emergencyResponderForm: string
+    completeAfterResponding: string
+    eventNumber: string
+    accidentType: string
+    equipmentUsed: string
+    injuryAndService: string
+    firstAidInitiated: string
+    callerUsedApp: string
+    receivingFacility: string
+    receivingFacilityName: string
+    receivingStaffName: string
+    staffId: string
+    feedback: string
+    responseTimeRating: string
+    serviceSatisfactionRating: string
+    equipmentAdequacyRating: string
+    additionalComments: string
+    selectAccidentType: string
+    selectRating: string
+    verySlow: string
+    slow: string
+    average: string
+    fast: string
+    veryFast: string
+    veryDissatisfied: string
+    dissatisfied: string
+    neutral: string
+    satisfied: string
+    verySatisfied: string
+    veryInadequate: string
+    inadequate: string
+    adequate: string
+    good: string
+    excellent: string
+    yes: string
+    no: string
+    unknown: string
+    pleaseEnterEventNumber: string
+    reportCreatedSuccessfully: string
+    basicInformation: string
+    equipmentAndService: string
+    sendReport: string
+    backToHome: string
+    notSpecified: string
+    emergencyReport: string
+    for: string
+    event: string
+    csvAttachmentMessage: string
+    automatedMessage: string
+    other: string
   }
 }
 
@@ -265,6 +316,57 @@ const translations: Translations = {
     responderForm: "Responder Form",
     submitEmergencyReports: "Submit Emergency Reports",
     learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
+    // New translations for responder form
+    emergencyResponderForm: "Emergency Responder Form",
+    completeAfterResponding: "Complete this form after responding to an emergency call",
+    eventNumber: "Event Number (ID)",
+    accidentType: "Type of Accident",
+    equipmentUsed: "Equipment Used",
+    injuryAndService: "Injury & Service Provided",
+    firstAidInitiated: "First Aid Initiated",
+    callerUsedApp: "Caller Used App",
+    receivingFacility: "Receiving Facility",
+    receivingFacilityName: "Receiving Facility Name",
+    receivingStaffName: "Receiving Staff Name",
+    staffId: "Staff ID",
+    feedback: "Feedback",
+    responseTimeRating: "Response Time Rating",
+    serviceSatisfactionRating: "Service Satisfaction Rating",
+    equipmentAdequacyRating: "Equipment Adequacy Rating",
+    additionalComments: "Additional Comments",
+    selectAccidentType: "Select accident type",
+    selectRating: "Select rating",
+    verySlow: "Very Slow",
+    slow: "Slow",
+    average: "Average",
+    fast: "Fast",
+    veryFast: "Very Fast",
+    veryDissatisfied: "Very Dissatisfied",
+    dissatisfied: "Dissatisfied",
+    neutral: "Neutral",
+    satisfied: "Satisfied",
+    verySatisfied: "Very Satisfied",
+    veryInadequate: "Very Inadequate",
+    inadequate: "Inadequate",
+    adequate: "Adequate",
+    good: "Good",
+    excellent: "Excellent",
+    yes: "Yes",
+    no: "No",
+    unknown: "Unknown",
+    pleaseEnterEventNumber: "Please enter an Event Number",
+    reportCreatedSuccessfully: "Report created successfully for Event",
+    basicInformation: "Basic Information",
+    equipmentAndService: "Equipment & Service",
+    sendReport: "Send Report",
+    backToHome: "Back to Home",
+    notSpecified: "Not specified",
+    emergencyReport: "Emergency Report",
+    for: "for",
+    event: "Event",
+    csvAttachmentMessage: "Please find the attached CSV file with complete emergency report details.",
+    automatedMessage: "This is an automated report sent from the Tanzania Emergency App.",
+    other: "Other",
   },
   sw: {
     guide: "Mwongozo wa dharura",
@@ -404,6 +506,57 @@ const translations: Translations = {
     responderForm: "Fomu ya Mwitikiaji",
     submitEmergencyReports: "Wasilisha Ripoti za Dharura",
     learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
+    // New translations for responder form
+    emergencyResponderForm: "Fomu ya Mwitikiaji wa Dharura",
+    completeAfterResponding: "Jaza fomu hii baada ya kuitikia simu ya dharura",
+    eventNumber: "Namba ya Tukio (ID)",
+    accidentType: "Aina ya Ajali",
+    equipmentUsed: "Vifaa Vilivyotumika",
+    injuryAndService: "Jeraha na Huduma Iliyotolewa",
+    firstAidInitiated: "Huduma ya Kwanza Ilianzishwa",
+    callerUsedApp: "Mpigaji Simu Alitumia Programu",
+    receivingFacility: "Kituo cha Mapokezi",
+    receivingFacilityName: "Jina la Kituo cha Mapokezi",
+    receivingStaffName: "Jina la Mtoa Huduma",
+    staffId: "Namba ya Mtoa Huduma",
+    feedback: "Maoni",
+    responseTimeRating: "Tathmini ya Muda wa Kuitikia",
+    serviceSatisfactionRating: "Tathmini ya Kuridhika na Huduma",
+    equipmentAdequacyRating: "Tathmini ya Utoshelezaji wa Vifaa",
+    additionalComments: "Maoni ya Ziada",
+    selectAccidentType: "Chagua aina ya ajali",
+    selectRating: "Chagua tathmini",
+    verySlow: "Polepole Sana",
+    slow: "Polepole",
+    average: "Wastani",
+    fast: "Haraka",
+    veryFast: "Haraka Sana",
+    veryDissatisfied: "Sijarudhika Kabisa",
+    dissatisfied: "Sijarudhika",
+    neutral: "Wastani",
+    satisfied: "Nimerudhika",
+    verySatisfied: "Nimerudhika Sana",
+    veryInadequate: "Hayatoshi Kabisa",
+    inadequate: "Hayatoshi",
+    adequate: "Yanatoshea",
+    good: "Mazuri",
+    excellent: "Bora Sana",
+    yes: "Ndio",
+    no: "Hapana",
+    unknown: "Sijui",
+    pleaseEnterEventNumber: "Tafadhali ingiza Namba ya Tukio",
+    reportCreatedSuccessfully: "Ripoti imeundwa kwa mafanikio kwa Tukio",
+    basicInformation: "Taarifa za Msingi",
+    equipmentAndService: "Vifaa na Huduma",
+    sendReport: "Tuma Ripoti",
+    backToHome: "Rudi Nyumbani",
+    notSpecified: "Haijabainishwa",
+    emergencyReport: "Ripoti ya Dharura",
+    for: "kwa",
+    event: "Tukio",
+    csvAttachmentMessage: "Tafadhali pata faili iliyoambatishwa ya CSV ikiwa na maelezo kamili ya ripoti ya dharura.",
+    automatedMessage: "Hii ni ripoti ya moja kwa moja kutoka kwenye Programu ya Dharura ya Tanzania.",
+    other: "Nyingine",
   },
 }
 

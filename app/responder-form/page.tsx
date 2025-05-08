@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Send } from "lucide-react"
 import Link from "next/link"
-// import { useLanguage } from "@/lib/language-context" // Removed useLanguage
+import { useLanguage } from "@/lib/language-context" // Uncommented useLanguage
 
 // Form data interface
 interface ResponderFormData {
@@ -30,7 +30,7 @@ interface ResponderFormData {
 
 export default function ResponderForm() {
   // const router = useRouter() // Removed router
-  // const { tString } = useLanguage() // Removed tString
+  const { tString } = useLanguage() // Uncommented tString
   
   // Initialize form with empty values
   const initialFormData: ResponderFormData = {
@@ -135,7 +135,7 @@ export default function ResponderForm() {
     e.preventDefault()
     
     if (!formData.eventNumber) {
-      alert("Please enter an Event Number")
+      alert(tString("pleaseEnterEventNumber"))
       return
     }
     
@@ -152,27 +152,27 @@ export default function ResponderForm() {
     
     // Get accident type label for the email
     const accidentTypeLabels: Record<string, string> = {
-      "traffic": "Traffic Accident",
-      "burn": "Burns",
-      "snakeBite": "Snake Bite",
-      "drowning": "Drowning",
-      "other": "Other"
+      "traffic": tString("trafficAccident"),
+      "burn": tString("burns"),
+      "snakeBite": tString("snakeBite"),
+      "drowning": tString("drowning"),
+      "other": tString("other")
     };
-    const accidentTypeLabel = accidentTypeLabels[formData.accidentType] || "Unspecified";
+    const accidentTypeLabel = accidentTypeLabels[formData.accidentType] || tString("notSpecified");
     
     // Create more detailed email content
-    const subject = encodeURIComponent(`Emergency Report #${formData.eventNumber} - ${accidentTypeLabel}`);
+    const subject = encodeURIComponent(`${tString("emergencyReport")} #${formData.eventNumber} - ${accidentTypeLabel}`);
     const bodyContent = [
-      `Emergency Report for Event #${formData.eventNumber}`,
+      `${tString("emergencyReport")} ${tString("for")} ${tString("event")} #${formData.eventNumber}`,
       "",
-      `Accident Type: ${accidentTypeLabel}`,
-      `Location: ${formData.location || "Not specified"}`,
-      `First Aid Initiated: ${formData.firstAidInitiated === "yes" ? "Yes" : "No"}`,
-      `Equipment Used: ${formData.equipmentUsed ? formData.equipmentUsed.substring(0, 50) + (formData.equipmentUsed.length > 50 ? "..." : "") : "Not specified"}`,
+      `${tString("accidentType")}: ${accidentTypeLabel}`,
+      `${tString("location")}: ${formData.location || tString("notSpecified")}`,
+      `${tString("firstAidInitiated")}: ${formData.firstAidInitiated === "yes" ? tString("yes") : tString("no")}`,
+      `${tString("equipmentUsed")}: ${formData.equipmentUsed ? formData.equipmentUsed.substring(0, 50) + (formData.equipmentUsed.length > 50 ? "..." : "") : tString("notSpecified")}`,
       "",
-      "Please find the attached CSV file with complete emergency report details.",
+      tString("csvAttachmentMessage"),
       "",
-      "This is an automated report sent from the Tanzania Emergency App."
+      tString("automatedMessage")
     ].join("\n");
     
     const body = encodeURIComponent(bodyContent);
@@ -199,25 +199,25 @@ export default function ResponderForm() {
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-6">
         <div>
-          <h1 className="text-2xl font-bold mb-2">Emergency Responder Form</h1>
-          <p className="text-gray-600">Complete this form after responding to an emergency call</p>
+          <h1 className="text-2xl font-bold mb-2">{tString("emergencyResponderForm")}</h1>
+          <p className="text-gray-600">{tString("completeAfterResponding")}</p>
         </div>
       </div>
       
       {saveSuccess && (
         <div className="mb-6 p-4 bg-green-50 border border-green-100 rounded-lg text-green-700">
-          Report created successfully for Event #{formData.eventNumber}
+          {tString("reportCreatedSuccessfully")} #{formData.eventNumber}
         </div>
       )}
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-4 p-6 bg-white rounded-lg border">
-          <h2 className="text-lg font-semibold border-b pb-2">Basic Information</h2>
+          <h2 className="text-lg font-semibold border-b pb-2">{tString("basicInformation")}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="eventNumber" className="block text-sm font-medium">
-                Event Number (ID Namba ya tukio) *
+                {tString("eventNumber")} *
               </label>
               <Input
                 id="eventNumber"
@@ -230,7 +230,7 @@ export default function ResponderForm() {
             
             <div className="space-y-2">
               <label htmlFor="location" className="block text-sm font-medium">
-                Location (Eneo la tukio)
+                {tString("location")}
               </label>
               <Input
                 id="location"
@@ -243,7 +243,7 @@ export default function ResponderForm() {
           
           <div className="space-y-2">
             <label htmlFor="accidentType" className="block text-sm font-medium">
-              Type of Accident (Aina ya Ajali)
+              {tString("accidentType")}
             </label>
             <select
               id="accidentType"
@@ -252,22 +252,22 @@ export default function ResponderForm() {
               onChange={handleChange}
               className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
-              <option value="">Select accident type</option>
-              <option value="traffic">Traffic Accident (Ajali ya Barabarani)</option>
-              <option value="burn">Burns (Kuungua)</option>
-              <option value="snakeBite">Snake Bite (Kuumwa na Nyoka)</option>
-              <option value="drowning">Drowning (Kuzama)</option>
-              <option value="other">Other (Nyingine)</option>
+              <option value="">{tString("selectAccidentType")}</option>
+              <option value="traffic">{tString("trafficAccident")}</option>
+              <option value="burn">{tString("burns")}</option>
+              <option value="snakeBite">{tString("snakeBite")}</option>
+              <option value="drowning">{tString("drowning")}</option>
+              <option value="other">{tString("other")}</option>
             </select>
           </div>
         </div>
         
         <div className="space-y-4 p-6 bg-white rounded-lg border">
-          <h2 className="text-lg font-semibold border-b pb-2">Equipment & Service</h2>
+          <h2 className="text-lg font-semibold border-b pb-2">{tString("equipmentAndService")}</h2>
           
           <div className="space-y-2">
             <label htmlFor="equipmentUsed" className="block text-sm font-medium">
-              Equipment Used (Aina ya Vifaa na Idadi)
+              {tString("equipmentUsed")}
             </label>
             <textarea
               id="equipmentUsed"
@@ -281,7 +281,7 @@ export default function ResponderForm() {
           
           <div className="space-y-2">
             <label htmlFor="injuryAndService" className="block text-sm font-medium">
-              Injury & Service Provided (Jeraha & Huduma)
+              {tString("injuryAndService")}
             </label>
             <textarea
               id="injuryAndService"
@@ -294,7 +294,7 @@ export default function ResponderForm() {
           </div>
           
           <div className="space-y-2">
-            <p className="block text-sm font-medium">First aid initiated?</p>
+            <p className="block text-sm font-medium">{tString("firstAidInitiated")}?</p>
             <div className="flex space-x-4">
               <label className="flex items-center">
                 <input
@@ -305,7 +305,7 @@ export default function ResponderForm() {
                   onChange={() => handleRadioChange("firstAidInitiated", "yes")}
                   className="mr-2"
                 />
-                Yes
+                {tString("yes")}
               </label>
               <label className="flex items-center">
                 <input
@@ -316,13 +316,13 @@ export default function ResponderForm() {
                   onChange={() => handleRadioChange("firstAidInitiated", "no")}
                   className="mr-2"
                 />
-                No
+                {tString("no")}
               </label>
             </div>
           </div>
           
           <div className="space-y-2">
-            <p className="block text-sm font-medium">Caller used app?</p>
+            <p className="block text-sm font-medium">{tString("callerUsedApp")}?</p>
             <div className="flex space-x-4">
               <label className="flex items-center">
                 <input
@@ -333,7 +333,7 @@ export default function ResponderForm() {
                   onChange={() => handleRadioChange("callerUsedApp", "yes")}
                   className="mr-2"
                 />
-                Yes
+                {tString("yes")}
               </label>
               <label className="flex items-center">
                 <input
@@ -344,7 +344,7 @@ export default function ResponderForm() {
                   onChange={() => handleRadioChange("callerUsedApp", "no")}
                   className="mr-2"
                 />
-                No
+                {tString("no")}
               </label>
               <label className="flex items-center">
                 <input
@@ -355,19 +355,19 @@ export default function ResponderForm() {
                   onChange={() => handleRadioChange("callerUsedApp", "unknown")}
                   className="mr-2"
                 />
-                Unknown
+                {tString("unknown")}
               </label>
             </div>
           </div>
         </div>
         
         <div className="space-y-4 p-6 bg-white rounded-lg border">
-          <h2 className="text-lg font-semibold border-b pb-2">Receiving Facility</h2>
+          <h2 className="text-lg font-semibold border-b pb-2">{tString("receivingFacility")}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="receivingFacilityName" className="block text-sm font-medium">
-                Receiving Facility Name (Jina la kituo cha afya)
+                {tString("receivingFacilityName")}
               </label>
               <Input
                 id="receivingFacilityName"
@@ -379,7 +379,7 @@ export default function ResponderForm() {
             
             <div className="space-y-2">
               <label htmlFor="receivingStaffName" className="block text-sm font-medium">
-                Receiving Staff Name (Aliyempokea majeruhi)
+                {tString("receivingStaffName")}
               </label>
               <Input
                 id="receivingStaffName"
@@ -392,7 +392,7 @@ export default function ResponderForm() {
           
           <div className="space-y-2">
             <label htmlFor="receivingStaffId" className="block text-sm font-medium">
-              Staff ID (Namba ya mtoa huduma ya afya)
+              {tString("staffId")}
             </label>
             <Input
               id="receivingStaffId"
@@ -404,11 +404,11 @@ export default function ResponderForm() {
         </div>
         
         <div className="space-y-4 p-6 bg-white rounded-lg border">
-          <h2 className="text-lg font-semibold border-b pb-2">Feedback</h2>
+          <h2 className="text-lg font-semibold border-b pb-2">{tString("feedback")}</h2>
           
           <div className="space-y-2">
             <label htmlFor="feedback.responseTime" className="block text-sm font-medium">
-              Response Time Rating (1-5)
+              {tString("responseTimeRating")} (1-5)
             </label>
             <select
               id="feedback.responseTime"
@@ -417,18 +417,18 @@ export default function ResponderForm() {
               onChange={handleChange}
               className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
-              <option value="">Select rating</option>
-              <option value="1">1 - Very Slow</option>
-              <option value="2">2 - Slow</option>
-              <option value="3">3 - Average</option>
-              <option value="4">4 - Fast</option>
-              <option value="5">5 - Very Fast</option>
+              <option value="">{tString("selectRating")}</option>
+              <option value="1">1 - {tString("verySlow")}</option>
+              <option value="2">2 - {tString("slow")}</option>
+              <option value="3">3 - {tString("average")}</option>
+              <option value="4">4 - {tString("fast")}</option>
+              <option value="5">5 - {tString("veryFast")}</option>
             </select>
           </div>
           
           <div className="space-y-2">
             <label htmlFor="feedback.serviceSatisfaction" className="block text-sm font-medium">
-              Service Satisfaction Rating (1-5)
+              {tString("serviceSatisfactionRating")} (1-5)
             </label>
             <select
               id="feedback.serviceSatisfaction"
@@ -437,18 +437,18 @@ export default function ResponderForm() {
               onChange={handleChange}
               className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
-              <option value="">Select rating</option>
-              <option value="1">1 - Very Dissatisfied</option>
-              <option value="2">2 - Dissatisfied</option>
-              <option value="3">3 - Neutral</option>
-              <option value="4">4 - Satisfied</option>
-              <option value="5">5 - Very Satisfied</option>
+              <option value="">{tString("selectRating")}</option>
+              <option value="1">1 - {tString("veryDissatisfied")}</option>
+              <option value="2">2 - {tString("dissatisfied")}</option>
+              <option value="3">3 - {tString("neutral")}</option>
+              <option value="4">4 - {tString("satisfied")}</option>
+              <option value="5">5 - {tString("verySatisfied")}</option>
             </select>
           </div>
           
           <div className="space-y-2">
             <label htmlFor="feedback.equipment" className="block text-sm font-medium">
-              Equipment Adequacy Rating (1-5)
+              {tString("equipmentAdequacyRating")} (1-5)
             </label>
             <select
               id="feedback.equipment"
@@ -457,18 +457,18 @@ export default function ResponderForm() {
               onChange={handleChange}
               className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
-              <option value="">Select rating</option>
-              <option value="1">1 - Very Inadequate</option>
-              <option value="2">2 - Inadequate</option>
-              <option value="3">3 - Adequate</option>
-              <option value="4">4 - Good</option>
-              <option value="5">5 - Excellent</option>
+              <option value="">{tString("selectRating")}</option>
+              <option value="1">1 - {tString("veryInadequate")}</option>
+              <option value="2">2 - {tString("inadequate")}</option>
+              <option value="3">3 - {tString("adequate")}</option>
+              <option value="4">4 - {tString("good")}</option>
+              <option value="5">5 - {tString("excellent")}</option>
             </select>
           </div>
           
           <div className="space-y-2">
             <label htmlFor="feedback.comments" className="block text-sm font-medium">
-              Additional Comments
+              {tString("additionalComments")}
             </label>
             <textarea
               id="feedback.comments"
@@ -484,11 +484,11 @@ export default function ResponderForm() {
         <div className="flex justify-between">
           <Button type="submit" className="flex items-center gap-2">
             <Send className="w-4 h-4" />
-            Send Report
+            {tString("sendReport")}
           </Button>
           
           <Link href="/">
-            <Button variant="outline">Back to Home</Button>
+            <Button variant="outline">{tString("backToHome")}</Button>
           </Link>
         </div>
       </form>
