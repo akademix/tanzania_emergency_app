@@ -1,4 +1,4 @@
-// Service Worker for First Aid App
+// Service Worker for First aid app
 
 const CACHE_NAME = 'first-aid-app-v1';
 const urlsToCache = [

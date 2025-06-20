@@ -58,7 +58,7 @@ export function Footer() {
         </div>
         
         <div className="border-t mt-8 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Tanzania Emergency First Aid App</p>
+          <p>&copy; {new Date().getFullYear()} Tanzania Emergency First aid app</p>
         </div>
       </div>
     </footer>

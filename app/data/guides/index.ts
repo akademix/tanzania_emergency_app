@@ -61,7 +61,7 @@ export async function getAllGuides(): Promise<GuideData[]> {
   // When adding a new guide module:
   // 1. Create a new TypeScript file in this directory (e.g., new-guide.ts)
   // 2. Add the ID (filename without extension) to this array
-  const guideIds = ['burns', 'traffic-accident', 'snake-bite', 'fire-emergency'];
+  const guideIds = ['burns', 'traffic-accident', 'snake-bite'];
   
   try {
     // Dynamically import all guides by ID

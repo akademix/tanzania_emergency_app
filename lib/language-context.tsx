@@ -15,12 +15,23 @@ type Translations = {
     disable: string
     address: string
     coordinates: string
+    getAddressAndCoordinates: string
     fetchingAddress: string
     fetchingCoordinates: string
     waitingLocation: string
     firstAid: string
     firstAidFor: string
     back: string
+    emergencyGuidesTitle: string
+    stepByStepInstructions: string
+    emergencyFirstAidSteps: string
+    loadingGuides: string
+    pleaseWaitLoadingGuides: string
+    followStepByStepInstructions: string
+    progress: string
+    of: string
+    completed: string
+    step: string
     trafficAccident: string
     snakeBite: string
     fireEmergency: string
@@ -127,21 +138,24 @@ type Translations = {
     completeAfterResponding: string
     eventNumber: string
     accidentType: string
+    selectAccidentType: string
     equipmentUsed: string
-    injuryAndService: string
+    injuryAndServiceDetails: string
     firstAidInitiated: string
     callerUsedApp: string
     receivingFacility: string
-    receivingFacilityName: string
-    receivingStaffName: string
+    facilityName: string
+    staffName: string
     staffId: string
     feedback: string
     responseTimeRating: string
     serviceSatisfactionRating: string
     equipmentAdequacyRating: string
     additionalComments: string
-    selectAccidentType: string
     selectRating: string
+    trafficAccidentOption: string
+    snakeBiteOption: string
+    drowningOption: string
     verySlow: string
     slow: string
     average: string
@@ -182,17 +196,28 @@ const translations: Translations = {
     quickReference: "Quick reference",
     emergency: "Call emergency",
     emergencyNumber: "Dial 0800 750 112",
-    location: "My Location",
+    location: "My location",
     enable: "Enable",
     disable: "Disable",
     address: "Address",
     coordinates: "GPS Coordinates",
+    getAddressAndCoordinates: "Get address and GPS coordinates",
     fetchingAddress: "Fetching address...",
     fetchingCoordinates: "Fetching coordinates...",
     waitingLocation: "Waiting for location data...",
-    firstAid: "First Aid",
-    firstAidFor: "First Aid for",
+    firstAid: "First aid",
+    firstAidFor: "First aid for",
     back: "Back",
+    emergencyGuidesTitle: "Emergency guides",
+    stepByStepInstructions: "Step-by-step first aid instructions",
+    emergencyFirstAidSteps: "Emergency first aid steps",
+    loadingGuides: "Loading guides...",
+    pleaseWaitLoadingGuides: "Please wait while we load the emergency guides.",
+    followStepByStepInstructions: "Follow these step-by-step instructions",
+    progress: "Progress",
+    of: "of",
+    completed: "completed",
+    step: "Step",
     trafficAccident: "Traffic Accident",
     snakeBite: "Snake Bite",
     fireEmergency: "Fire Emergency",
@@ -231,7 +256,7 @@ const translations: Translations = {
         "Try to remember or safely photograph the snake for identification",
       ],
     },
-    firstAidLocations: "First Aid Locations",
+    firstAidLocations: "First aid locations",
     findNearbyLocations: "Find nearby locations",
     immediateActions: "Immediate Actions",
     resetProgress: "Reset Progress",
@@ -256,9 +281,9 @@ const translations: Translations = {
     yourEmergencyContacts: "Your Emergency Contacts",
     noContactsYet: "No contacts added yet",
     addYourFirstContact: "Add your first emergency contact",
-    firstAidApp: "First Aid App",
+    firstAidApp: "First aid app",
     appDescription: "A comprehensive first aid guide application designed to help you prepare for emergencies.",
-    copyRight: "© 2023 First Aid App. All rights reserved.",
+    copyRight: "© 2023 First aid app. All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     quickLinks: "Quick Links",
@@ -297,7 +322,7 @@ const translations: Translations = {
     emailAddress: "Email Address",
     subscribe: "Subscribe",
     settings: "Settings",
-    emergencyServices: "Emergency Services",
+    emergencyServices: "Emergency services",
     fireEmergencyTitle: "Fire Emergency",
     fireEmergencyDescription: "Steps to take during a fire emergency",
     videoPlayerError: "Error playing video",
@@ -313,8 +338,8 @@ const translations: Translations = {
     videoDialogTitle: "Video Tutorial",
     videoDialogDescription: "Watch this tutorial for more information",
     closeButton: "Close",
-    responderForm: "Responder Form",
-    submitEmergencyReports: "Submit Emergency Reports",
+    responderForm: "Responder form",
+    submitEmergencyReports: "Submit emergency reports",
     learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
     // New translations for responder form
     emergencyResponderForm: "Emergency Responder Form",
@@ -322,12 +347,12 @@ const translations: Translations = {
     eventNumber: "Event Number (ID)",
     accidentType: "Type of Accident",
     equipmentUsed: "Equipment Used",
-    injuryAndService: "Injury & Service Provided",
-    firstAidInitiated: "First Aid Initiated",
-    callerUsedApp: "Caller Used App",
-    receivingFacility: "Receiving Facility",
-    receivingFacilityName: "Receiving Facility Name",
-    receivingStaffName: "Receiving Staff Name",
+    injuryAndServiceDetails: "Injury & service details",
+    firstAidInitiated: "First aid initiated",
+    callerUsedApp: "Caller used app",
+    receivingFacility: "Receiving facility",
+    facilityName: "Facility name",
+    staffName: "Staff name",
     staffId: "Staff ID",
     feedback: "Feedback",
     responseTimeRating: "Response Time Rating",
@@ -336,6 +361,9 @@ const translations: Translations = {
     additionalComments: "Additional Comments",
     selectAccidentType: "Select accident type",
     selectRating: "Select rating",
+    trafficAccidentOption: "Traffic accident",
+    snakeBiteOption: "Snake bite",
+    drowningOption: "Drowning",
     verySlow: "Very Slow",
     slow: "Slow",
     average: "Average",
@@ -356,12 +384,12 @@ const translations: Translations = {
     unknown: "Unknown",
     pleaseEnterEventNumber: "Please enter an Event Number",
     reportCreatedSuccessfully: "Report created successfully for Event",
-    basicInformation: "Basic Information",
-    equipmentAndService: "Equipment & Service",
-    sendReport: "Send Report",
-    backToHome: "Back to Home",
+    basicInformation: "Basic information",
+    equipmentAndService: "Equipment & service",
+    sendReport: "Send report",
+    backToHome: "Back to home",
     notSpecified: "Not specified",
-    emergencyReport: "Emergency Report",
+    emergencyReport: "Emergency report",
     for: "for",
     event: "Event",
     csvAttachmentMessage: "Please find the attached CSV file with complete emergency report details.",
@@ -373,17 +401,28 @@ const translations: Translations = {
     quickReference: "Rejea ya haraka",
     emergency: "Piga simu ya dharura",
     emergencyNumber: "Piga 0800 750 112",
-    location: "Mahali Pangu",
+    location: "Mahali pangu",
     enable: "Wezesha",
     disable: "Zima",
     address: "Anwani",
     coordinates: "Vipimo vya GPS",
+    getAddressAndCoordinates: "Pata anwani na vipimo vya GPS",
     fetchingAddress: "Inaleta anwani...",
     fetchingCoordinates: "Inaleta vipimo...",
     waitingLocation: "Inasubiri data ya mahali...",
     firstAid: "Huduma ya Kwanza",
-    firstAidFor: "Huduma ya Kwanza kwa",
+    firstAidFor: "Huduma ya kwanza kwa",
     back: "Rudi",
+    emergencyGuidesTitle: "Miongozo ya dharura",
+    stepByStepInstructions: "Maelekezo ya hatua kwa hatua ya huduma ya kwanza",
+    emergencyFirstAidSteps: "Hatua za huduma ya kwanza za dharura",
+    loadingGuides: "Inapakia miongozo...",
+    pleaseWaitLoadingGuides: "Tafadhali subiri tunapoipakia miongozo ya dharura.",
+    followStepByStepInstructions: "Fuata maelekezo haya ya hatua kwa hatua",
+    progress: "Maendeleo",
+    of: "ya",
+    completed: "yamekamilika",
+    step: "Hatua",
     trafficAccident: "Ajali ya Barabarani",
     snakeBite: "Kuumwa na Nyoka",
     fireEmergency: "Dharura ya Moto",
@@ -487,7 +526,7 @@ const translations: Translations = {
     emailAddress: "Anwani ya Barua pepe",
     subscribe: "Jiandikishe",
     settings: "Mipangilio",
-    emergencyServices: "Huduma za Dharura",
+    emergencyServices: "Huduma za dharura",
     fireEmergencyTitle: "Dharura ya Moto",
     fireEmergencyDescription: "Hatua za kuchukua wakati wa dharura ya moto",
     videoPlayerError: "Hitilafu katika kucheza video",
@@ -503,8 +542,8 @@ const translations: Translations = {
     videoDialogTitle: "Mafunzo ya Video",
     videoDialogDescription: "Tazama mafunzo haya kwa taarifa zaidi",
     closeButton: "Funga",
-    responderForm: "Fomu ya Mwitikiaji",
-    submitEmergencyReports: "Wasilisha Ripoti za Dharura",
+    responderForm: "Fomu ya mwitikiaji",
+    submitEmergencyReports: "Wasilisha ripoti za dharura",
     learnSkillsDescription: "Access training materials and improve your first aid knowledge.",
     // New translations for responder form
     emergencyResponderForm: "Fomu ya Mwitikiaji wa Dharura",
@@ -512,12 +551,12 @@ const translations: Translations = {
     eventNumber: "Namba ya Tukio (ID)",
     accidentType: "Aina ya Ajali",
     equipmentUsed: "Vifaa Vilivyotumika",
-    injuryAndService: "Jeraha na Huduma Iliyotolewa",
+    injuryAndServiceDetails: "Maelezo ya jeraha na huduma",
     firstAidInitiated: "Huduma ya Kwanza Ilianzishwa",
     callerUsedApp: "Mpigaji Simu Alitumia Programu",
     receivingFacility: "Kituo cha Mapokezi",
-    receivingFacilityName: "Jina la Kituo cha Mapokezi",
-    receivingStaffName: "Jina la Mtoa Huduma",
+    facilityName: "Jina la Kituo cha Mapokezi",
+    staffName: "Jina la Mtoa Huduma",
     staffId: "Namba ya Mtoa Huduma",
     feedback: "Maoni",
     responseTimeRating: "Tathmini ya Muda wa Kuitikia",
@@ -526,6 +565,9 @@ const translations: Translations = {
     additionalComments: "Maoni ya Ziada",
     selectAccidentType: "Chagua aina ya ajali",
     selectRating: "Chagua tathmini",
+    trafficAccidentOption: "Ajali ya barabarani",
+    snakeBiteOption: "Kuumwa na nyoka",
+    drowningOption: "Kuzama",
     verySlow: "Polepole Sana",
     slow: "Polepole",
     average: "Wastani",

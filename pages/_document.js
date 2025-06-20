@@ -4,10 +4,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="application-name" content="First Aid Training App" />
+        <meta name="application-name" content="First aid training app" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="First Aid" />
+        <meta name="apple-mobile-web-app-title" content="First aid" />
         <meta name="description" content="Learn essential first aid skills and access emergency guides" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />

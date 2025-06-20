@@ -1,7 +1,7 @@
 import { Metadata, Viewport } from "next"
 
 export const metadata: Metadata = {
-  title: "Emergency Guides | First Aid App",
+  title: "Emergency Guides | First aid app",
   description: "Quick access to essential first aid guides for emergency situations"
 }
 

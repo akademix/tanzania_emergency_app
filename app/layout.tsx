@@ -7,8 +7,8 @@ import { LanguageProvider } from "@/lib/language-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "First Aid App",
-  description: "Emergency first aid application with location services",
+  title: "First aid",
+  description: "Emergency Response - Professional first aid application with location services",
   manifest: "/manifest.json",
   icons: [
     { rel: "icon", url: "/logo.svg", type: "image/svg+xml" },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 // Move themeColor and viewport to viewport export per Next.js 15.2.0+ recommendations
 export const viewport: Viewport = {
-  themeColor: "#3b82f6",
+  themeColor: "#1e293b",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -35,14 +35,14 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="First Aid App" />
+        <meta name="apple-mobile-web-app-title" content="First aid" />
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </head>
-      <body className={`${inter.className} bg-gray-50 min-h-screen`} suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900`} suppressHydrationWarning>
         <LanguageProvider>
           <Header />
-          <main className="py-8">{children}</main>
+          <main className="py-6 px-4">{children}</main>
         </LanguageProvider>
         {/* Service worker is registered in the PWAInstaller component */}
       </body>

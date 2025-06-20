@@ -23,20 +23,20 @@ export async function generateMetadata(
   // Defensively get English strings for metadata
   const titleString = guide.title && typeof guide.title === 'object' && guide.title.en 
     ? guide.title.en 
-    : 'First Aid Guide'; // Fallback title
+    : 'First aid guide'; // Fallback title
   const descriptionString = guide.description && typeof guide.description === 'object' && guide.description.en
     ? guide.description.en
     : 'Emergency first aid information'; // Fallback description
   
   return {
-    title: `${titleString} | First Aid Guide`,
+    title: `${titleString} | First aid`,
     description: descriptionString
   }
 }
 
 // Define viewport export for Next.js 15.2.0+ compatibility
 export const viewport: Viewport = {
-  themeColor: '#4F46E5',
+  themeColor: '#1e293b',
 }
 
 // The page component
@@ -53,7 +53,7 @@ export default async function GuidePage(
   }
   
   return (
-    <div className="max-w-2xl mx-auto px-4">
+    <div className="max-w-md mx-auto px-4">
       <BackButton />
       <GuideContent guide={guide} />
     </div>

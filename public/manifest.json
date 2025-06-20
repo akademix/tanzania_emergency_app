@@ -1,6 +1,6 @@
 {
-  "name": "First Aid App",
-  "short_name": "First Aid",
+  "name": "First aid app",
+  "short_name": "First aid",
   "description": "Emergency first aid application with location services",
   "start_url": "/",
   "display": "standalone",

@@ -1,8 +1,8 @@
 import { GuideData } from './index';
 
-const guide: GuideData = {
+export const burnsGuide: GuideData = {
   id: 'burns',
-  title: { en: 'Burns Treatment', sw: 'Matibabu ya kuungua' },
+  title: { en: 'burns treatment', sw: 'matibabu ya kuungua' },
   description: { en: 'How to treat different types of burns', sw: 'Jinsi ya kutibu aina mbalimbali za kuungua' },
   image: 'https://placehold.co/800x400/FA5252/FFFFFF?text=Burns+Treatment',
   audioEnPath: "/audio/burns/burns_title_english.wav",
@@ -13,7 +13,7 @@ const guide: GuideData = {
     {
       instruction: { 
         en: "Ensure your own safety and call emergency services immediately, especially if:\n• Large burn area\n• Inhaled smoke/hot air\n• Burns to face/throat\n• Breathing difficulties\n\nAlways seek medical advice after treating a burn.", 
-        sw: "Hakikisha usalama wako na piga simu ya dharura mara moja, hasa ikiwa:\n • Sehemu kubwa imeungua\n• Amevuta moshi au hewa ya moto\n• Ameungua usoni au kooni\n• Ana ugumu wa kupumua\n\nDaima tafuta ushauri wa kitabibu baada ya kutibu jeraha la kuungua."
+        sw: "Hakikisha usalama wako na piga simu ya dharura mara moja, hasa ikiwa:\n• Sehemu kubwa imeungua\n• Amevuta moshi au hewa ya moto\n• Ameungua usoni au kooni\n• Ana ugumu wa kupumua\n\nDaima tafuta ushauri wa kitabibu baada ya kutibu jeraha la kuungua."
       },
       videoId: "/videos/training/Burn%20Injury/CALL%20BUTTON%20VIDEO.mp4",
       audioEnPath: "/audio/burns/burns_step1_english.wav",
@@ -142,4 +142,4 @@ const guide: GuideData = {
   }
 };
 
-export default guide; 
+export default burnsGuide; 
