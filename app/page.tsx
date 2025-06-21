@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ArrowRight, Phone, Book, FileText, Navigation, Users } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function Home() {
   const { tString } = useLanguage()
@@ -95,7 +95,10 @@ export default function Home() {
       {/* Emergency Call Section */}
       <a
         href="tel:0800750112"
-        className="block bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-[1.02] group"
+        className="block bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-[1.02] group pulse-emergency touch-target tap-highlight-none"
+        onClick={() => {
+          if (navigator.vibrate) navigator.vibrate([200, 100, 200])
+        }}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -113,7 +116,10 @@ export default function Home() {
       {/* Emergency Guides Section */}
       <Link
         href="/guide"
-        className="block bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-[1.02]"
+        className="block bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-[1.02] touch-target tap-highlight-none"
+        onClick={() => {
+          if (navigator.vibrate) navigator.vibrate(50)
+        }}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -139,7 +145,10 @@ export default function Home() {
         {/* Responder Form */}
         <Link
           href="/responder-form"
-          className="block bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20 hover:bg-white/20 transition-all duration-200"
+          className="block bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20 hover:bg-white/20 transition-all duration-200 touch-target tap-highlight-none"
+          onClick={() => {
+            if (navigator.vibrate) navigator.vibrate(30)
+          }}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">

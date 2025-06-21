@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { LanguageProvider } from "@/lib/language-context"
+import PWAInstaller from "@/components/pwa-installer"
+import { MobileNav } from "@/components/mobile-nav"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -43,6 +45,8 @@ export default function RootLayout({
         <LanguageProvider>
           <Header />
           <main className="py-6 px-4">{children}</main>
+          <MobileNav />
+          <PWAInstaller />
         </LanguageProvider>
         {/* Service worker is registered in the PWAInstaller component */}
       </body>

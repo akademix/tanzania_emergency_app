@@ -187,6 +187,9 @@ type Translations = {
     csvAttachmentMessage: string
     automatedMessage: string
     other: string
+    installApp: string
+    installAppDescription: string
+    install: string
   }
 }
 
@@ -395,6 +398,9 @@ const translations: Translations = {
     csvAttachmentMessage: "Please find the attached CSV file with complete emergency report details.",
     automatedMessage: "This is an automated report sent from the Tanzania Emergency App.",
     other: "Other",
+    installApp: "Install App",
+    installAppDescription: "Get quick access to emergency guides offline",
+    install: "Install",
   },
   sw: {
     guide: "Mwongozo wa dharura",
@@ -599,6 +605,9 @@ const translations: Translations = {
     csvAttachmentMessage: "Tafadhali pata faili iliyoambatishwa ya CSV ikiwa na maelezo kamili ya ripoti ya dharura.",
     automatedMessage: "Hii ni ripoti ya moja kwa moja kutoka kwenye Programu ya Dharura ya Tanzania.",
     other: "Nyingine",
+    installApp: "Sakinisha Programu",
+    installAppDescription: "Pata ufikiaji wa haraka wa miongozo ya dharura bila mtandao",
+    install: "Sakinisha",
   },
 }
 

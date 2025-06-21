@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from "react"
-import { CheckIcon, AlertTriangle, PlayCircle, Volume2, Pause } from "lucide-react"
+import { CheckIcon, AlertTriangle, PlayCircle, Volume2, Pause, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { useCompletedSteps } from "@/lib/useCompletedSteps"
@@ -179,6 +179,25 @@ export function GuideContent({ guide }: GuideContentProps) {
         </div>
       </div>
 
+      {/* Emergency Call Section - Always Visible */}
+      <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 backdrop-blur-sm rounded-3xl p-4 border border-red-400/30 shadow-lg shadow-red-500/20">
+        <div className="text-center mb-4">
+          <h3 className="text-lg font-bold text-white mb-1">{tString("emergency")}</h3>
+          <p className="text-red-200 text-sm">0800 750 112</p>
+        </div>
+        <a
+          href="tel:0800750112"
+          onClick={() => {
+            if (navigator.vibrate) navigator.vibrate([200, 100, 200])
+          }}
+          className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-2xl shadow-xl shadow-red-500/40 transition-all duration-300 touch-target tap-highlight-none transform hover:scale-[1.02] active:scale-95 pulse-emergency font-bold text-lg"
+          aria-label="Call emergency services now"
+        >
+          <Phone className="w-6 h-6" />
+          <span>Call Now</span>
+        </a>
+      </div>
+
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-white flex items-center gap-2">
           <AlertTriangle className="w-5 h-5 text-red-400" />
@@ -188,72 +207,125 @@ export function GuideContent({ guide }: GuideContentProps) {
         {guide.steps.map((step, index) => {
           const isPlaying = playingAudioIndex === index;
           const audioPath = language === 'sw' ? step.audioSwPath : step.audioEnPath;
+          const isCompleted = completedSteps.includes(index);
 
           return (
             <div
               key={index}
-              className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-200 ${
-                completedSteps.includes(index) 
-                  ? "border-green-400/50 bg-green-500/20" 
-                  : "border-white/20 hover:bg-white/15"
+              className={`bg-white/10 backdrop-blur-sm rounded-3xl p-6 border transition-all duration-300 transform hover:scale-[1.01] ${
+                isCompleted 
+                  ? "border-green-400/50 bg-green-500/20 shadow-lg shadow-green-500/20" 
+                  : "border-white/20 hover:bg-white/15 hover:border-white/30"
               }`}
             >
-              <div className="flex items-start gap-4">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={`p-0 w-8 h-8 mt-1 rounded-full flex-shrink-0 transition-all duration-200 ${
-                    completedSteps.includes(index)
-                      ? "bg-green-500 text-white hover:bg-green-600"
-                      : "bg-white/20 border border-white/40 text-white hover:bg-white/30"
-                  }`}
-                  onClick={() => toggleStep(index)}
-                  aria-label={completedSteps.includes(index) ? "Mark step as incomplete" : "Mark step as complete"}
-                >
-                  {completedSteps.includes(index) && <CheckIcon className="w-4 h-4" />}
-                </Button>
-                
-                <div className="flex-1 min-w-0">
-                  <div className="flex justify-between items-start gap-2 mb-3">
-                    <h3 className="text-lg font-semibold text-white">
+              {/* Step Header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  {/* Completion Toggle Button - Now first */}
+                  <button
+                    onClick={() => {
+                      toggleStep(index)
+                      if (navigator.vibrate) navigator.vibrate(isCompleted ? 30 : 50)
+                    }}
+                    className={`w-6 h-6 rounded-md transition-all duration-300 touch-target tap-highlight-none transform active:scale-95 flex items-center justify-center border-2 ${
+                      isCompleted
+                        ? "bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 shadow-lg shadow-green-500/30"
+                        : "bg-white/5 border-white/40 hover:bg-white/10 hover:border-white/60"
+                    }`}
+                    aria-label={isCompleted ? "Mark step as incomplete" : "Mark step as complete"}
+                  >
+                    {isCompleted && (
+                      <CheckIcon className="w-4 h-4 text-white" />
+                    )}
+                  </button>
+                  
+                  <div>
+                    <h3 className="text-xl font-bold text-white">
                       {tString("step")} {index + 1}
                     </h3>
-                    
-                    <div className="flex gap-2">
-                      {audioPath && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handlePlayAudio(step, index)}
-                          className="bg-white/10 hover:bg-white/20 text-white border border-white/20"
-                        >
-                          {isPlaying ? (
-                            <Pause className="w-4 h-4" />
-                          ) : (
-                            <Volume2 className="w-4 h-4" />
-                          )}
-                        </Button>
-                      )}
-                      
-                      {step.videoId && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleWatchDemo(step.videoId!, "Training Video")}
-                          className="bg-white/10 hover:bg-white/20 text-white border border-white/20"
-                        >
-                          <PlayCircle className="w-4 h-4" />
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <div className="text-white mb-3">
-                    {formatTextWithLineBreaks(
-                      step.instruction && typeof step.instruction === 'object' && language in step.instruction
-                        ? step.instruction[language as keyof typeof step.instruction] as string
-                        : ''
+                    {isCompleted && (
+                      <p className="text-green-300 text-sm font-medium">
+                        ✓ {tString("completed")}
+                      </p>
                     )}
+                  </div>
+                </div>
+
+                {/* Action Buttons - Moved to top right */}
+                <div className="flex gap-2">
+                  {/* Audio Button */}
+                  {audioPath && (
+                    <button
+                      onClick={() => {
+                        handlePlayAudio(step, index)
+                        if (navigator.vibrate) navigator.vibrate(30)
+                      }}
+                      className={`w-10 h-10 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
+                        isPlaying
+                          ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
+                          : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
+                      }`}
+                      aria-label={isPlaying ? "Pause audio" : "Play audio"}
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-4 h-4" />
+                      ) : (
+                        <Volume2 className="w-4 h-4" />
+                      )}
+                    </button>
+                  )}
+                  
+                  {/* Video Button */}
+                  {step.videoId && (
+                    <button
+                      onClick={() => {
+                        handleWatchDemo(step.videoId!, "Training Video")
+                        if (navigator.vibrate) navigator.vibrate(30)
+                      }}
+                      className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50 transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg"
+                      aria-label="Watch demonstration video"
+                    >
+                      <PlayCircle className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {/* Step Content */}
+              <div className="mb-6">
+                <div className="text-white leading-relaxed text-base">
+                  {formatTextWithLineBreaks(
+                    step.instruction && typeof step.instruction === 'object' && language in step.instruction
+                      ? step.instruction[language as keyof typeof step.instruction] as string
+                      : ''
+                  )}
+                </div>
+              </div>
+
+              {/* Progress Indicator */}
+              <div className="mt-4 pt-4 border-t border-white/20">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-300">
+                    {tString("step")} {index + 1} {tString("of")} {guide.steps.length}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1">
+                      {Array.from({ length: guide.steps.length }).map((_, i) => (
+                        <div
+                          key={i}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            i <= index
+                              ? completedSteps.includes(i)
+                                ? "bg-green-400"
+                                : "bg-blue-400"
+                              : "bg-white/20"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-gray-300 ml-2">
+                      {Math.round(((completedSteps.length) / guide.steps.length) * 100)}%
+                    </span>
                   </div>
                 </div>
               </div>

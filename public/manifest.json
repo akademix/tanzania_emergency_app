@@ -1,18 +1,74 @@
 {
-  "name": "First aid app",
-  "short_name": "First aid",
-  "description": "Emergency first aid application with location services",
+  "name": "First Aid - Tanzania Emergency Response",
+  "short_name": "First Aid",
+  "description": "Professional emergency first aid application with location services for Tanzania",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#1e293b",
+  "categories": ["medical", "emergency", "health"],
+  "lang": "en",
+  "scope": "/",
   "icons": [
     {
       "src": "/logo.svg",
-      "sizes": "192x192 512x512",
+      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 384x384 512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/splash/splash.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/splash/splash.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Emergency Call",
+      "short_name": "Emergency",
+      "description": "Call emergency services immediately",
+      "url": "tel:0800750112",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Emergency Guides",
+      "short_name": "Guides",
+      "description": "Access first aid guides",
+      "url": "/guide",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }
 

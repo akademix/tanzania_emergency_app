@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Bug, Car, Flame, Heart, AlertTriangle, Activity, Shield, Zap, Book } from "lucide-react"
+import { ArrowRight, Car, Flame, Heart, AlertTriangle, Activity, Shield, Book } from "lucide-react"
 import Link from "next/link"
 import { BackButton } from "@/components/back-button"
 import { useEffect, useState } from "react"
