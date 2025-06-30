@@ -12,26 +12,26 @@ export const burnsGuide: GuideData = {
   steps: [
     {
       instruction: { 
-        en: "Ensure your own safety and call emergency services immediately, especially if:\n• Large burn area\n• Inhaled smoke/hot air\n• Burns to face/throat\n• Breathing difficulties\n\nAlways seek medical advice after treating a burn.", 
-        sw: "Hakikisha usalama wako na piga simu ya dharura mara moja, hasa ikiwa:\n• Sehemu kubwa imeungua\n• Amevuta moshi au hewa ya moto\n• Ameungua usoni au kooni\n• Ana ugumu wa kupumua\n\nDaima tafuta ushauri wa kitabibu baada ya kutibu jeraha la kuungua."
+        en: "If person or clothes are on fire: Stop, drop, and roll them on the ground.", 
+        sw: "Ikiwa mtu au nguo zake zimeshika moto: Msimamishe, amjitupe chini, na amjivingirishe ardhini."
       },
-      videoId: "/videos/training/Burn%20Injury/CALL%20BUTTON%20VIDEO.mp4",
+      videoId: "/videos/training/Burn%20Injury/VIDEO%201.mp4",
       audioEnPath: "/audio/burns/burns_step1_english.wav",
       audioSwPath: "/audio/burns/burns_step1_swahili.wav"
     },
     {
       instruction: { 
-        en: "If person or clothes are on fire: Stop, drop, and roll them on the ground. Use water if available.", 
-        sw: "Mtu au nguo zake zikishika moto: Simama, jitupe chini, na jivingirishe ardhini. Tumia maji yakiwepo."
+        en: "You can also pour water on the area if possible.", 
+        sw: "Unaweza pia kumwaga maji kwenye eneo hilo ikiwezekana."
       },
-      videoId: "/videos/training/Burn%20Injury/VIDEO%201.mp4",
+      videoId: "/videos/training/Burn%20Injury/VIDEO%202.mp4",
       audioEnPath: "/audio/burns/burns_step2_english.wav",
       audioSwPath: "/audio/burns/burns_step2_swahili.wav"
     },
     {
       instruction: { 
-        en: "Cool the burned area with room temperature water (20°C) for at least 20 minutes.", 
-        sw: "Poza eneo lililoungua kwa maji ya joto la kawaida (20°C) kwa angalau dakika 20."
+        en: "Cool the burned area with cold, running water for at least 20 minutes. Do not cool the entire patient due to risk of hypothermia.", 
+        sw: "Poza eneo lililoungua kwa maji baridi yanayotiririka kwa angalau dakika 20. Usipozeshe mgonjwa mzima kwa sababu ya hatari ya kupungua kwa joto la mwili."
       },
       videoId: "/videos/training/Burn%20Injury/VIDEO%203.mp4",
       audioEnPath: "/audio/burns/burns_step3_english.wav",
@@ -39,8 +39,8 @@ export const burnsGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "Use running water if possible, or immerse the burned area if it's an arm or leg.", 
-        sw: "Tumia maji yanayotiririka ikiwezekana, au tumbukiza eneo lililoungua ikiwa ni mkono au mguu."
+        en: "If running water is not available, you can put the affected limb in water.", 
+        sw: "Kama maji yanayotiririka hayapatikani, unaweza kuweka kiungo kilichoathiriwa kwenye maji."
       },
       videoId: "/videos/training/Burn%20Injury/VIDEO%204.mp4",
       audioEnPath: "/audio/burns/burns_step4_english.wav",
@@ -48,8 +48,8 @@ export const burnsGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "Remove any jewelry or tight items from the burned area before swelling occurs.", 
-        sw: "Ondoa mapambo yoyote au vitu vinavyobana kutoka kwenye eneo lililoungua kabla ya uvimbe kutokea."
+        en: "Alternatively, if nothing else is available, use a clean towel and moisten it with water.", 
+        sw: "Ikiwa hakuna kingine kinapatikana, tumia taula safi na uiloweshe kwa maji."
       },
       videoId: "/videos/training/Burn%20Injury/VIDEO%205.mp4",
       audioEnPath: "/audio/burns/burns_step5_english.wav",
@@ -57,29 +57,37 @@ export const burnsGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "If running water isn't available, use a clean, wet cloth at room temperature.", 
-        sw: "Kama maji yanayotiririka hayapatikani, tumia kitambaa safi kilicholowa maji ya joto la kawaida."
+        en: "Remove rings and jewelry from the burned area before swelling occurs.", 
+        sw: "Ondoa pete na mapambo kutoka kwenye eneo lililoungua kabla ya uvimbe kutokea."
       },
-      videoId: "/videos/training/Burn%20Injury/VIDEO%205.mp4",
       audioEnPath: "/audio/burns/burns_step6_english.wav",
       audioSwPath: "/audio/burns/burns_step6_swahili.wav"
     },
     {
       instruction: { 
-        en: "Only cool the burned area, not the entire body, to prevent hypothermia.", 
-        sw: "Poza eneo lililoungua tu, siyo mwili mzima, ili kuzuia kupungua kwa joto la mwili kupita kiasi (hypothermia)."
+        en: "While cooling, call for help immediately (0800 750 112) if:\n• The injury is large\n• The patient has inhaled hot air or smoke from fire\n• The patient has difficulty breathing or has burn injuries in the mouth, face, or throat due to risk of airway damage and swelling\n\nAlways call for help if you are in doubt!", 
+        sw: "Wakati wa kupoza, piga simu ya msaada mara moja (0800 750 112) ikiwa:\n• Jeraha ni kubwa\n• Mgonjwa amevuta hewa ya moto au moshi kutoka kwenye moto\n• Mgonjwa ana ugumu wa kupumua au ana majeraha ya kuungua kinywani, usoni, au kooni kwa sababu ya hatari ya uharibifu wa njia ya hewa na uvimbe\n\nDaima piga simu ya msaada ikiwa una mashaka!"
       },
+      videoId: "/videos/training/Burn%20Injury/CALL%20BUTTON%20VIDEO.mp4",
       audioEnPath: "/audio/burns/burns_step7_english.wav",
       audioSwPath: "/audio/burns/burns_step7_swahili.wav"
     },
     {
       instruction: { 
-        en: "After cooling, loosely cover the burn with a sterile bandage or clean, non-stick cloth.", 
-        sw: "Baada ya kupoza, funika jeraha la moto kwa ulegevu kwa kutumia bandeji tasa au kitambaa safi kisichoganda."
+        en: "Cover the wound with a sterile bandage or clean, non-sticky material. Do not apply any cream or oil. Do not burst any blisters.", 
+        sw: "Funika jeraha kwa bandeji safi au kitambaa safi kisichoganda. Usiweke krimu au mafuta yoyote. Usipasue malengelenge yoyote."
       },
       videoId: "/videos/training/Burn%20Injury/VIDEO%206.mp4",
       audioEnPath: "/audio/burns/burns_step8_english.wav",
       audioSwPath: "/audio/burns/burns_step8_swahili.wav"
+    },
+    {
+      instruction: { 
+        en: "If the injury is minor, contact medical personnel for evaluation and wound care.", 
+        sw: "Ikiwa jeraha ni dogo, wasiliana na wataalamu wa afya kwa tathmini na huduma ya jeraha."
+      },
+      audioEnPath: "/audio/burns/burns_step9_english.wav",
+      audioSwPath: "/audio/burns/burns_step9_swahili.wav"
     }
   ],
   dangerWarnings: [
@@ -91,7 +99,7 @@ export const burnsGuide: GuideData = {
     },
     { 
       en: 'Pop any blisters that form', 
-      sw: 'Usitoboe malengelenge yoyote yanayojitokeza',
+      sw: 'Usipasue malengelenge yoyote yanayojitokeza',
       audioEnPath: "/audio/burns/burns_danger2_english.wav",
       audioSwPath: "/audio/burns/burns_danger2_swahili.wav"
     },
@@ -129,14 +137,14 @@ export const burnsGuide: GuideData = {
     },
     { 
       en: 'Third Degree: Deep injury, dry leather-like skin, severe damage', 
-      sw: 'Daraja la Tatu: Jeraha la ndani, ngozi kavu kama ngozi ya wanyama, uharibifu mkubwa',
+      sw: 'Daraja la Tatu: Jeraha la ndani, ngozi kavu kama ngozi, uharibifu mkubwa',
       audioEnPath: "/audio/burns/burns_sign3_english.wav",
       audioSwPath: "/audio/burns/burns_sign3_swahili.wav"
     }
   ],
   additionalInfo: { 
     en: 'For chemical burns, rinse with clean water for at least 30 minutes. For electrical burns, ensure the power source is off before providing help.', 
-    sw: 'Kwa maumivu ya kemikali, osha kwa maji safi kwa angalau dakika 30. Kwa maumivu ya umeme, hakikisha chanzo cha umeme kimezimwa kabla ya kutoa msaada.',
+    sw: 'Kwa kuungua kwa kemikali, osha kwa maji safi kwa angalau dakika 30. Kwa kuungua kwa umeme, hakikisha chanzo cha umeme kimezimwa kabla ya kutoa msaada.',
     audioEnPath: "/audio/burns/burns_additional_info_english.wav",
     audioSwPath: "/audio/burns/burns_additional_info_swahili.wav"
   }

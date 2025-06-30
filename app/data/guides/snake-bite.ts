@@ -12,8 +12,8 @@ export const snakeBiteGuide: GuideData = {
   steps: [
     {
       instruction: { 
-        en: "Ensure safety & move away\n\n• Move away from the area where the snake is, if you can\n• Do not try to kill or capture the snake\n• If the snake is attached to the victim, use a stick or tool to make it let go\n• Sea snake victims must be moved to dry land\n• Keep yourself and others safe from further bites", 
-        sw: "Hakikisha usalama na sogea mbali\n\n• Sogea mbali na eneo lile nyoka alipo, ukiweza\n• Usijaribu kuua au kukamata nyoka\n• Kama nyoka ameambatana na mhanga, tumia fimbo au chombo ili amwache\n• Wahanga wa nyoka wa baharini lazima wahamishe kwenye ardhi kavu\n• Jilinde wewe na wengine dhidi ya kuumwa zaidi" 
+        en: "Ensure immediate safety for yourself and others before approaching the victim.", 
+        sw: "Hakikisha usalama wa haraka kwa ajili yako na wengine kabla ya kumkaribia mhanga."
       },
       videoId: "/videos/training/Snake%20Bite/VIDEO%201.mp4",
       audioEnPath: "/audio/snake-bite/step1_english.wav",
@@ -21,8 +21,8 @@ export const snakeBiteGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "Move away from snake area\n\n• Move away from the area where the snake is, if you can\n• Do not try to kill or capture the snake\n• If the snake is attached to the victim, use a stick or tool to make it let go\n• Sea snake victims must be moved to dry land", 
-        sw: "Sogea mbali na eneo la nyoka\n\n• Sogea mbali na eneo lile nyoka alipo, ukiweza\n• Usijaribu kuua au kukamata nyoka\n• Kama nyoka ameambatana na mhanga, tumia fimbo au chombo ili amwache\n• Wahanga wa nyoka wa baharini lazima wahamishe kwenye ardhi kavu" 
+        en: "Move away from the area where the snake is, if you can. Do not try to kill or capture the snake. If the snake is attached to the victim, use a stick or tool to make it let go. Sea snake victims must be moved to dry land.", 
+        sw: "Sogea mbali na eneo lile nyoka alipo, ukiweza. Usijaribu kuua au kukamata nyoka. Kama nyoka ameambatana na mhanga, tumia fimbo au chombo ili amwache. Wahanga wa nyoka wa baharini lazima wahamishwe kwenye ardhi kavu."
       },
       videoId: "/videos/training/Snake%20Bite/VIDEO%202.mp4",
       audioEnPath: "/audio/snake-bite/step2_english.wav",
@@ -30,8 +30,8 @@ export const snakeBiteGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "Keep victim calm & call for help\n\n• Try to keep the victim calm and reassure him/her\n• Call for help and transportation (0800 750 112) to a health care facility\n• Cleanse wounds to decrease infection risk\n• Remove rings or anything tight from the bitten part of the body\n• They can cause harm if swellings occur", 
-        sw: "Weka mhanga atulie na piga simu msaada\n\n• Jaribu kumweka mhanga atulie na kumfariji\n• Piga simu msaada na usafiri (0800 750 112) kwenda kituo cha afya\n• Safisha majeraha kupunguza hatari ya maambukizi\n• Ondoa pete au kitu chochote kilicho kigumu kutoka sehemu iliyoumwa\n• Vinaweza kusababisha madhara kama kuvimba kutatokea" 
+        en: "Try to keep the victim calm and reassure him/her. Call for help and transportation (0800 750 112) to a health care facility. Cleanse wounds to decrease infection risk. Remove rings or anything tight from the bitten part of the body. They can cause harm if swellings occur. Do not apply a tourniquet, cut in the wound or try to suck out the venom.", 
+        sw: "Jaribu kumweka mhanga atulie na kumfariji. Piga simu ya msaada na usafiri (0800 750 112) kwenda kituo cha afya. Safisha majeraha kupunguza hatari ya maambukizi. Ondoa pete au kitu chochote kizito kutoka sehemu iliyoumwa. Vinaweza kusababisha madhara kama kuvimba kutatokea. Usiweke kifungo cha kuzuia damu, usikatae jeraha au kujaribu kumeza sumu."
       },
       videoId: "/videos/training/Snake%20Bite/VIDEO%203.mp4",
       audioEnPath: "/audio/snake-bite/step3_english.wav",
@@ -39,30 +39,12 @@ export const snakeBiteGuide: GuideData = {
     },
     {
       instruction: { 
-        en: "What NOT to do\n\n• Do not apply a tourniquet\n• Do not cut in the wound\n• Do not try to suck out the venom\n• Do not apply ice or cold water\n• Do not give alcohol or caffeine\n• Do not elevate the bitten limb above heart level", 
-        sw: "Usifanye nini\n\n• Usiweke tourniquet (kifungo cha kuzuia damu)\n• Usikatae jeraha\n• Usijaribu kumeza sumu\n• Usiweke barafu au maji baridi\n• Usimpe pombe au kifeine\n• Usiinue kiungo kilichoumwa juu ya kiwango cha moyo" 
-      },
-      videoId: "/videos/training/Snake%20Bite/CALL%20BUTTON%20VIDEO.mp4",
-      audioEnPath: "/audio/snake-bite/step4_english.wav",
-      audioSwPath: "/audio/snake-bite/step4_swahili.wav"
-    },
-    {
-      instruction: { 
-        en: "Immobilize completely\n\n• Immobilize the person completely\n• Splint the bitten limb to keep it still, using a stick or the other limb\n• Monitor the patient's breathing and level of consciousness\n• Place the patient in recovery position if reduced consciousness\n• Be prepared for vomiting", 
-        sw: "Simamisha kabisa\n\n• Simamisha mtu kabisa\n• Weka splint kwenye kiungo kilichoumwa ili kisihamike, ukitumia fimbo au kiungo kingine\n• Chunguza kupumua kwa mgonjwa na kiwango cha ufahamu\n• Weka mgonjwa katika nafasi ya kuokoa kama ufahamu umepungua\n• Jiandae kwa kutapika" 
+        en: "Immobilize the person completely. Splint the bitten limb to keep it still, using a stick or the other limb. Monitor the patient's breathing and level of consciousness. Place the patient in recovery position if reduced consciousness, and be prepared for vomiting. Reassure the victim. Many bites are caused by non-venomous snakes, and even venomous snakes usually do not cause immediate death. Seeking immediate help is essential!", 
+        sw: "Simamisha mtu kabisa. Weka kijiti kwenye kiungo kilichoumwa ili kisihamike, ukitumia fimbo au kiungo kingine. Chunguza kupumua kwa mgonjwa na kiwango cha ufahamu. Weka mgonjwa katika nafasi ya kupona kama ufahamu umepungua, na jiandae kwa kutapika. Mfariji mhanga. Kuumwa kwingi ni kutokana na nyoka wasio na sumu, na hata nyoka wenye sumu kwa kawaida hawasababishi kifo cha haraka. Kutafuta msaada wa haraka ni muhimu!"
       },
       videoId: "/videos/training/Snake%20Bite/VIDEO%204.mp4",
-      audioEnPath: "/audio/snake-bite/step5_english.wav",
-      audioSwPath: "/audio/snake-bite/step5_swahili.wav"
-    },
-    {
-      instruction: { 
-        en: "Ongoing monitoring & reassurance\n\n• Reassure the victim continuously\n• Many bites are caused by non-venomous snakes\n• Even venomous snakes usually do not cause immediate death\n• Seeking immediate help is essential\n• Monitor vital signs until help arrives\n• Keep detailed notes of symptoms and timing", 
-        sw: "Ufuatiliaji unaoendelea na faraja\n\n• Endelea kumfariji mhanga\n• Kuumwa kwingi ni kutokana na nyoka wasio na sumu\n• Hata nyoka wenye sumu kwa kawaida hawasababishi kifo cha haraka\n• Kutafuta msaada wa haraka ni muhimu\n• Chunguza alama muhimu za uhai hadi msaada ufike\n• Weka maelezo ya kina ya dalili na muda" 
-      },
-      videoId: "/videos/training/Snake%20Bite/VIDEO%205.mp4",
-      audioEnPath: "/audio/snake-bite/step6_english.wav",
-      audioSwPath: "/audio/snake-bite/step6_swahili.wav"
+      audioEnPath: "/audio/snake-bite/step4_english.wav",
+      audioSwPath: "/audio/snake-bite/step4_swahili.wav"
     }
   ],
   dangerWarnings: [
