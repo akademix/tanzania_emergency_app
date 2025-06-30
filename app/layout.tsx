@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { LanguageProvider } from "@/lib/language-context"
 import PWAInstaller from "@/components/pwa-installer"
 import { MobileNav } from "@/components/mobile-nav"
@@ -45,6 +46,7 @@ export default function RootLayout({
         <LanguageProvider>
           <Header />
           <main className="py-6 px-4">{children}</main>
+          <Footer />
           <MobileNav />
           <PWAInstaller />
         </LanguageProvider>
