@@ -45,7 +45,9 @@ export function GuideContent({ guide }: GuideContentProps) {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false)
   const [currentVideo, setCurrentVideo] = useState<{videoId: string, title: string}>({videoId: "", title: ""})
   const [playingAudioIndex, setPlayingAudioIndex] = useState<number | null>(null)
+  const [playingTitleAudio, setPlayingTitleAudio] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
+  const titleAudioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     if (isReturning) {
@@ -91,6 +93,25 @@ export function GuideContent({ guide }: GuideContentProps) {
     }
   };
 
+  const handlePlayTitleAudio = () => {
+    const audioPath = language === 'sw' ? guide.audioSwPath : guide.audioEnPath;
+    
+    if (titleAudioRef.current && audioPath) {
+      if (playingTitleAudio) {
+        titleAudioRef.current.pause();
+        setPlayingTitleAudio(false);
+      } else {
+        titleAudioRef.current.src = audioPath;
+        titleAudioRef.current.play().then(() => {
+          setPlayingTitleAudio(true);
+        }).catch(error => {
+          console.error("Error playing title audio:", error);
+          setPlayingTitleAudio(false);
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     const audioElement = audioRef.current;
     const handleAudioEnd = () => {
@@ -101,6 +122,20 @@ export function GuideContent({ guide }: GuideContentProps) {
       audioElement.addEventListener('ended', handleAudioEnd);
       return () => {
         audioElement.removeEventListener('ended', handleAudioEnd);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    const titleAudioElement = titleAudioRef.current;
+    const handleTitleAudioEnd = () => {
+      setPlayingTitleAudio(false);
+    };
+
+    if (titleAudioElement) {
+      titleAudioElement.addEventListener('ended', handleTitleAudioEnd);
+      return () => {
+        titleAudioElement.removeEventListener('ended', handleTitleAudioEnd);
       };
     }
   }, []);
@@ -157,15 +192,37 @@ export function GuideContent({ guide }: GuideContentProps) {
       </Dialog>
 
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">
-          {tString("firstAidFor")} {
-            String(
-              guide.title && typeof guide.title === 'object' && language in guide.title
-                ? guide.title[language as keyof typeof guide.title]
-                : ''
-            )
-          }
-        </h1>
+        <div className="flex items-center gap-3 mb-2">
+          <h1 className="text-3xl font-bold text-white">
+            {tString("firstAidFor")} {
+              String(
+                guide.title && typeof guide.title === 'object' && language in guide.title
+                  ? guide.title[language as keyof typeof guide.title]
+                  : ''
+              )
+            }
+          </h1>
+          {(language === 'sw' ? guide.audioSwPath : guide.audioEnPath) && (
+            <button
+              onClick={() => {
+                handlePlayTitleAudio()
+                if (navigator.vibrate) navigator.vibrate(30)
+              }}
+              className={`w-10 h-10 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
+                playingTitleAudio
+                  ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
+                  : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
+              }`}
+              aria-label={playingTitleAudio ? "Pause title audio" : "Play title audio"}
+            >
+              {playingTitleAudio ? (
+                <Pause className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
+            </button>
+          )}
+        </div>
         <p className="text-gray-300">{tString("followStepByStepInstructions")}</p>
       </div>
 
@@ -335,6 +392,7 @@ export function GuideContent({ guide }: GuideContentProps) {
       </div>
 
       <audio ref={audioRef} />
+      <audio ref={titleAudioRef} />
     </div>
   )
 } 

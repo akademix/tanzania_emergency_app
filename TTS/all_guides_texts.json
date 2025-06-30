@@ -1,0 +1,307 @@
+[
+  {
+    "id": "burns_title",
+    "english": "burns treatment",
+    "swahili": "matibabu ya kuungua"
+  },
+  {
+    "id": "burns_description",
+    "english": "How to treat different types of burns",
+    "swahili": "Jinsi ya kutibu aina mbalimbali za kuungua"
+  },
+  {
+    "id": "burns_step1",
+    "english": "If person or clothes are on fire: Stop, drop, and roll them on the ground.",
+    "swahili": "Ikiwa mtu au nguo zake zimeshika moto: Msimamishe, amjitupe chini, na amjivingirishe ardhini."
+  },
+  {
+    "id": "burns_step2",
+    "english": "You can also pour water on the area if possible.",
+    "swahili": "Unaweza pia kumwaga maji kwenye eneo hilo ikiwezekana."
+  },
+  {
+    "id": "burns_step3",
+    "english": "Cool the burned area with cold, running water for at least 20 minutes. Do not cool the entire patient due to risk of hypothermia.",
+    "swahili": "Poza eneo lililoungua kwa maji baridi yanayotiririka kwa angalau dakika 20. Usipozeshe mgonjwa mzima kwa sababu ya hatari ya kupungua kwa joto la mwili."
+  },
+  {
+    "id": "burns_step4",
+    "english": "If running water is not available, you can put the affected limb in water.",
+    "swahili": "Kama maji yanayotiririka hayapatikani, unaweza kuweka kiungo kilichoathiriwa kwenye maji."
+  },
+  {
+    "id": "burns_step5",
+    "english": "Alternatively, if nothing else is available, use a clean towel and moisten it with water.",
+    "swahili": "Ikiwa hakuna kingine kinapatikana, tumia taula safi na uiloweshe kwa maji."
+  },
+  {
+    "id": "burns_step6",
+    "english": "Remove rings and jewelry from the burned area before swelling occurs.",
+    "swahili": "Ondoa pete na mapambo kutoka kwenye eneo lililoungua kabla ya uvimbe kutokea."
+  },
+  {
+    "id": "burns_step7",
+    "english": "While cooling, call for help immediately (0800 750 112) if: The injury is large, The patient has inhaled hot air or smoke from fire, The patient has difficulty breathing or has burn injuries in the mouth, face, or throat due to risk of airway damage and swelling. Always call for help if you are in doubt!",
+    "swahili": "Wakati wa kupoza, piga simu ya msaada mara moja (0800 750 112) ikiwa: Jeraha ni kubwa, Mgonjwa amevuta hewa ya moto au moshi kutoka kwenye moto, Mgonjwa ana ugumu wa kupumua au ana majeraha ya kuungua kinywani, usoni, au kooni kwa sababu ya hatari ya uharibifu wa njia ya hewa na uvimbe. Daima piga simu ya msaada ikiwa una mashaka!"
+  },
+  {
+    "id": "burns_step8",
+    "english": "Cover the wound with a sterile bandage or clean, non-sticky material. Do not apply any cream or oil. Do not burst any blisters.",
+    "swahili": "Funika jeraha kwa bandeji safi au kitambaa safi kisichoganda. Usiweke krimu au mafuta yoyote. Usipasue malengelenge yoyote."
+  },
+  {
+    "id": "burns_step9",
+    "english": "If the injury is minor, contact medical personnel for evaluation and wound care.",
+    "swahili": "Ikiwa jeraha ni dogo, wasiliana na wataalamu wa afya kwa tathmini na huduma ya jeraha."
+  },
+  {
+    "id": "burns_danger1",
+    "english": "Use ice or very cold water",
+    "swahili": "Usitumie barafu au maji baridi sana"
+  },
+  {
+    "id": "burns_danger2",
+    "english": "Pop any blisters that form",
+    "swahili": "Usipasue malengelenge yoyote yanayojitokeza"
+  },
+  {
+    "id": "burns_danger3",
+    "english": "Apply creams, ointments, or butter to the burn",
+    "swahili": "Usiweke krimu, marhamu, au siagi kwenye jeraha la kuungua"
+  },
+  {
+    "id": "burns_danger4",
+    "english": "Remove clothes that are stuck to the burn",
+    "swahili": "Usiondoe nguo zinazogandamana na jeraha la kuungua"
+  },
+  {
+    "id": "burns_danger5",
+    "english": "Cool the entire body - focus only on burned area",
+    "swahili": "Usipozeshe mwili mzima - lenga tu eneo lililoungua"
+  },
+  {
+    "id": "burns_sign1",
+    "english": "First Degree: Red, painful, dry skin without blisters",
+    "swahili": "Daraja la Kwanza: Ngozi nyekundu, yenye maumivu, kavu bila malengelenge"
+  },
+  {
+    "id": "burns_sign2",
+    "english": "Second Degree: Blisters, moist skin, usually leaves scars",
+    "swahili": "Daraja la Pili: Malengelenge, ngozi yenye unyevu, kwa kawaida huacha makovu"
+  },
+  {
+    "id": "burns_sign3",
+    "english": "Third Degree: Deep injury, dry leather-like skin, severe damage",
+    "swahili": "Daraja la Tatu: Jeraha la ndani, ngozi kavu kama ngozi, uharibifu mkubwa"
+  },
+  {
+    "id": "burns_additional_info",
+    "english": "For chemical burns, rinse with clean water for at least 30 minutes. For electrical burns, ensure the power source is off before providing help.",
+    "swahili": "Kwa kuungua kwa kemikali, osha kwa maji safi kwa angalau dakika 30. Kwa kuungua kwa umeme, hakikisha chanzo cha umeme kimezimwa kabla ya kutoa msaada."
+  },
+  {
+    "id": "traffic_accident_title",
+    "english": "traffic accident response",
+    "swahili": "mwitikio wa ajali ya barabarani"
+  },
+  {
+    "id": "traffic_accident_description",
+    "english": "Comprehensive guide for responding to traffic accidents safely and effectively",
+    "swahili": "Mwongozo kamili wa kuitikia ajali za barabarani kwa usalama na ufanisi"
+  },
+  {
+    "id": "traffic_accident_step1",
+    "english": "Assess safety before approaching the scene. Turn on hazard lights and park to protect the accident site. Be alert for oncoming vehicles, flames, fuel leaks, and other dangers. Secure the area to prevent further accidents. Wear a reflective vest for visibility. Place warning triangle 50-150 meters away depending on road speed. Switch off ignition and apply handbrake of crashed car if possible.",
+    "swahili": "Tathmini usalama kabla ya kufikia eneo. Washa taa za hatari na egeza gari ili kulinda eneo la ajali. Chunguza magari yanayokuja, moto, uvujaji wa mafuta, na hatari zingine. Hakikisha usalama wa eneo kuzuia ajali zaidi. Vaa jaketi ya kung'ara ili kuonekana. Weka alama ya onyo mita 50-150 kulingana na kasi ya barabara. Zima injini na weka breki ya mkono ya gari lililoanguka ikiwezekana."
+  },
+  {
+    "id": "traffic_accident_step2",
+    "english": "Call for help (0800 750 112) and attract attention from other bystanders if you need assistance. Provide exact location, number of casualties, and nature of injuries.",
+    "swahili": "Piga simu ya msaada (0800 750 112) na uvute umakini wa watu wengine ikiwa unahitaji msaada. Toa mahali halisi, idadi ya walijeruhiwa, na aina ya majeraha."
+  },
+  {
+    "id": "traffic_accident_step3",
+    "english": "Approach the casualties and get an overview of the injured. Try talking to them. If someone does not answer, touch or shake their shoulder gently to determine if they are unconscious.",
+    "swahili": "Karibia wahanga na upate muhtasari wa walijeruhiwa. Jaribu kuzungumza nao. Kama mtu hajibu, mguse au mgongongee begani kwa upole ili kujua kama amezimia."
+  },
+  {
+    "id": "traffic_accident_step4",
+    "english": "Casualties inside a vehicle who are awake and able to exit themselves, or with little support, can do so as long as there is no increased risk of further injury. Make sure they are safe and have someone monitor them. Keep them warm, as cold increases damage in the body and risk of bleeding.",
+    "swahili": "Wahanga walio ndani ya gari walio macho na wanaweza kutoka wenyewe, au kwa msaada mdogo, wanaweza kufanya hivyo mradi hakuna hatari ya kuongezeka kwa jeraha zaidi. Hakikisha wana usalama na mtu awakaguze. Waweke joto, kwani baridi huongeza uharibifu mwilini na hatari ya kutokwa damu."
+  },
+  {
+    "id": "traffic_accident_step5",
+    "english": "Casualties inside a vehicle who are unconscious (unresponsive to speech or gentle shoulder shaking) are at risk of airway obstruction. Carefully lean into the vehicle through the door or window closest to them. Position yourself beside the casualty's head while staying outside the vehicle for safety.",
+    "swahili": "Wahanga walio ndani ya gari wasio na fahamu (hawajibu mazungumzo au kugongongwa begani kwa upole) wako hatarini ya kuzuiliwa njia ya hewa. Inamia ndani ya gari kwa uangalifu kupitia mlango au dirisha lililo karibu nao. Jiweke kando ya kichwa cha mhanga huku ukiwa nje ya gari kwa usalama."
+  },
+  {
+    "id": "traffic_accident_step6",
+    "english": "Open the casualty's airways and check breathing. Place one hand at the back of the head above the nape, and the other under the chin. Gently lift the head into neutral position, aligning it with the trunk. This opens airways and relieves weight from cervical spine. Check breathing as covered in unconscious and CPR modules.",
+    "swahili": "Fungua njia ya hewa ya mhanga na uangalie kupumua. Weka mkono mmoja nyuma ya kichwa juu ya shingo, na mwingine chini ya kidevu. Inua kichwa kwa upole hadi nafasi ya kawaida, ukikipanga na mwili. Hii inafungua njia ya hewa na kupunguza uzito kutoka uti wa mgongo wa shingoni. Angalia kupumua kama inavyofundishwa katika moduli za wasimaizi na CPR."
+  },
+  {
+    "id": "traffic_accident_step7",
+    "english": "If breathing is normal, maintain the head and neck position until help arrives. Only move the casualty out of the car when it is safe. If spinal injury is suspected, ensure proper back and neck stabilization throughout the process.",
+    "swahili": "Kama kupumua ni kawaida, dumisha msimamo wa kichwa na shingo hadi msaada ufike. Hamisha mhanga nje ya gari tu wakati ni salama. Kama jeraha la uti wa mgongo linashukiwa, hakikisha udhamini sahihi wa mgongo na shingo wakati wote."
+  },
+  {
+    "id": "traffic_accident_step8",
+    "english": "Casualties outside a vehicle (thrown from car, motorcycle riders, pedestrians) who are awake should be helped according to other modules: burns, bleeding, and musculoskeletal injuries. If you suspect back or neck damage with risk of spinal column injury, keep the patient still and stabilize the neck until help arrives.",
+    "swahili": "Wahanga walio nje ya gari (waliotupwa kutoka garini, waendesha pikipiki, waendaji kwa miguu) walio macho wanafaa kusaidiwa kulingana na moduli zingine: kuungua, kutokwa damu, na majeraha ya misuli na mifupa. Kama unashuku uharibifu wa mgongo au shingo na hatari ya jeraha la uti wa mgongo, mwache mgonjwa atulie na uthabiti shingo hadi msaada ufike."
+  },
+  {
+    "id": "traffic_accident_step9",
+    "english": "Casualties who are unconscious on the ground (motorcycle riders, pedestrians, or those thrown from vehicle) should be approached and assessed according to the 'Unconscious Patient' or 'CPR' modules, if applicable.",
+    "swahili": "Wahanga wasio na fahamu ardhini (waendesha pikipiki, waendaji kwa miguu, au waliotupwa kutoka garini) wanafaa kukaribwa na kutathminiwa kulingana na moduli za 'Mgonjwa Asiye na Fahamu' au 'CPR', ikihusika."
+  },
+  {
+    "id": "traffic_accident_danger1",
+    "english": "Move casualties with suspected spinal injuries unless immediate life threat",
+    "swahili": "Hamisha wahanga wanaoshukiwa kuwa na majeraha ya uti wa mgongo isipokuwa kuna hatari ya haraka ya uhai"
+  },
+  {
+    "id": "traffic_accident_danger2",
+    "english": "Remove motorcycle helmets unless airway is completely blocked",
+    "swahili": "Ondoa kofia za pikipiki isipokuwa njia ya hewa imezuiliwa kabisa"
+  },
+  {
+    "id": "traffic_accident_danger3",
+    "english": "Give food, water, or medication to casualties",
+    "swahili": "Toa chakula, maji, au dawa kwa wahanga"
+  },
+  {
+    "id": "traffic_accident_danger4",
+    "english": "Leave casualties alone or leave the scene before help arrives",
+    "swahili": "Acha wahanga peke yao au kuondoka eneo kabla ya msaada kufika"
+  },
+  {
+    "id": "traffic_accident_danger5",
+    "english": "Move vehicles unless they pose immediate danger to life",
+    "swahili": "Hamisha magari isipokuwa yana hatari ya haraka kwa uhai"
+  },
+  {
+    "id": "traffic_accident_danger6",
+    "english": "Approach if there are downed power lines or fuel fires",
+    "swahili": "Karibia kama kuna mistari ya umeme iliyoanguka au moto wa mafuta"
+  },
+  {
+    "id": "traffic_accident_sign1",
+    "english": "Airway: Noisy breathing, gurgling, or complete obstruction",
+    "swahili": "Njia ya hewa: Kupumua kwa kelele, mvugumo, au kuzuiliwa kabisa"
+  },
+  {
+    "id": "traffic_accident_sign2",
+    "english": "Breathing: Absent, very slow (less than 10 per minute), or very fast (more than 30 per minute)",
+    "swahili": "Kupumua: Hakipo, polepole sana (chini ya 10 kwa dakika), au haraka sana (zaidi ya 30 kwa dakika)"
+  },
+  {
+    "id": "traffic_accident_sign3",
+    "english": "Circulation: No pulse, very weak pulse, or severe bleeding",
+    "swahili": "Mzunguko wa damu: Hakuna mapigo, mapigo dhaifu sana, au kutokwa damu kwingi"
+  },
+  {
+    "id": "traffic_accident_sign4",
+    "english": "Consciousness: Unresponsive, confused, or rapidly deteriorating",
+    "swahili": "Ufahamu: Haitikii, kuchanganyikiwa, au kuharibika haraka"
+  },
+  {
+    "id": "traffic_accident_sign5",
+    "english": "Spinal: Loss of sensation, inability to move limbs, or neck pain",
+    "swahili": "Uti wa mgongo: Kupoteza hisia, kutoweza kuhamisha viungo, au maumivu ya shingo"
+  },
+  {
+    "id": "traffic_accident_additional_info",
+    "english": "Remember ABC priority: Airway, Breathing, Circulation. Traffic accidents often involve multiple casualties - triage to help the most people possible. Always ensure your own safety first - you cannot help others if you become a casualty yourself.",
+    "swahili": "Kumbuka kipaumbele cha ABC: Airway (Njia ya hewa), Breathing (Kupumua), Circulation (Mzunguko wa damu). Ajali za barabarani mara nyingi zinahusisha wahanga wengi - panga ili kusaidia watu wengi iwezekanavyo. Daima hakikisha usalama wako kwanza - huwezi kusaidia wengine kama utakuwa mhanga mwenyewe."
+  },
+  {
+    "id": "snake_bite_title",
+    "english": "snake bite treatment",
+    "swahili": "matibabu ya kuumwa na nyoka"
+  },
+  {
+    "id": "snake_bite_description",
+    "english": "Comprehensive guide for treating snake bites safely and effectively",
+    "swahili": "Mwongozo kamili wa kutibu kuumwa na nyoka kwa usalama na ufanisi"
+  },
+  {
+    "id": "snake_bite_step1",
+    "english": "Ensure immediate safety for yourself and others before approaching the victim.",
+    "swahili": "Hakikisha usalama wa haraka kwa ajili yako na wengine kabla ya kumkaribia mhanga."
+  },
+  {
+    "id": "snake_bite_step2",
+    "english": "Move away from the area where the snake is, if you can. Do not try to kill or capture the snake. If the snake is attached to the victim, use a stick or tool to make it let go. Sea snake victims must be moved to dry land.",
+    "swahili": "Sogea mbali na eneo lile nyoka alipo, ukiweza. Usijaribu kuua au kukamata nyoka. Kama nyoka ameambatana na mhanga, tumia fimbo au chombo ili amwache. Wahanga wa nyoka wa baharini lazima wahamishwe kwenye ardhi kavu."
+  },
+  {
+    "id": "snake_bite_step3",
+    "english": "Try to keep the victim calm and reassure him/her. Call for help and transportation (0800 750 112) to a health care facility. Cleanse wounds to decrease infection risk. Remove rings or anything tight from the bitten part of the body. They can cause harm if swellings occur. Do not apply a tourniquet, cut in the wound or try to suck out the venom.",
+    "swahili": "Jaribu kumweka mhanga atulie na kumfariji. Piga simu ya msaada na usafiri (0800 750 112) kwenda kituo cha afya. Safisha majeraha kupunguza hatari ya maambukizi. Ondoa pete au kitu chochote kizito kutoka sehemu iliyoumwa. Vinaweza kusababisha madhara kama kuvimba kutatokea. Usiweke kifungo cha kuzuia damu, usikatae jeraha au kujaribu kumeza sumu."
+  },
+  {
+    "id": "snake_bite_step4",
+    "english": "Immobilize the person completely. Splint the bitten limb to keep it still, using a stick or the other limb. Monitor the patient's breathing and level of consciousness. Place the patient in recovery position if reduced consciousness, and be prepared for vomiting. Reassure the victim. Many bites are caused by non-venomous snakes, and even venomous snakes usually do not cause immediate death. Seeking immediate help is essential!",
+    "swahili": "Simamisha mtu kabisa. Weka kijiti kwenye kiungo kilichoumwa ili kisihamike, ukitumia fimbo au kiungo kingine. Chunguza kupumua kwa mgonjwa na kiwango cha ufahamu. Weka mgonjwa katika nafasi ya kupona kama ufahamu umepungua, na jiandae kwa kutapika. Mfariji mhanga. Kuumwa kwingi ni kutokana na nyoka wasio na sumu, na hata nyoka wenye sumu kwa kawaida hawasababishi kifo cha haraka. Kutafuta msaada wa haraka ni muhimu!"
+  },
+  {
+    "id": "snake_bite_danger1",
+    "english": "Apply a tourniquet or try to suck out the venom",
+    "swahili": "Weka kifungo cha kuzuia damu au kujaribu kumeza sumu"
+  },
+  {
+    "id": "snake_bite_danger2",
+    "english": "Cut into the wound or make incisions",
+    "swahili": "Kata jeraha au fanya mikato"
+  },
+  {
+    "id": "snake_bite_danger3",
+    "english": "Apply ice, cold water, or submerge in water",
+    "swahili": "Weka barafu, maji baridi, au kuzamisha majini"
+  },
+  {
+    "id": "snake_bite_danger4",
+    "english": "Give alcohol, caffeine, or stimulants to the victim",
+    "swahili": "Mpa mhanga pombe, kifeine, au vichochezi"
+  },
+  {
+    "id": "snake_bite_danger5",
+    "english": "Try to kill or capture the snake for identification",
+    "swahili": "Jaribu kuua au kukamata nyoka kwa utambulisho"
+  },
+  {
+    "id": "snake_bite_danger6",
+    "english": "Elevate the bitten limb above heart level",
+    "swahili": "Inua kiungo kilichoumwa juu ya kiwango cha moyo"
+  },
+  {
+    "id": "snake_bite_sign1",
+    "english": "Breathing: Difficulty breathing, shallow breathing, or respiratory distress",
+    "swahili": "Kupumua: Ugumu wa kupumua, kupumua kwa uchuchu, au dhiki ya kupumua"
+  },
+  {
+    "id": "snake_bite_sign2",
+    "english": "Consciousness: Confusion, drowsiness, or loss of consciousness",
+    "swahili": "Ufahamu: Kuchanganyikiwa, usingizi, au kupoteza fahamu"
+  },
+  {
+    "id": "snake_bite_sign3",
+    "english": "Circulation: Weak pulse, pale skin, or signs of shock",
+    "swahili": "Mzunguko wa damu: Mapigo dhaifu, ngozi yenye rangi nyeupe, au dalili za shinikizo"
+  },
+  {
+    "id": "snake_bite_sign4",
+    "english": "Local symptoms: Severe swelling, intense pain, or tissue death",
+    "swahili": "Dalili za eneo: Kuvimba kwingi, maumivu makali, au kufa kwa tishu"
+  },
+  {
+    "id": "snake_bite_sign5",
+    "english": "Systemic symptoms: Nausea, vomiting, or allergic reactions",
+    "swahili": "Dalili za mfumo: Kichefuchefu, kutapika, au athari za mzio"
+  },
+  {
+    "id": "snake_bite_additional_info",
+    "english": "If possible, note the snake's appearance (color, pattern, size) from a safe distance to help medical professionals identify it. Most snake bites are from non-venomous species, but always treat every bite as potentially dangerous and seek immediate medical attention.",
+    "swahili": "Ikiwezekana, angalia mwonekano wa nyoka (rangi, mchoro, ukubwa) kutoka umbali salama ili kusaidia wataalamu wa matibabu kumtambua. Kuumwa kwingi na nyoka ni kutoka aina zisizo na sumu, lakini daima tibu kila kuumwa kama kuna hatari na utafute matibabu ya haraka."
+  }
+] 

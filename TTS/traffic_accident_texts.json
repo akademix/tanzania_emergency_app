@@ -1,0 +1,117 @@
+[
+  {
+    "id": "traffic_accident_title",
+    "english": "traffic accident response",
+    "swahili": "mwitikio wa ajali ya barabarani"
+  },
+  {
+    "id": "traffic_accident_description",
+    "english": "Comprehensive guide for responding to traffic accidents safely and effectively",
+    "swahili": "Mwongozo kamili wa kuitikia ajali za barabarani kwa usalama na ufanisi"
+  },
+  {
+    "id": "traffic_accident_step1",
+    "english": "Assess safety before approaching the scene. Turn on hazard lights and park to protect the accident site. Be alert for oncoming vehicles, flames, fuel leaks, and other dangers. Secure the area to prevent further accidents. Wear a reflective vest for visibility. Place warning triangle 50-150 meters away depending on road speed. Switch off ignition and apply handbrake of crashed car if possible.",
+    "swahili": "Tathmini usalama kabla ya kufikia eneo. Washa taa za hatari na egeza gari ili kulinda eneo la ajali. Chunguza magari yanayokuja, moto, uvujaji wa mafuta, na hatari zingine. Hakikisha usalama wa eneo kuzuia ajali zaidi. Vaa jaketi ya kung'ara ili kuonekana. Weka alama ya onyo mita 50-150 kulingana na kasi ya barabara. Zima injini na weka breki ya mkono ya gari lililoanguka ikiwezekana."
+  },
+  {
+    "id": "traffic_accident_step2",
+    "english": "Call for help (0800 750 112) and attract attention from other bystanders if you need assistance. Provide exact location, number of casualties, and nature of injuries.",
+    "swahili": "Piga simu ya msaada (0800 750 112) na uvute umakini wa watu wengine ikiwa unahitaji msaada. Toa mahali halisi, idadi ya walijeruhiwa, na aina ya majeraha."
+  },
+  {
+    "id": "traffic_accident_step3",
+    "english": "Approach the casualties and get an overview of the injured. Try talking to them. If someone does not answer, touch or shake their shoulder gently to determine if they are unconscious.",
+    "swahili": "Karibia wahanga na upate muhtasari wa walijeruhiwa. Jaribu kuzungumza nao. Kama mtu hajibu, mguse au mgongongee begani kwa upole ili kujua kama amezimia."
+  },
+  {
+    "id": "traffic_accident_step4",
+    "english": "Casualties inside a vehicle who are awake and able to exit themselves, or with little support, can do so as long as there is no increased risk of further injury. Make sure they are safe and have someone monitor them. Keep them warm, as cold increases damage in the body and risk of bleeding.",
+    "swahili": "Wahanga walio ndani ya gari walio macho na wanaweza kutoka wenyewe, au kwa msaada mdogo, wanaweza kufanya hivyo mradi hakuna hatari ya kuongezeka kwa jeraha zaidi. Hakikisha wana usalama na mtu awakaguze. Waweke joto, kwani baridi huongeza uharibifu mwilini na hatari ya kutokwa damu."
+  },
+  {
+    "id": "traffic_accident_step5",
+    "english": "Casualties inside a vehicle who are unconscious (unresponsive to speech or gentle shoulder shaking) are at risk of airway obstruction. Carefully lean into the vehicle through the door or window closest to them. Position yourself beside the casualty's head while staying outside the vehicle for safety.",
+    "swahili": "Wahanga walio ndani ya gari wasio na fahamu (hawajibu mazungumzo au kugongongwa begani kwa upole) wako hatarini ya kuzuiliwa njia ya hewa. Inamia ndani ya gari kwa uangalifu kupitia mlango au dirisha lililo karibu nao. Jiweke kando ya kichwa cha mhanga huku ukiwa nje ya gari kwa usalama."
+  },
+  {
+    "id": "traffic_accident_step6",
+    "english": "Open the casualty's airways and check breathing. Place one hand at the back of the head above the nape, and the other under the chin. Gently lift the head into neutral position, aligning it with the trunk. This opens airways and relieves weight from cervical spine. Check breathing as covered in unconscious and CPR modules.",
+    "swahili": "Fungua njia ya hewa ya mhanga na uangalie kupumua. Weka mkono mmoja nyuma ya kichwa juu ya shingo, na mwingine chini ya kidevu. Inua kichwa kwa upole hadi nafasi ya kawaida, ukikipanga na mwili. Hii inafungua njia ya hewa na kupunguza uzito kutoka uti wa mgongo wa shingoni. Angalia kupumua kama inavyofundishwa katika moduli za wasimaizi na CPR."
+  },
+  {
+    "id": "traffic_accident_step7",
+    "english": "If breathing is normal, maintain the head and neck position until help arrives. Only move the casualty out of the car when it is safe. If spinal injury is suspected, ensure proper back and neck stabilization throughout the process.",
+    "swahili": "Kama kupumua ni kawaida, dumisha msimamo wa kichwa na shingo hadi msaada ufike. Hamisha mhanga nje ya gari tu wakati ni salama. Kama jeraha la uti wa mgongo linashukiwa, hakikisha udhamini sahihi wa mgongo na shingo wakati wote."
+  },
+  {
+    "id": "traffic_accident_step8",
+    "english": "Casualties outside a vehicle (thrown from car, motorcycle riders, pedestrians) who are awake should be helped according to other modules: burns, bleeding, and musculoskeletal injuries. If you suspect back or neck damage with risk of spinal column injury, keep the patient still and stabilize the neck until help arrives.",
+    "swahili": "Wahanga walio nje ya gari (waliotupwa kutoka garini, waendesha pikipiki, waendaji kwa miguu) walio macho wanafaa kusaidiwa kulingana na moduli zingine: kuungua, kutokwa damu, na majeraha ya misuli na mifupa. Kama unashuku uharibifu wa mgongo au shingo na hatari ya jeraha la uti wa mgongo, mwache mgonjwa atulie na uthabiti shingo hadi msaada ufike."
+  },
+  {
+    "id": "traffic_accident_step9",
+    "english": "Casualties who are unconscious on the ground (motorcycle riders, pedestrians, or those thrown from vehicle) should be approached and assessed according to the 'Unconscious Patient' or 'CPR' modules, if applicable.",
+    "swahili": "Wahanga wasio na fahamu ardhini (waendesha pikipiki, waendaji kwa miguu, au waliotupwa kutoka garini) wanafaa kukaribwa na kutathminiwa kulingana na moduli za 'Mgonjwa Asiye na Fahamu' au 'CPR', ikihusika."
+  },
+  {
+    "id": "traffic_accident_danger1",
+    "english": "Move casualties with suspected spinal injuries unless immediate life threat",
+    "swahili": "Hamisha wahanga wanaoshukiwa kuwa na majeraha ya uti wa mgongo isipokuwa kuna hatari ya haraka ya uhai"
+  },
+  {
+    "id": "traffic_accident_danger2",
+    "english": "Remove motorcycle helmets unless airway is completely blocked",
+    "swahili": "Ondoa kofia za pikipiki isipokuwa njia ya hewa imezuiliwa kabisa"
+  },
+  {
+    "id": "traffic_accident_danger3",
+    "english": "Give food, water, or medication to casualties",
+    "swahili": "Toa chakula, maji, au dawa kwa wahanga"
+  },
+  {
+    "id": "traffic_accident_danger4",
+    "english": "Leave casualties alone or leave the scene before help arrives",
+    "swahili": "Acha wahanga peke yao au kuondoka eneo kabla ya msaada kufika"
+  },
+  {
+    "id": "traffic_accident_danger5",
+    "english": "Move vehicles unless they pose immediate danger to life",
+    "swahili": "Hamisha magari isipokuwa yana hatari ya haraka kwa uhai"
+  },
+  {
+    "id": "traffic_accident_danger6",
+    "english": "Approach if there are downed power lines or fuel fires",
+    "swahili": "Karibia kama kuna mistari ya umeme iliyoanguka au moto wa mafuta"
+  },
+  {
+    "id": "traffic_accident_sign1",
+    "english": "Airway: Noisy breathing, gurgling, or complete obstruction",
+    "swahili": "Njia ya hewa: Kupumua kwa kelele, mvugumo, au kuzuiliwa kabisa"
+  },
+  {
+    "id": "traffic_accident_sign2",
+    "english": "Breathing: Absent, very slow (less than 10 per minute), or very fast (more than 30 per minute)",
+    "swahili": "Kupumua: Hakipo, polepole sana (chini ya 10 kwa dakika), au haraka sana (zaidi ya 30 kwa dakika)"
+  },
+  {
+    "id": "traffic_accident_sign3",
+    "english": "Circulation: No pulse, very weak pulse, or severe bleeding",
+    "swahili": "Mzunguko wa damu: Hakuna mapigo, mapigo dhaifu sana, au kutokwa damu kwingi"
+  },
+  {
+    "id": "traffic_accident_sign4",
+    "english": "Consciousness: Unresponsive, confused, or rapidly deteriorating",
+    "swahili": "Ufahamu: Haitikii, kuchanganyikiwa, au kuharibika haraka"
+  },
+  {
+    "id": "traffic_accident_sign5",
+    "english": "Spinal: Loss of sensation, inability to move limbs, or neck pain",
+    "swahili": "Uti wa mgongo: Kupoteza hisia, kutoweza kuhamisha viungo, au maumivu ya shingo"
+  },
+  {
+    "id": "traffic_accident_additional_info",
+    "english": "Remember ABC priority: Airway, Breathing, Circulation. Traffic accidents often involve multiple casualties - triage to help the most people possible. Always ensure your own safety first - you cannot help others if you become a casualty yourself.",
+    "swahili": "Kumbuka kipaumbele cha ABC: Airway (Njia ya hewa), Breathing (Kupumua), Circulation (Mzunguko wa damu). Ajali za barabarani mara nyingi zinahusisha wahanga wengi - panga ili kusaidia watu wengi iwezekanavyo. Daima hakikisha usalama wako kwanza - huwezi kusaidia wengine kama utakuwa mhanga mwenyewe."
+  }
+] 

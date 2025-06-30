@@ -1,0 +1,102 @@
+[
+  {
+    "id": "burns_title",
+    "english": "burns treatment",
+    "swahili": "matibabu ya kuungua"
+  },
+  {
+    "id": "burns_description",
+    "english": "How to treat different types of burns",
+    "swahili": "Jinsi ya kutibu aina mbalimbali za kuungua"
+  },
+  {
+    "id": "burns_step1",
+    "english": "If person or clothes are on fire: Stop, drop, and roll them on the ground.",
+    "swahili": "Ikiwa mtu au nguo zake zimeshika moto: Msimamishe, amjitupe chini, na amjivingirishe ardhini."
+  },
+  {
+    "id": "burns_step2",
+    "english": "You can also pour water on the area if possible.",
+    "swahili": "Unaweza pia kumwaga maji kwenye eneo hilo ikiwezekana."
+  },
+  {
+    "id": "burns_step3",
+    "english": "Cool the burned area with cold, running water for at least 20 minutes. Do not cool the entire patient due to risk of hypothermia.",
+    "swahili": "Poza eneo lililoungua kwa maji baridi yanayotiririka kwa angalau dakika 20. Usipozeshe mgonjwa mzima kwa sababu ya hatari ya kupungua kwa joto la mwili."
+  },
+  {
+    "id": "burns_step4",
+    "english": "If running water is not available, you can put the affected limb in water.",
+    "swahili": "Kama maji yanayotiririka hayapatikani, unaweza kuweka kiungo kilichoathiriwa kwenye maji."
+  },
+  {
+    "id": "burns_step5",
+    "english": "Alternatively, if nothing else is available, use a clean towel and moisten it with water.",
+    "swahili": "Ikiwa hakuna kingine kinapatikana, tumia taula safi na uiloweshe kwa maji."
+  },
+  {
+    "id": "burns_step6",
+    "english": "Remove rings and jewelry from the burned area before swelling occurs.",
+    "swahili": "Ondoa pete na mapambo kutoka kwenye eneo lililoungua kabla ya uvimbe kutokea."
+  },
+  {
+    "id": "burns_step7",
+    "english": "While cooling, call for help immediately (0800 750 112) if: The injury is large, The patient has inhaled hot air or smoke from fire, The patient has difficulty breathing or has burn injuries in the mouth, face, or throat due to risk of airway damage and swelling. Always call for help if you are in doubt!",
+    "swahili": "Wakati wa kupoza, piga simu ya msaada mara moja (0800 750 112) ikiwa: Jeraha ni kubwa, Mgonjwa amevuta hewa ya moto au moshi kutoka kwenye moto, Mgonjwa ana ugumu wa kupumua au ana majeraha ya kuungua kinywani, usoni, au kooni kwa sababu ya hatari ya uharibifu wa njia ya hewa na uvimbe. Daima piga simu ya msaada ikiwa una mashaka!"
+  },
+  {
+    "id": "burns_step8",
+    "english": "Cover the wound with a sterile bandage or clean, non-sticky material. Do not apply any cream or oil. Do not burst any blisters.",
+    "swahili": "Funika jeraha kwa bandeji safi au kitambaa safi kisichoganda. Usiweke krimu au mafuta yoyote. Usipasue malengelenge yoyote."
+  },
+  {
+    "id": "burns_step9",
+    "english": "If the injury is minor, contact medical personnel for evaluation and wound care.",
+    "swahili": "Ikiwa jeraha ni dogo, wasiliana na wataalamu wa afya kwa tathmini na huduma ya jeraha."
+  },
+  {
+    "id": "burns_danger1",
+    "english": "Use ice or very cold water",
+    "swahili": "Usitumie barafu au maji baridi sana"
+  },
+  {
+    "id": "burns_danger2",
+    "english": "Pop any blisters that form",
+    "swahili": "Usipasue malengelenge yoyote yanayojitokeza"
+  },
+  {
+    "id": "burns_danger3",
+    "english": "Apply creams, ointments, or butter to the burn",
+    "swahili": "Usiweke krimu, marhamu, au siagi kwenye jeraha la kuungua"
+  },
+  {
+    "id": "burns_danger4",
+    "english": "Remove clothes that are stuck to the burn",
+    "swahili": "Usiondoe nguo zinazogandamana na jeraha la kuungua"
+  },
+  {
+    "id": "burns_danger5",
+    "english": "Cool the entire body - focus only on burned area",
+    "swahili": "Usipozeshe mwili mzima - lenga tu eneo lililoungua"
+  },
+  {
+    "id": "burns_sign1",
+    "english": "First Degree: Red, painful, dry skin without blisters",
+    "swahili": "Daraja la Kwanza: Ngozi nyekundu, yenye maumivu, kavu bila malengelenge"
+  },
+  {
+    "id": "burns_sign2",
+    "english": "Second Degree: Blisters, moist skin, usually leaves scars",
+    "swahili": "Daraja la Pili: Malengelenge, ngozi yenye unyevu, kwa kawaida huacha makovu"
+  },
+  {
+    "id": "burns_sign3",
+    "english": "Third Degree: Deep injury, dry leather-like skin, severe damage",
+    "swahili": "Daraja la Tatu: Jeraha la ndani, ngozi kavu kama ngozi, uharibifu mkubwa"
+  },
+  {
+    "id": "burns_additional_info",
+    "english": "For chemical burns, rinse with clean water for at least 30 minutes. For electrical burns, ensure the power source is off before providing help.",
+    "swahili": "Kwa kuungua kwa kemikali, osha kwa maji safi kwa angalau dakika 30. Kwa kuungua kwa umeme, hakikisha chanzo cha umeme kimezimwa kabla ya kutoa msaada."
+  }
+] 

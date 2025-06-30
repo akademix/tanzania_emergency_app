@@ -1,0 +1,92 @@
+[
+  {
+    "id": "snake_bite_title",
+    "english": "snake bite treatment",
+    "swahili": "matibabu ya kuumwa na nyoka"
+  },
+  {
+    "id": "snake_bite_description",
+    "english": "Comprehensive guide for treating snake bites safely and effectively",
+    "swahili": "Mwongozo kamili wa kutibu kuumwa na nyoka kwa usalama na ufanisi"
+  },
+  {
+    "id": "snake_bite_step1",
+    "english": "Ensure immediate safety for yourself and others before approaching the victim.",
+    "swahili": "Hakikisha usalama wa haraka kwa ajili yako na wengine kabla ya kumkaribia mhanga."
+  },
+  {
+    "id": "snake_bite_step2",
+    "english": "Move away from the area where the snake is, if you can. Do not try to kill or capture the snake. If the snake is attached to the victim, use a stick or tool to make it let go. Sea snake victims must be moved to dry land.",
+    "swahili": "Sogea mbali na eneo lile nyoka alipo, ukiweza. Usijaribu kuua au kukamata nyoka. Kama nyoka ameambatana na mhanga, tumia fimbo au chombo ili amwache. Wahanga wa nyoka wa baharini lazima wahamishwe kwenye ardhi kavu."
+  },
+  {
+    "id": "snake_bite_step3",
+    "english": "Try to keep the victim calm and reassure him/her. Call for help and transportation (0800 750 112) to a health care facility. Cleanse wounds to decrease infection risk. Remove rings or anything tight from the bitten part of the body. They can cause harm if swellings occur. Do not apply a tourniquet, cut in the wound or try to suck out the venom.",
+    "swahili": "Jaribu kumweka mhanga atulie na kumfariji. Piga simu ya msaada na usafiri (0800 750 112) kwenda kituo cha afya. Safisha majeraha kupunguza hatari ya maambukizi. Ondoa pete au kitu chochote kizito kutoka sehemu iliyoumwa. Vinaweza kusababisha madhara kama kuvimba kutatokea. Usiweke kifungo cha kuzuia damu, usikatae jeraha au kujaribu kumeza sumu."
+  },
+  {
+    "id": "snake_bite_step4",
+    "english": "Immobilize the person completely. Splint the bitten limb to keep it still, using a stick or the other limb. Monitor the patient's breathing and level of consciousness. Place the patient in recovery position if reduced consciousness, and be prepared for vomiting. Reassure the victim. Many bites are caused by non-venomous snakes, and even venomous snakes usually do not cause immediate death. Seeking immediate help is essential!",
+    "swahili": "Simamisha mtu kabisa. Weka kijiti kwenye kiungo kilichoumwa ili kisihamike, ukitumia fimbo au kiungo kingine. Chunguza kupumua kwa mgonjwa na kiwango cha ufahamu. Weka mgonjwa katika nafasi ya kupona kama ufahamu umepungua, na jiandae kwa kutapika. Mfariji mhanga. Kuumwa kwingi ni kutokana na nyoka wasio na sumu, na hata nyoka wenye sumu kwa kawaida hawasababishi kifo cha haraka. Kutafuta msaada wa haraka ni muhimu!"
+  },
+  {
+    "id": "snake_bite_danger1",
+    "english": "Apply a tourniquet or try to suck out the venom",
+    "swahili": "Weka kifungo cha kuzuia damu au kujaribu kumeza sumu"
+  },
+  {
+    "id": "snake_bite_danger2",
+    "english": "Cut into the wound or make incisions",
+    "swahili": "Kata jeraha au fanya mikato"
+  },
+  {
+    "id": "snake_bite_danger3",
+    "english": "Apply ice, cold water, or submerge in water",
+    "swahili": "Weka barafu, maji baridi, au kuzamisha majini"
+  },
+  {
+    "id": "snake_bite_danger4",
+    "english": "Give alcohol, caffeine, or stimulants to the victim",
+    "swahili": "Mpa mhanga pombe, kifeine, au vichochezi"
+  },
+  {
+    "id": "snake_bite_danger5",
+    "english": "Try to kill or capture the snake for identification",
+    "swahili": "Jaribu kuua au kukamata nyoka kwa utambulisho"
+  },
+  {
+    "id": "snake_bite_danger6",
+    "english": "Elevate the bitten limb above heart level",
+    "swahili": "Inua kiungo kilichoumwa juu ya kiwango cha moyo"
+  },
+  {
+    "id": "snake_bite_sign1",
+    "english": "Breathing: Difficulty breathing, shallow breathing, or respiratory distress",
+    "swahili": "Kupumua: Ugumu wa kupumua, kupumua kwa uchuchu, au dhiki ya kupumua"
+  },
+  {
+    "id": "snake_bite_sign2",
+    "english": "Consciousness: Confusion, drowsiness, or loss of consciousness",
+    "swahili": "Ufahamu: Kuchanganyikiwa, usingizi, au kupoteza fahamu"
+  },
+  {
+    "id": "snake_bite_sign3",
+    "english": "Circulation: Weak pulse, pale skin, or signs of shock",
+    "swahili": "Mzunguko wa damu: Mapigo dhaifu, ngozi yenye rangi nyeupe, au dalili za shinikizo"
+  },
+  {
+    "id": "snake_bite_sign4",
+    "english": "Local symptoms: Severe swelling, intense pain, or tissue death",
+    "swahili": "Dalili za eneo: Kuvimba kwingi, maumivu makali, au kufa kwa tishu"
+  },
+  {
+    "id": "snake_bite_sign5",
+    "english": "Systemic symptoms: Nausea, vomiting, or allergic reactions",
+    "swahili": "Dalili za mfumo: Kichefuchefu, kutapika, au athari za mzio"
+  },
+  {
+    "id": "snake_bite_additional_info",
+    "english": "If possible, note the snake's appearance (color, pattern, size) from a safe distance to help medical professionals identify it. Most snake bites are from non-venomous species, but always treat every bite as potentially dangerous and seek immediate medical attention.",
+    "swahili": "Ikiwezekana, angalia mwonekano wa nyoka (rangi, mchoro, ukubwa) kutoka umbali salama ili kusaidia wataalamu wa matibabu kumtambua. Kuumwa kwingi na nyoka ni kutoka aina zisizo na sumu, lakini daima tibu kila kuumwa kama kuna hatari na utafute matibabu ya haraka."
+  }
+] 
