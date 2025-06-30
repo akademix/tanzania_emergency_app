@@ -143,51 +143,51 @@ export default function GuidePage() {
                     </div>
                   </div>
                   <div className="text-white flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h2 className="text-xl font-semibold">
-                        {capitalizeFirstLetter(guideTitle)}
-                      </h2>
-                      {titleAudioPath && (
-                        <button
-                          onClick={(e) => handlePlayAudio(`${guide.id}-title`, titleAudioPath, e)}
-                          className={`w-8 h-8 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
-                            isTitlePlaying
-                              ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
-                              : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
-                          }`}
-                          aria-label={isTitlePlaying ? "Pause title audio" : "Play title audio"}
-                        >
-                          {isTitlePlaying ? (
-                            <Pause className="w-3 h-3" />
-                          ) : (
-                            <Volume2 className="w-3 h-3" />
-                          )}
-                        </button>
-                      )}
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <p className="text-gray-300 text-sm flex-1">{guideDescription}</p>
-                      {descriptionAudioPath && (
-                        <button
-                          onClick={(e) => handlePlayAudio(`${guide.id}-description`, descriptionAudioPath, e)}
-                          className={`w-6 h-6 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
-                            isDescriptionPlaying
-                              ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
-                              : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
-                          }`}
-                          aria-label={isDescriptionPlaying ? "Pause description audio" : "Play description audio"}
-                        >
-                          {isDescriptionPlaying ? (
-                            <Pause className="w-2.5 h-2.5" />
-                          ) : (
-                            <Volume2 className="w-2.5 h-2.5" />
-                          )}
-                        </button>
-                      )}
-                    </div>
+                    <h2 className="text-xl font-semibold mb-1">
+                      {capitalizeFirstLetter(guideTitle)}
+                    </h2>
+                    <p className="text-gray-300 text-sm">{guideDescription}</p>
                   </div>
                 </div>
-                <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0 ml-3" />
+                <div className="flex items-start gap-2 ml-3">
+                  <div className="flex flex-col gap-1">
+                    {titleAudioPath && (
+                      <button
+                        onClick={(e) => handlePlayAudio(`${guide.id}-title`, titleAudioPath, e)}
+                        className={`w-8 h-8 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
+                          isTitlePlaying
+                            ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
+                            : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
+                        }`}
+                        aria-label={isTitlePlaying ? "Pause title audio" : "Play title audio"}
+                      >
+                        {isTitlePlaying ? (
+                          <Pause className="w-3 h-3" />
+                        ) : (
+                          <Volume2 className="w-3 h-3" />
+                        )}
+                      </button>
+                    )}
+                    {descriptionAudioPath && (
+                      <button
+                        onClick={(e) => handlePlayAudio(`${guide.id}-description`, descriptionAudioPath, e)}
+                        className={`w-8 h-8 rounded-full transition-all duration-300 touch-target tap-highlight-none transform hover:scale-110 active:scale-95 flex items-center justify-center shadow-lg ${
+                          isDescriptionPlaying
+                            ? "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/30"
+                            : "bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50"
+                        }`}
+                        aria-label={isDescriptionPlaying ? "Pause description audio" : "Play description audio"}
+                      >
+                        {isDescriptionPlaying ? (
+                          <Pause className="w-3 h-3" />
+                        ) : (
+                          <Volume2 className="w-3 h-3" />
+                        )}
+                      </button>
+                    )}
+                  </div>
+                  <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0" />
+                </div>
               </div>
             </Link>
           )
