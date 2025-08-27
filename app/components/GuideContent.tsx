@@ -140,6 +140,18 @@ export function GuideContent({ guide }: GuideContentProps) {
     }
   }, []);
 
+  // Ensure clean UI state when switching languages (stop any playing audio)
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setPlayingAudioIndex(null);
+    }
+    if (titleAudioRef.current) {
+      titleAudioRef.current.pause();
+      setPlayingTitleAudio(false);
+    }
+  }, [language]);
+
   return (
     <div className="space-y-6">
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
@@ -255,7 +267,8 @@ export function GuideContent({ guide }: GuideContentProps) {
         </a>
       </div>
 
-      <div className="space-y-4">
+      {/* Remount steps when language changes to prevent any mixed-language DOM remnants */}
+      <div key={language} className="space-y-4">
         <h2 className="text-xl font-semibold text-white flex items-center gap-2">
           <AlertTriangle className="w-5 h-5 text-red-400" />
           {tString("immediateActions")}

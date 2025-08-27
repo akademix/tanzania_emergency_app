@@ -97,7 +97,8 @@ export default function GuidePage() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-4">
+    // Remount the list when language changes to avoid mixed text artifacts
+    <div key={language} className="max-w-md mx-auto px-4">
       <BackButton />
       
       <div className="mb-8 text-center">
